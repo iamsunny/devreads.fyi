@@ -35,12 +35,20 @@ npm run import:opml                 # re-import data/seed.opml into sites.yml (m
 
 `/` search · `j`/`k` navigate · `o`/`Enter` open post · `s` save for later · `Esc` close
 
-## Deploying (GitHub Pages)
+## Deploying (Cloudflare Pages at devreads.fyi)
 
-1. Create a GitHub repo and push this project (branch `main`).
-2. Repo **Settings → Pages → Source: GitHub Actions**.
-3. Run the **Pull feeds and deploy** workflow once manually (Actions tab) — the first run backfills everything and may take a while.
-4. After that it runs every 30 minutes: ingest → commit `data/` → rebuild → deploy.
+GitHub Actions does ingest + build, then direct-uploads `dist/` with wrangler. (A git-connected Pages project would burn a build per data commit — ~1,440/month against the 500/month free-tier limit — direct uploads don't count.)
+
+One-time setup:
+
+1. Push this repo to GitHub (branch `main`).
+2. Add the site to Cloudflare (free plan) and switch the domain's nameservers at Namecheap to the two Cloudflare ones.
+3. Create the Pages project once, locally: `npx wrangler login && npx wrangler pages project create devreads`.
+4. In the Cloudflare dashboard: **Workers & Pages → devreads → Custom domains → add `devreads.fyi`**.
+5. In the GitHub repo: **Settings → Secrets and variables → Actions**, add `CLOUDFLARE_API_TOKEN` (token with the "Cloudflare Pages — Edit" permission) and `CLOUDFLARE_ACCOUNT_ID`.
+6. Run the **Pull feeds and deploy** workflow once manually (Actions tab).
+
+After that it runs every 30 minutes: ingest → commit `data/` → build → deploy.
 
 ## Adding a site
 

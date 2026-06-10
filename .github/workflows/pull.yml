@@ -9,8 +9,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: pull-and-deploy
@@ -38,19 +36,14 @@ jobs:
           git push
       - name: Build site + search index
         env:
-          BASE_PATH: /${{ github.event.repository.name }}
-          SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          SITE_URL: https://devreads.fyi
         run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+      # Direct upload instead of a git-connected Pages project: scheduled data
+      # commits (~1,440/month) would blow past the 500 builds/month free-tier
+      # limit, while wrangler deploys don't count against it.
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
-          path: dist
-
-  deploy:
-    needs: pull
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=devreads --branch=main
