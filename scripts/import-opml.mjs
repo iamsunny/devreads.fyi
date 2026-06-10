@@ -39,9 +39,11 @@ for (const [, attrs] of outlines) {
   let id = slugify(attr.title || attr.text || new URL(feed).hostname);
   while (seenIds.has(id)) id += '-2';
   seenIds.add(id);
+  const name = attr.title || attr.text || id;
   imported.push({
     id,
-    name: attr.title || attr.text || id,
+    name,
+    title: name,
     feed,
     url: attr.htmlUrl?.trim() || new URL(feed).origin,
   });

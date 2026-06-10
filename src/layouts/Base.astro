@@ -73,6 +73,14 @@ const postCount = posts.length.toLocaleString('en-US');
     .meta > * + *::before { content: '·'; margin-right: 6px; color: var(--faint); }
     .meta .src { font-weight: 600; }
     .meta .src:hover { color: var(--fg); }
+    .title-line { display: flex; align-items: flex-start; gap: 10px; }
+    .title-line .title { flex: 1; min-width: 0; }
+    .src-pill {
+      flex-shrink: 0; margin-top: 3px; font-size: 11px; font-weight: 600; white-space: nowrap;
+      background: var(--accent-bg); color: var(--accent); border-radius: 999px; padding: 2px 10px;
+      max-width: 180px; overflow: hidden; text-overflow: ellipsis;
+    }
+    .src-pill:hover { text-decoration: underline; }
     .title { margin: 2px 0 0; font-size: 15.5px; font-weight: 600; line-height: 1.4; }
     .title a:hover { text-decoration: underline; }
     .row.unread .title::before {

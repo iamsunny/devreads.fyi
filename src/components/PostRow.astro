@@ -19,11 +19,14 @@ const dateStr = post.published
   <span class="avatar" style={`--h:${hueOf(post.siteId)}`} aria-hidden="true">{name[0].toUpperCase()}</span>
   <div class="row-main">
     <p class="meta">
-      {showSource && <a class="src" href={`${root}source/${post.siteId}/`}>{name}</a>}
+      {post.author && <span>{post.author}</span>}
       {dateStr && <time data-rel datetime={post.published}>{dateStr}</time>}
       {post.readingMin && <span>{post.readingMin} min read</span>}
     </p>
-    <h3 class="title"><a href={post.url} target="_blank" rel="noopener">{post.title}</a></h3>
+    <div class="title-line">
+      <h3 class="title"><a href={post.url} target="_blank" rel="noopener">{post.title}</a></h3>
+      {showSource && <a class="src-pill" href={`${root}source/${post.siteId}/`} title={`All posts from ${name}`}>{site?.title ?? name}</a>}
+    </div>
     {post.summary && <p class="summary">{post.summary}</p>}
     {post.tags?.length > 0 && (
       <p class="tags">

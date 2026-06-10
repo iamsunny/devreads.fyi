@@ -96,11 +96,28 @@ async function processSite(site) {
   }
 }
 
+// Per-host serialization with a small gap: many sites share a host (100+ on
+// medium.com), and hitting one host with the full concurrency triggers 429s.
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const hostQueues = new Map();
+function withHostLock(url, fn) {
+  let host;
+  try {
+    host = new URL(url).hostname;
+  } catch {
+    host = url;
+  }
+  const prev = hostQueues.get(host) ?? Promise.resolve();
+  const run = prev.then(fn, fn);
+  hostQueues.set(host, run.then(() => sleep(400), () => sleep(400)));
+  return run;
+}
+
 let cursor = 0;
 async function workerLoop() {
   while (cursor < queue.length) {
     const site = queue[cursor++];
-    await processSite(site);
+    await withHostLock(site.feed, () => processSite(site));
   }
 }
 const started = Date.now();

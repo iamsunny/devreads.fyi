@@ -44,13 +44,18 @@ npm run import:opml                 # re-import data/seed.opml into sites.yml (m
 
 ## Adding a site
 
-Append to `sites.yml`:
+Append to `sites.yml` (all five fields are required; `title` is the pill shown next to each article):
 
 ```yaml
   - id: my-blog
     name: My Blog
+    title: My Blog
     feed: https://example.com/feed.xml
     url: https://example.com
 ```
 
-The next scheduled run backfills it and folds it into the regular pull. The aggregator also republishes everything at `/feed.xml` (RSS) and `/opml.xml`.
+Open a PR — the **Validate sites.yml** workflow gates it: every new entry must use `https://` for feed and url, carry a non-empty title, and its feed must fetch live and return at least one item, otherwise the build fails. Run the same check locally with `node scripts/validate-sites.mjs` (validates entries not yet committed). Once merged, the next scheduled run backfills the site and folds it into the regular pull.
+
+`node scripts/cleanup-sites.mjs` removes entries that have never had a successful fetch (sites with a completed backfill are kept even if the last pull failed — transient errors such as rate limits recover on their own).
+
+The aggregator also republishes everything at `/feed.xml` (RSS) and `/opml.xml`.
