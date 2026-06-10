@@ -37,7 +37,7 @@ npm run import:opml                 # re-import data/seed.opml into sites.yml (m
 
 ## Deploying (Cloudflare Pages at devreads.fyi)
 
-Split responsibilities: GitHub Actions only ingests feeds and commits data; Cloudflare Pages (git-connected) builds and deploys on every push. The ingest cron runs every 2 hours so data commits (~360/month) stay inside the Pages free tier of 500 builds/month.
+Split responsibilities: GitHub Actions only ingests feeds and commits data; Cloudflare Pages (git-connected) builds and deploys on every push. The ingest cron runs every 6 hours (~120 data commits/month), well inside the Pages free tier of 500 builds/month.
 
 One-time setup:
 

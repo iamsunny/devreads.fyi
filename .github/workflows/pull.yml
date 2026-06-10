@@ -2,12 +2,12 @@ name: Pull feeds
 
 # Ingests feeds and commits new posts. The site itself is built and deployed
 # by Cloudflare Pages (git-connected): every data commit pushed here triggers
-# a Pages build. Cadence is every 2 hours to stay inside the Pages free tier
-# of 500 builds/month (~360 data commits + code pushes + PR previews).
+# a Pages build. Cadence is every 6 hours (~120 builds/month), well inside
+# the Pages free tier of 500 builds/month.
 
 on:
   schedule:
-    - cron: '7 */2 * * *'
+    - cron: '7 */6 * * *'
   workflow_dispatch:
 
 permissions:
