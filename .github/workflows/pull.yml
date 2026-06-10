@@ -17,6 +17,8 @@ concurrency:
 jobs:
   pull:
     runs-on: ubuntu-latest
+    env:
+      HAS_CLOUDFLARE: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -42,6 +44,7 @@ jobs:
       # commits (~1,440/month) would blow past the 500 builds/month free-tier
       # limit, while wrangler deploys don't count against it.
       - name: Deploy to Cloudflare Pages
+        if: env.HAS_CLOUDFLARE == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
