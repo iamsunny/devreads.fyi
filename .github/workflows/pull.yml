@@ -1,24 +1,25 @@
-name: Pull feeds and deploy
+name: Pull feeds
+
+# Ingests feeds and commits new posts. The site itself is built and deployed
+# by Cloudflare Pages (git-connected): every data commit pushed here triggers
+# a Pages build. Cadence is every 2 hours to stay inside the Pages free tier
+# of 500 builds/month (~360 data commits + code pushes + PR previews).
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '7 */2 * * *'
   workflow_dispatch:
-  push:
-    branches: [main]
 
 permissions:
   contents: write
 
 concurrency:
-  group: pull-and-deploy
+  group: pull
   cancel-in-progress: false
 
 jobs:
   pull:
     runs-on: ubuntu-latest
-    env:
-      HAS_CLOUDFLARE: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -36,17 +37,3 @@ jobs:
           git diff --cached --quiet || git commit -m "data: scheduled pull $(date -u +'%Y-%m-%dT%H:%MZ')"
           git pull --rebase
           git push
-      - name: Build site + search index
-        env:
-          SITE_URL: https://devreads.fyi
-        run: npm run build
-      # Direct upload instead of a git-connected Pages project: scheduled data
-      # commits (~1,440/month) would blow past the 500 builds/month free-tier
-      # limit, while wrangler deploys don't count against it.
-      - name: Deploy to Cloudflare Pages
-        if: env.HAS_CLOUDFLARE == 'true'
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=devreads --branch=main
