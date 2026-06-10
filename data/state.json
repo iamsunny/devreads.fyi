@@ -1,0 +1,129 @@
+{
+  "0xadada": {
+    "status": "active",
+    "failCount": 0,
+    "lastPolledAt": "2026-06-10T19:54:46.403Z",
+    "etag": "W/\"6797f7d2-bea78\"",
+    "lastModified": "Mon, 27 Jan 2025 21:17:06 GMT",
+    "lastSuccessAt": "2026-06-10T19:54:07.897Z",
+    "lastError": null,
+    "backfilledAt": "2026-06-10T19:54:07.897Z",
+    "backfillDepth": 59
+  },
+  "8th-light": {
+    "status": "active",
+    "failCount": 0,
+    "lastPolledAt": "2026-06-10T19:54:46.469Z",
+    "etag": null,
+    "lastModified": null,
+    "lastSuccessAt": "2026-06-10T19:54:46.469Z",
+    "lastError": null,
+    "backfilledAt": "2026-06-10T19:54:07.966Z",
+    "backfillDepth": 25
+  },
+  "aaron-patterson": {
+    "status": "active",
+    "failCount": 0,
+    "lastPolledAt": "2026-06-10T19:54:46.471Z",
+    "etag": "\"3a2ce-65129a1f6cd34-gzip\"",
+    "lastModified": "Wed, 06 May 2026 17:38:33 GMT",
+    "lastSuccessAt": "2026-06-10T19:54:46.471Z",
+    "lastError": null,
+    "backfilledAt": "2026-06-10T19:54:07.968Z",
+    "backfillDepth": 15
+  },
+  "abu-ashraf-masnun": {
+    "status": "active",
+    "failCount": 0,
+    "lastPolledAt": "2026-06-10T19:54:46.471Z",
+    "etag": null,
+    "lastModified": "Thu, 06 Dec 2018 17:14:35 GMT",
+    "lastSuccessAt": "2026-06-10T19:54:07.968Z",
+    "lastError": null,
+    "backfilledAt": "2026-06-10T19:54:07.968Z",
+    "backfillDepth": 110
+  },
+  "addy-osmani": {
+    "status": "active",
+    "failCount": 0,
+    "lastPolledAt": "2026-06-10T19:54:46.473Z",
+    "etag": "\"d30fd29ce846ecd94a707826a4775c51-ssl-df\"",
+    "lastModified": null,
+    "lastSuccessAt": "2026-06-10T19:54:07.969Z",
+    "lastError": null,
+    "backfilledAt": "2026-06-10T19:54:07.969Z",
+    "backfillDepth": 10
+  },
+  "adroll": {
+    "status": "active",
+    "failCount": 0,
+    "lastPolledAt": "2026-06-10T19:54:46.473Z",
+    "etag": "\"4b4ccc57002fe1762ca2a29da8de9de8\"",
+    "lastModified": "Fri, 15 Dec 2023 20:54:44 GMT",
+    "lastSuccessAt": "2026-06-10T19:54:07.970Z",
+    "lastError": null,
+    "backfilledAt": "2026-06-10T19:54:07.970Z",
+    "backfillDepth": 102
+  },
+  "advanced-web-machinery": {
+    "status": "active",
+    "failCount": 0,
+    "lastPolledAt": "2026-06-10T19:54:46.474Z",
+    "etag": "W/\"6a2160ee-32633\"",
+    "lastModified": "Thu, 04 Jun 2026 11:26:38 GMT",
+    "lastSuccessAt": "2026-06-10T19:54:07.970Z",
+    "lastError": null,
+    "backfilledAt": "2026-06-10T19:54:07.970Z",
+    "backfillDepth": 10
+  },
+  "airbnb": {
+    "status": "active",
+    "failCount": 0,
+    "lastPolledAt": "2026-06-10T19:54:46.475Z",
+    "etag": null,
+    "lastModified": null,
+    "lastSuccessAt": "2026-06-10T19:54:46.475Z",
+    "lastError": null,
+    "backfilledAt": "2026-06-10T19:54:07.971Z",
+    "backfillDepth": 10
+  },
+  "alan-storm": {
+    "status": "active",
+    "failCount": 0,
+    "lastPolledAt": "2026-06-10T19:54:46.609Z",
+    "etag": "\"3e25-600c207f73cde\"",
+    "lastModified": "Tue, 18 Jul 2023 12:26:57 GMT",
+    "lastSuccessAt": "2026-06-10T19:54:11.082Z",
+    "lastError": null,
+    "backfilledAt": "2026-06-10T19:54:11.082Z",
+    "backfillDepth": 10
+  },
+  "alex-russell": {
+    "status": "active",
+    "failCount": 0,
+    "lastPolledAt": "2026-06-10T19:54:46.772Z",
+    "etag": "\"05915d836254b2feb73a739397678a27-ssl-df\"",
+    "lastModified": null,
+    "lastSuccessAt": "2026-06-10T19:54:11.114Z",
+    "lastError": null,
+    "backfilledAt": "2026-06-10T19:54:11.114Z",
+    "backfillDepth": 30
+  },
+  "algolia": {
+    "status": "backfilling",
+    "failCount": 2,
+    "lastPolledAt": "2026-06-10T19:54:47.026Z",
+    "lastError": "HTTP 404"
+  },
+  "amit-merchant": {
+    "status": "active",
+    "failCount": 0,
+    "lastPolledAt": "2026-06-10T19:54:47.143Z",
+    "etag": "W/\"52e1dd54eb44629302dc808f81fb5952\"",
+    "lastModified": null,
+    "lastSuccessAt": "2026-06-10T19:54:12.746Z",
+    "lastError": null,
+    "backfilledAt": "2026-06-10T19:54:12.746Z",
+    "backfillDepth": 10
+  }
+}

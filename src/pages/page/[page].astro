@@ -1,0 +1,17 @@
+---
+import Base from '../../layouts/Base.astro';
+import Listing from '../../components/Listing.astro';
+import Pagination from '../../components/Pagination.astro';
+import { pageSlice, pageCount, posts, sites } from '../../lib/data.mjs';
+
+export function getStaticPaths() {
+  const total = pageCount();
+  return Array.from({ length: Math.max(0, total - 1) }, (_, i) => ({ params: { page: String(i + 2) } }));
+}
+const page = Number(Astro.params.page);
+---
+<Base title={`Engineering reads — page ${page}`}>
+  <Listing posts={pageSlice(page)} />
+  <Pagination page={page} total={pageCount()} />
+  <span slot="footer-right">{posts.length.toLocaleString()} posts from {sites.length} sources</span>
+</Base>
