@@ -10,8 +10,8 @@ export function getStaticPaths() {
 }
 const page = Number(Astro.params.page);
 ---
-<Base title={`Engineering reads — page ${page}`}>
+<Base title={`devreads.fyi — page ${page}`}>
   <Listing posts={pageSlice(page)} />
   <Pagination page={page} total={pageCount()} />
-  <span slot="footer-right">{posts.length.toLocaleString()} posts from {sites.length} sources</span>
+  <span slot="footer-right">FYI: {posts.length.toLocaleString()} posts from {sites.length} sources</span>
 </Base>

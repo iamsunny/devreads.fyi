@@ -12,7 +12,7 @@ const sitePosts = posts.filter((p) => p.siteId === site.id).slice(0, 300);
 const count = postCountBySite.get(site.id) ?? 0;
 const oldest = sitePosts.at(-1)?.published;
 ---
-<Base title={`${site.name} — Engineering reads`}>
+<Base title={`${site.name} — devreads.fyi`}>
   <div class="page-head">
     <h1>{site.name}</h1>
     <p>

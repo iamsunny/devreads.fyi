@@ -1,6 +1,6 @@
-# Engineering reads
+# devreads.fyi
 
-An aggregator for engineering blogs: scheduled RSS/Atom ingestion with one-time backfill per site, and a static webapp with instant client-side search.
+`$ tail -f engineering` — an aggregator for engineering blogs: scheduled RSS/Atom ingestion with one-time backfill per site, and a static webapp with instant client-side search. Light and dark themes (toggle in the header, system preference respected by default).
 
 Seeded from [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs) (420 feeds via its OPML).
 

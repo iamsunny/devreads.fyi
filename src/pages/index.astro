@@ -7,5 +7,5 @@ import { pageSlice, pageCount, posts, sites } from '../lib/data.mjs';
 <Base>
   <Listing posts={pageSlice(1)} />
   <Pagination page={1} total={pageCount()} />
-  <span slot="footer-right">{posts.length.toLocaleString()} posts from {sites.length} sources</span>
+  <span slot="footer-right">FYI: {posts.length.toLocaleString()} posts from {sites.length} sources</span>
 </Base>

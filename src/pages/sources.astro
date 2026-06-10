@@ -9,7 +9,7 @@ const healthy = rows.filter((r) => r.st.status === 'active').length;
 const failing = rows.filter((r) => ['failing', 'quarantined'].includes(r.st.status)).length;
 const fmt = (iso) => (iso ? new Date(iso).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '—');
 ---
-<Base title="Sources — Engineering reads">
+<Base title="Sources — devreads.fyi">
   <div class="page-head">
     <h1>Sources</h1>
     <p>{rows.length} sites · {healthy} healthy · {failing} failing. Add a site by appending one entry to <code>sites.yml</code> — it backfills automatically on the next pull.</p>

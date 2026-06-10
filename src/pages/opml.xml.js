@@ -9,9 +9,9 @@ export function GET() {
     .join('\n');
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>Engineering reads</title></head>
+  <head><title>devreads.fyi</title></head>
   <body>
-    <outline text="Engineering reads" title="Engineering reads">
+    <outline text="devreads.fyi" title="devreads.fyi">
 ${outlines}
     </outline>
   </body>

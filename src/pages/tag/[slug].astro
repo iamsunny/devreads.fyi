@@ -11,7 +11,7 @@ const tag = tagBySlug.get(slug);
 const all = posts.filter((p) => p.tags?.some((t) => tagSlug(t) === slug));
 const tagged = all.slice(0, 300);
 ---
-<Base title={`${tag} — Engineering reads`}>
+<Base title={`#${tag} — devreads.fyi`}>
   <div class="page-head">
     <h1>#{tag}</h1>
     <p>{all.length} posts{all.length > 300 ? ' (showing latest 300 — use search for the rest)' : ''}</p>

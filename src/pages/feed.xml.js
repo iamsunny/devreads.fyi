@@ -20,9 +20,9 @@ export function GET(context) {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>Engineering reads</title>
+    <title>devreads.fyi</title>
     <link>${esc(context.site ?? 'http://localhost:4321')}</link>
-    <description>Engineering blogs, aggregated</description>
+    <description>$ tail -f engineering — every engineering blog, one feed</description>
 ${items}
   </channel>
 </rss>`;

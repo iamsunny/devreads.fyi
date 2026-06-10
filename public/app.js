@@ -1,5 +1,12 @@
 (() => {
   const base = document.body.dataset.base || '/';
+
+  // --- theme toggle -----------------------------------------------------------
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('theme', next);
+  });
   const esc = (s) =>
     String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
@@ -77,7 +84,7 @@
     if (!el) return;
     const items = Object.values(loadSaved()).sort((a, b) => (b.savedAt ?? '').localeCompare(a.savedAt ?? ''));
     if (!items.length) {
-      el.innerHTML = '<p class="search-empty">Nothing saved yet. Press <kbd>s</kbd> on any post.</p>';
+      el.innerHTML = '<p class="search-empty">// nothing saved yet — press <kbd>s</kbd> on any post</p>';
       return;
     }
     el.innerHTML = items
@@ -147,7 +154,7 @@
     if (fSource.value) filters.source = fSource.value;
     if (fTag.value) filters.tag = fTag.value;
     if (!term && !fSource.value && !fTag.value) {
-      resultsEl.innerHTML = '<p class="search-empty">Type to search.</p>';
+      resultsEl.innerHTML = '<p class="search-empty">// type to search</p>';
       firstResultUrl = null;
       return;
     }
@@ -160,7 +167,7 @@
     if (seq !== searchSeq) return;
     firstResultUrl = top[0]?.meta?.url || null;
     if (!top.length) {
-      resultsEl.innerHTML = '<p class="search-empty">No matches.</p>';
+      resultsEl.innerHTML = '<p class="search-empty">// no matches</p>';
       return;
     }
     resultsEl.innerHTML =
