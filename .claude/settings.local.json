@@ -8,7 +8,8 @@
       "PowerShell(npm --version)",
       "PowerShell(New-Item -ItemType Directory -Force scripts, ingest, data | Out-Null; Invoke-WebRequest -Uri \"https://raw.githubusercontent.com/kilimchoi/engineering-blogs/master/engineering_blogs.opml\" -OutFile \"data\\\\seed.opml\"; Get-Content \"data\\\\seed.opml\" -TotalCount 12; \\(Select-String -Path \"data\\\\seed.opml\" -Pattern 'xmlUrl' -AllMatches\\).Matches.Count)",
       "PowerShell(node ingest/run.mjs --limit 12 2>&1 | Out-String; \\(Get-Content data\\\\state.json | ConvertFrom-Json\\).PSObject.Properties | Select-Object -First 3 Name, @{n='status';e={$_.Value.status}}, @{n='depth';e={$_.Value.backfillDepth}}, @{n='etag';e={[bool]$_.Value.etag}} | Format-Table)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(node ingest/run.mjs --concurrency 12 2>&1 | Select-Object -Last 2; $s = Get-Content data\\\\state.json | ConvertFrom-Json; $s.PSObject.Properties.Value | Group-Object status | Select-Object Name, Count | Format-Table)"
     ]
   }
 }

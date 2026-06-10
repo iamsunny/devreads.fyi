@@ -41,9 +41,9 @@ async function processSite(site) {
     }
   }
 
-  const isBackfill = st.status === 'new' || st.status === 'backfilling';
+  // Backfill is pending until it has succeeded once; status only reports health.
+  const isBackfill = !st.backfilledAt;
   try {
-    if (isBackfill) st.status = 'backfilling';
     const res = await fetchUrl(site.feed, isBackfill ? {} : { etag: st.etag, lastModified: st.lastModified });
     st.lastPolledAt = now;
     if (res.status === 304) {
@@ -90,9 +90,7 @@ async function processSite(site) {
     st.lastPolledAt = now;
     st.failCount = (st.failCount ?? 0) + 1;
     st.lastError = String(err?.message ?? err).slice(0, 200);
-    if (st.failCount >= QUARANTINE_AFTER) st.status = 'quarantined';
-    else if (isBackfill) st.status = 'backfilling';
-    else st.status = 'failing';
+    st.status = st.failCount >= QUARANTINE_AFTER ? 'quarantined' : 'failing';
     counters.failed++;
     console.log(`  ${site.id}: FAIL ${st.lastError}`);
   }

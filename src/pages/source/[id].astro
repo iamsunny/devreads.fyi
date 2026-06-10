@@ -21,6 +21,11 @@ const oldest = sitePosts.at(-1)?.published;
       · <span class={`badge ${st.status ?? 'new'}`}>{st.status ?? 'new'}</span>
     </p>
   </div>
-  {st.status === 'backfilling' && <p style="color: var(--muted); font-size: 13.5px;">Backfill in progress — {count} posts so far.</p>}
+  {!st.backfilledAt && st.lastPolledAt && (
+    <p style="color: var(--muted); font-size: 13.5px;">
+      Backfill hasn't completed yet — {count} posts so far.
+      {st.lastError && ` Last attempt failed (${st.lastError}); it retries on every pull and is quarantined after 8 consecutive failures.`}
+    </p>
+  )}
   <Listing posts={sitePosts} showSource={false} />
 </Base>
