@@ -16,7 +16,7 @@ sites.yml ──> ingest worker (cron) ──> data/posts/*.ndjson + data/state.
 - **`sites.yml`** is the single source of truth. Adding a site is one entry (`id`, `name`, `feed`, `url`). A site with no entry in `data/state.json` is treated as new and gets a **backfill**: the feed itself, then RFC 5005 archive pagination, then the WordPress `?paged=N` trick (capped at 500 posts/site). Every later run is a cheap **delta** using conditional GET (ETag/Last-Modified), so unchanged feeds cost a 304.
 - Per-site state machine: `new → backfilling → active`, with `failing → quarantined` after 8 consecutive errors (quarantined sites are retried daily). Health is visible on the **Sources** page.
 - Posts are deduped by feed GUID → canonical URL (tracking params stripped) → title+date hash, and stored as append-only NDJSON (git-friendly diffs for the scheduled commits).
-- The webapp is fully static: paginated latest feed with day grouping, tag and source pages, saved posts and unread tracking in localStorage, and a [Pagefind](https://pagefind.app) search overlay (title/summary/tags, filterable by source and tag) that runs entirely in the browser.
+- The webapp is fully static: paginated latest feed with day grouping, tag and source pages, saved posts and unread tracking in localStorage, and a search overlay (title/summary/tags, filterable by source and tag) that runs entirely in the browser against a sharded JSON index (~10 files under `dist/search/`, prefetched in the background). The index is deliberately not Pagefind: its one-fragment-file-per-record layout exceeds Cloudflare Pages' 20,000-file deployment limit at this corpus size.
 
 ## Commands
 

@@ -104,80 +104,135 @@
   }
   renderSavedPage();
 
-  // --- search overlay (Pagefind) ---------------------------------------------
+  // --- search overlay (sharded JSON index) ------------------------------------
+  // Record tuple: [title, url, source, date, tags[], summary]
   const overlay = document.getElementById('search-overlay');
   const input = document.getElementById('search-input');
   const resultsEl = document.getElementById('search-results');
   const fSource = document.getElementById('f-source');
   const fTag = document.getElementById('f-tag');
-  let pagefind = null;
+  let indexPromise = null;
+  let manifest = null;
   let filtersLoaded = false;
   let firstResultUrl = null;
 
-  async function ensurePagefind() {
-    if (pagefind) return pagefind;
-    try {
-      pagefind = await import(`${base}pagefind/pagefind.js`);
-      await pagefind.options({ baseUrl: base });
-      pagefind.init();
-    } catch {
-      resultsEl.innerHTML =
-        '<p class="search-empty">Search index not available (dev mode). Run <code>npm run build</code> first.</p>';
-      pagefind = null;
+  function ensureIndex() {
+    if (!indexPromise) {
+      indexPromise = (async () => {
+        const mRes = await fetch(`${base}search/manifest.json`);
+        if (!mRes.ok) throw new Error('manifest');
+        manifest = await mRes.json();
+        const shards = await Promise.all(
+          Array.from({ length: manifest.shardCount }, (_, i) =>
+            fetch(`${base}search/shard-${i}.json`).then((r) => {
+              if (!r.ok) throw new Error(`shard ${i}`);
+              return r.json();
+            })
+          )
+        );
+        return shards.flat();
+      })().catch((err) => {
+        indexPromise = null;
+        throw err;
+      });
     }
-    return pagefind;
+    return indexPromise;
   }
+  (window.requestIdleCallback ?? ((fn) => setTimeout(fn, 2500)))(() => ensureIndex().catch(() => {}));
 
   async function populateFilters() {
-    if (filtersLoaded || !(await ensurePagefind())) return;
-    const filters = await pagefind.filters();
-    const fill = (select, entries, limit) => {
-      for (const [value] of entries.slice(0, limit)) {
+    if (filtersLoaded) return;
+    try {
+      await ensureIndex();
+    } catch {
+      resultsEl.innerHTML =
+        '<p class="search-empty">// search index not available (dev mode) — run npm run build</p>';
+      return;
+    }
+    const fill = (select, values) => {
+      for (const value of values) {
         const opt = document.createElement('option');
         opt.value = value;
         opt.textContent = value;
         select.appendChild(opt);
       }
     };
-    fill(fSource, Object.entries(filters.source ?? {}).sort((a, b) => a[0].localeCompare(b[0])), 1000);
-    fill(fTag, Object.entries(filters.tag ?? {}).sort((a, b) => b[1] - a[1]), 60);
+    fill(fSource, manifest.sources.map((s) => s.name));
+    fill(fTag, manifest.tags.map(([t]) => t));
     filtersLoaded = true;
   }
 
+  const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const highlight = (text, tokens) =>
+    tokens.length ? esc(text).replace(new RegExp(`(${tokens.map(escRe).join('|')})`, 'gi'), '<mark>$1</mark>') : esc(text);
+
   let searchSeq = 0;
   async function runSearch() {
-    const pf = await ensurePagefind();
-    if (!pf) return;
     const seq = ++searchSeq;
-    const term = input.value.trim();
-    const filters = {};
-    if (fSource.value) filters.source = fSource.value;
-    if (fTag.value) filters.tag = fTag.value;
-    if (!term && !fSource.value && !fTag.value) {
+    const term = input.value.trim().toLowerCase();
+    const srcFilter = fSource.value;
+    const tagFilter = fTag.value;
+    if (!term && !srcFilter && !tagFilter) {
       resultsEl.innerHTML = '<p class="search-empty">// type to search</p>';
       firstResultUrl = null;
       return;
     }
-    const res = await pf.search(term || null, {
-      filters,
-      ...(term ? {} : { sort: { date: 'desc' } }),
-    });
+    let index;
+    try {
+      if (!indexPromise) resultsEl.innerHTML = '<p class="search-empty">// loading index…</p>';
+      index = await ensureIndex();
+    } catch {
+      resultsEl.innerHTML =
+        '<p class="search-empty">// search index not available (dev mode) — run npm run build</p>';
+      return;
+    }
     if (seq !== searchSeq) return;
-    const top = await Promise.all(res.results.slice(0, 30).map((r) => r.data()));
-    if (seq !== searchSeq) return;
-    firstResultUrl = top[0]?.meta?.url || null;
+
+    const tokens = term.split(/\s+/).filter(Boolean);
+    const matches = [];
+    for (const r of index) {
+      if (srcFilter && r[2] !== srcFilter) continue;
+      if (tagFilter && !r[4].includes(tagFilter)) continue;
+      let score = 0;
+      if (tokens.length) {
+        let ok = true;
+        const title = ' ' + r[0].toLowerCase();
+        const source = r[2].toLowerCase();
+        const summary = r[5].toLowerCase();
+        for (const tok of tokens) {
+          let s = 0;
+          if (title.includes(' ' + tok)) s = 3;
+          else if (title.includes(tok)) s = 2;
+          if (r[4].some((t) => t.includes(tok))) s = Math.max(s, 2.5);
+          if (source.includes(tok)) s = Math.max(s, 2);
+          if (summary.includes(tok)) s = Math.max(s, 1);
+          if (!s) {
+            ok = false;
+            break;
+          }
+          score += s;
+        }
+        if (!ok) continue;
+      }
+      matches.push([score, r]);
+    }
+    // Index is newest-first, so equal scores (and browse mode) stay date-sorted.
+    if (tokens.length) matches.sort((a, b) => b[0] - a[0]);
+    const top = matches.slice(0, 30).map(([, r]) => r);
+
+    firstResultUrl = top[0]?.[1] || null;
     if (!top.length) {
       resultsEl.innerHTML = '<p class="search-empty">// no matches</p>';
       return;
     }
     resultsEl.innerHTML =
-      `<p class="search-empty" style="text-align:left; padding: 6px 8px 2px;">${res.results.length.toLocaleString()} result${res.results.length === 1 ? '' : 's'}</p>` +
+      `<p class="search-empty" style="text-align:left; padding: 6px 8px 2px;">${matches.length.toLocaleString()} result${matches.length === 1 ? '' : 's'}</p>` +
       top
         .map(
-          (d) => `<a class="sr" href="${esc(d.meta.url)}" target="_blank" rel="noopener">
-  <p class="meta"><span class="src">${esc(d.meta.source)}</span>${d.meta.date ? `<span>${esc(d.meta.date)}</span>` : ''}</p>
-  <p class="t">${esc(d.meta.title)}</p>
-  <p class="x">${d.excerpt ?? ''}</p>
+          (r) => `<a class="sr" href="${esc(r[1])}" target="_blank" rel="noopener">
+  <p class="meta"><span class="src">${esc(r[2])}</span>${r[3] ? `<span>${esc(r[3])}</span>` : ''}</p>
+  <p class="t">${highlight(r[0], tokens)}</p>
+  <p class="x">${highlight(r[5], tokens)}</p>
 </a>`
         )
         .join('');
