@@ -1,0 +1,25 @@
+---
+import PostRow from './PostRow.astro';
+import { dayLabel } from '../lib/data.mjs';
+const { posts, showSource = true, dayHeadings = true } = Astro.props;
+const groups = [];
+if (dayHeadings) {
+  let current = null;
+  for (const post of posts) {
+    const label = dayLabel(post.published);
+    if (!current || current.label !== label) {
+      current = { label, posts: [] };
+      groups.push(current);
+    }
+    current.posts.push(post);
+  }
+} else {
+  groups.push({ label: null, posts });
+}
+---
+{groups.map((g) => (
+  <section>
+    {g.label && <h2 class="day">{g.label}</h2>}
+    {g.posts.map((post) => <PostRow post={post} showSource={showSource} />)}
+  </section>
+))}

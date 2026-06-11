@@ -1,0 +1,76 @@
+# devreads.fyi
+
+`$ tail -f engineering` — an aggregator for engineering blogs: scheduled RSS/Atom ingestion with one-time backfill per site, and a static webapp with instant client-side search. Light and dark themes (toggle in the header, system preference respected by default).
+
+Seeded from [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs) (420 feeds via its OPML).
+
+## How it works
+
+```
+sites.yml ──> ingest worker (cron) ──> data/posts/*.ndjson + data/state.json
+                                            │
+                                            v
+                              astro build + pagefind index ──> dist/ (static site)
+```
+
+- **`sites.yml`** is the single source of truth. Adding a site is one entry (`id`, `name`, `feed`, `url`). A site with no entry in `data/state.json` is treated as new and gets a **backfill**: the feed itself, then RFC 5005 archive pagination, then the WordPress `?paged=N` trick (capped at 500 posts/site). Every later run is a cheap **delta** using conditional GET (ETag/Last-Modified), so unchanged feeds cost a 304.
+- Per-site state machine: `new → backfilling → active`, with `failing → quarantined` after 8 consecutive errors (quarantined sites are retried daily). Health is visible on the **Sources** page.
+- Posts are deduped by feed GUID → canonical URL (tracking params stripped) → title+date hash, and stored as append-only NDJSON (git-friendly diffs for the scheduled commits).
+- The webapp is fully static: paginated latest feed with day grouping, tag and source pages, saved posts and unread tracking in localStorage, and a search overlay (title/summary/tags, filterable by source and tag) that runs entirely in the browser against a sharded JSON index (~10 files under `dist/search/`, prefetched in the background). The index is deliberately not Pagefind: its one-fragment-file-per-record layout exceeds Cloudflare Pages' 20,000-file deployment limit at this corpus size.
+
+## Commands
+
+```sh
+npm install
+node ingest/run.mjs                 # pull all sites (backfills new ones)
+node ingest/run.mjs --limit 20      # only first 20 sites
+node ingest/run.mjs --site netflix  # one site by id
+npm run build                       # astro build + search index -> dist/
+npm run preview                     # serve dist/ locally
+npm run dev                         # astro dev (search overlay needs a real build)
+npm run import:opml                 # re-import data/seed.opml into sites.yml (manual edits win)
+```
+
+## Keyboard shortcuts
+
+`/` search · `j`/`k` navigate · `o`/`Enter` open post · `s` save for later · `Esc` close
+
+## Deploying (Cloudflare Pages at devreads.fyi)
+
+Split responsibilities: GitHub Actions only ingests feeds and commits data; Cloudflare Pages (git-connected) builds and deploys on every push. The ingest cron runs every 6 hours (~120 data commits/month), well inside the Pages free tier of 500 builds/month.
+
+One-time setup:
+
+1. Push this repo to GitHub (branch `main`).
+2. Add the site to Cloudflare (free plan) and switch the domain's nameservers at Namecheap to the two Cloudflare ones.
+3. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git** → pick `iamsunny/devreads.fyi`. Build settings: production branch `main`, build command `npm run build`, output directory `dist`. (Node version comes from `.node-version`; the site URL defaults to `https://devreads.fyi` on Pages builds.)
+4. **Custom domains → add `devreads.fyi`** on the project.
+
+No Cloudflare secrets are needed in GitHub. To change data freshness, edit the cron in `.github/workflows/pull.yml` — but keep expected monthly pushes under ~500 or Pages builds start queueing/failing for the month.
+
+## Adding a site
+
+Append to `sites.yml` (all five fields are required; `title` is the pill shown next to each article):
+
+```yaml
+  - id: my-blog
+    name: My Blog
+    title: My Blog
+    feed: https://example.com/feed.xml
+    url: https://example.com
+```
+
+Open a PR — the **Validate sites.yml** workflow gates it: every new entry must use `https://` for feed and url, carry a non-empty title, and its feed must fetch live and return at least one item, otherwise the build fails. Run the same check locally with `node scripts/validate-sites.mjs` (validates entries not yet committed). Once merged, the next scheduled run backfills the site and folds it into the regular pull.
+
+`node scripts/cleanup-sites.mjs` removes entries that have never had a successful fetch (sites with a completed backfill are kept even if the last pull failed — transient errors such as rate limits recover on their own).
+
+The aggregator also republishes everything at `/feed.xml` (RSS) and `/opml.xml`.
+
+## Monetization (ethical, off by default)
+
+All monetization surfaces are config-driven via `src/lib/site.mjs` — every field is empty by default and the UI renders nothing until filled. The principles: link out, never rehost; no tracking; nothing wrapped around publishers' content.
+
+- **Donations** — enroll at [github.com/sponsors](https://github.com/sponsors) and/or [ko-fi.com](https://ko-fi.com), then set `githubSponsors` / `kofi`. Links appear on `/support`.
+- **One ethical ad** — apply at [ethicalads.io](https://www.ethicalads.io) (privacy-respecting, dev-audience text ads), then set `ethicalAdsPublisher`. A single labeled text slot renders above the listing.
+- **Weekly digest newsletter** — `/digest` is a rolling 7-day digest (max 2 posts per source), rebuilt on every deploy. Create a [Buttondown](https://buttondown.com) account and set `buttondown` to render the subscribe form. Newsletter sponsorship is the realistic revenue path at scale.
+- **Direct sponsorship** — set `sponsorEmail` to show a "sponsor a week" contact on `/support`.

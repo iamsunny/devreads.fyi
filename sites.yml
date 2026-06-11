@@ -1,0 +1,1556 @@
+sites:
+  - id: "0xadada"
+    name: "0xADADA"
+    title: "0xADADA"
+    feed: https://0xadada.pub/rss.xml
+    url: https://0xadada.pub/
+  - id: 8th-light
+    name: 8th Light
+    title: 8th Light
+    feed: https://8thlight.com/insights/feed/rss.xml
+    url: https://8thlight.com/blog/
+  - id: aaron-patterson
+    name: Aaron Patterson
+    title: Aaron Patterson
+    feed: http://tenderlovemaking.com/atom.xml
+    url: http://tenderlovemaking.com/
+  - id: abu-ashraf-masnun
+    name: Abu Ashraf Masnun
+    title: Abu Ashraf Masnun
+    feed: https://masnun.com/feed
+    url: http://masnun.com/
+  - id: addy-osmani
+    name: Addy Osmani
+    title: Addy Osmani
+    feed: http://addyosmani.com/rss.xml
+    url: https://addyosmani.com/blog/
+  - id: adroll
+    name: AdRoll
+    title: AdRoll
+    feed: http://tech.adroll.com/feed.xml
+    url: http://tech.adroll.com/blog/
+  - id: advanced-web-machinery
+    name: Advanced Web Machinery
+    title: Advanced Web Machinery
+    feed: https://advancedweb.hu/atom.xml
+    url: https://advancedweb.hu/
+  - id: airbnb
+    name: Airbnb
+    title: Airbnb
+    feed: https://medium.com/feed/airbnb-engineering
+    url: https://medium.com/airbnb-engineering
+  - id: alan-storm
+    name: Alan Storm
+    title: Alan Storm
+    feed: https://alanastorm.com/feed/feed.xml
+    url: http://alanstorm.com/
+  - id: alex-russell
+    name: Alex Russell
+    title: Alex Russell
+    feed: https://infrequently.org/feed/
+    url: https://infrequently.org/
+  - id: amit-merchant
+    name: Amit Merchant
+    title: Amit Merchant
+    feed: https://www.amitmerchant.com/feed.xml
+    url: https://www.amitmerchant.com/
+  - id: android
+    name: Android
+    title: Android
+    feed: https://android-developers.googleblog.com/feeds/posts/default
+    url: https://android-developers.blogspot.com/
+  - id: antirez
+    name: Antirez
+    title: Antirez
+    feed: http://antirez.com/rss
+    url: http://antirez.com/latest/0
+  - id: appnexus
+    name: Appnexus
+    title: Appnexus
+    feed: https://medium.com/feed/xandr-tech
+    url: https://techblog.appnexus.com/
+  - id: ariya-hidayat
+    name: Ariya Hidayat
+    title: Ariya Hidayat
+    feed: https://ariya.io/index.xml
+    url: https://ariya.io/
+  - id: arkency
+    name: Arkency
+    title: Arkency
+    feed: https://blog.arkency.com/feed.xml
+    url: http://blog.arkency.com/
+  - id: armin-ronacher
+    name: Armin Ronacher
+    title: Armin Ronacher
+    feed: http://lucumr.pocoo.org/feed.atom
+    url: http://lucumr.pocoo.org/
+  - id: artsy
+    name: Artsy
+    title: Artsy
+    feed: http://artsy.github.io/feed
+    url: http://artsy.github.io/
+  - id: atomic-object
+    name: Atomic Object
+    title: Atomic Object
+    feed: https://spin.atomicobject.com/feed/
+    url: https://spin.atomicobject.com/
+  - id: auth0
+    name: Auth0
+    title: Auth0
+    feed: https://auth0.com/blog/rss.xml
+    url: https://auth0.com/blog/
+  - id: avenue-code
+    name: Avenue Code
+    title: Avenue Code
+    feed: https://blog.avenuecode.com/rss.xml
+    url: http://blog.avenuecode.com/
+  - id: aws
+    name: AWS
+    title: AWS
+    feed: https://aws.amazon.com/blogs/aws/feed/
+    url: https://aws.amazon.com/blogs/aws/
+  - id: babbel
+    name: Babbel
+    title: Babbel
+    feed: https://cms.babbel.news/feed/?post_type=english_edition
+    url: https://bytes.babbel.com/en/
+  - id: bad-concurrency
+    name: Bad Concurrency
+    title: Bad Concurrency
+    feed: http://bad-concurrency.blogspot.com/feeds/posts/default
+    url: http://bad-concurrency.blogspot.com/
+  - id: badoo
+    name: Badoo
+    title: Badoo
+    feed: https://medium.com/feed/bumble-tech
+    url: https://techblog.badoo.com/
+  - id: bandcamp
+    name: Bandcamp
+    title: Bandcamp
+    feed: https://bandcamptech.wordpress.com/feed/
+    url: https://bandcamptech.wordpress.com/
+  - id: bartlomiej-filipek
+    name: Bartlomiej Filipek
+    title: Bartlomiej Filipek
+    feed: https://www.cppstories.com/index.xml
+    url: http://www.bfilipek.com/
+  - id: bazaarvoice
+    name: Bazaarvoice
+    title: Bazaarvoice
+    feed: https://blog.developer.bazaarvoice.com/feed/
+    url: https://blog.developer.bazaarvoice.com/
+  - id: bbc
+    name: BBC
+    title: BBC
+    feed: https://medium.com/feed/bbc-product-technology
+    url: https://medium.com/bbc-design-engineering/
+  - id: bigcommerce
+    name: Bigcommerce
+    title: Bigcommerce
+    feed: https://www.bigeng.io/rss/
+    url: http://www.bigeng.io/
+  - id: blender
+    name: Blender
+    title: Blender
+    feed: https://code.blender.org/rss
+    url: https://code.blender.org/
+  - id: blundell-s-android-tutorials
+    name: Blundell's Android Tutorials
+    title: Blundell's Android Tutorials
+    feed: https://blog.blundellapps.co.uk/feed/
+    url: http://blog.blundellapps.co.uk
+  - id: bohops
+    name: Bohops
+    title: Bohops
+    feed: https://bohops.com/feed/
+    url: https://bohops.com/
+  - id: bootstrap-com
+    name: Bootstrap.com
+    title: Bootstrap.com
+    feed: https://blog.getbootstrap.com/feed.xml
+    url: https://blog.getbootstrap.com/
+  - id: brandwatch
+    name: Brandwatch
+    title: Brandwatch
+    feed: http://engineering.brandwatch.com/rss
+    url: http://engineering.brandwatch.com/
+  - id: brendan-eich
+    name: Brendan Eich
+    title: Brendan Eich
+    feed: https://brendaneich.com/feed/
+    url: https://brendaneich.com/
+  - id: brendan-gregg
+    name: Brendan Gregg
+    title: Brendan Gregg
+    feed: http://www.brendangregg.com/blog/rss.xml
+    url: http://www.brendangregg.com/blog/
+  - id: brujo-benavides
+    name: Brujo Benavides
+    title: Brujo Benavides
+    feed: https://medium.com/feed/@elbrujohalcon
+    url: https://medium.com/@elbrujohalcon
+  - id: canva
+    name: Canva
+    title: Canva
+    feed: https://www.canva.dev/blog/engineering/feed.xml
+    url: https://engineering.canva.com
+  - id: carlos-becker
+    name: Carlos Becker
+    title: Carlos Becker
+    feed: https://carlosbecker.com/index.xml
+    url: https://carlosbecker.com
+  - id: cerner
+    name: Cerner
+    title: Cerner
+    feed: https://engineering.cerner.com/index.xml
+    url: http://engineering.cerner.com/
+  - id: chris-wellons
+    name: Chris Wellons
+    title: Chris Wellons
+    feed: http://nullprogram.com/feed/
+    url: http://nullprogram.com/
+  - id: clever
+    name: Clever
+    title: Clever
+    feed: https://engineering.clever.com/rss
+    url: https://engineering.clever.com/
+  - id: cloudflare
+    name: Cloudflare
+    title: Cloudflare
+    feed: https://blog.cloudflare.com/rss
+    url: https://blog.cloudflare.com/
+  - id: codrops
+    name: Codrops
+    title: Codrops
+    feed: https://tympanus.net/codrops/feed/
+    url: https://tympanus.net/codrops/
+  - id: confluent
+    name: Confluent
+    title: Confluent
+    feed: https://www.confluent.io/rss.xml
+    url: https://www.confluent.io/blog
+  - id: criteo
+    name: Criteo
+    title: Criteo
+    feed: https://medium.com/feed/criteo-engineering
+    url: https://medium.com/criteo-labs
+  - id: crystal
+    name: Crystal
+    title: Crystal
+    feed: https://crystal-lang.org/feed.xml
+    url: https://crystal-lang.org/
+  - id: csc-it-center-for-science-cloud-team
+    name: CSC - IT Center For Science - Cloud Team
+    title: CSC - IT Center For Science - Cloud Team
+    feed: https://cloud.blog.csc.fi/feeds/posts/default
+    url: https://cloud.blog.csc.fi/
+  - id: curalate
+    name: Curalate
+    title: Curalate
+    feed: http://engineering.curalate.com/feed.xml
+    url: http://engineering.curalate.com/
+  - id: daily-js
+    name: Daily JS
+    title: Daily JS
+    feed: https://medium.com/feed/dailyjs
+    url: https://medium.com/dailyjs
+  - id: daily-tech-video
+    name: Daily Tech Video
+    title: Daily Tech Video
+    feed: https://dailytechvideo.com/feed/
+    url: http://dailytechvideo.com/
+  - id: dan-luu
+    name: Dan Luu
+    title: Dan Luu
+    feed: https://danluu.com/atom.xml
+    url: https://danluu.com/
+  - id: daniel-doubrovkine-db
+    name: Daniel Doubrovkine (dB.)
+    title: Daniel Doubrovkine (dB.)
+    feed: https://code.dblock.org/feed.xml
+    url: http://code.dblock.org/
+  - id: daniel-schmidt
+    name: Daniel Schmidt
+    title: Daniel Schmidt
+    feed: https://medium.com/feed/@dschmidt1992
+    url: https://medium.com/@dschmidt1992
+  - id: databricks
+    name: Databricks
+    title: Databricks
+    feed: https://www.databricks.com/feed
+    url: https://databricks.com/blog
+  - id: dave-cheney
+    name: Dave Cheney
+    title: Dave Cheney
+    feed: https://dave.cheney.net/feed
+    url: https://dave.cheney.net/
+  - id: david-walsh
+    name: David Walsh
+    title: David Walsh
+    feed: https://davidwalsh.name/feed/atom
+    url: https://davidwalsh.name/
+  - id: dean-hume
+    name: Dean Hume
+    title: Dean Hume
+    feed: https://deanhume.com/rss/
+    url: http://deanhume.com/
+  - id: deliveroo
+    name: Deliveroo
+    title: Deliveroo
+    feed: https://deliveroo.engineering/feed.xml
+    url: https://deliveroo.engineering/
+  - id: dennis-felsing
+    name: Dennis Felsing
+    title: Dennis Felsing
+    feed: https://hookrace.net/blog/feed/
+    url: https://hookrace.net/
+  - id: dereuromark
+    name: Dereuromark
+    title: Dereuromark
+    feed: https://www.dereuromark.de/feed/
+    url: http://www.dereuromark.de/
+  - id: discord
+    name: Discord
+    title: Discord
+    feed: https://discord.com/blog/rss.xml
+    url: https://blog.discordapp.com/
+  - id: docker
+    name: Docker
+    title: Docker
+    feed: https://www.docker.com/feed/
+    url: https://blog.docker.com/
+  - id: domenico-luciani
+    name: Domenico Luciani
+    title: Domenico Luciani
+    feed: https://domenicoluciani.com/feed.xml
+    url: https://domenicoluciani.com
+  - id: dragan-djuric
+    name: Dragan Djuric
+    title: Dragan Djuric
+    feed: https://dragan.rocks/feed.xml
+    url: http://dragan.rocks
+  - id: drew-devault
+    name: Drew DeVault
+    title: Drew DeVault
+    feed: https://drewdevault.com/blog/index.xml
+    url: https://drewdevault.com/
+  - id: dropbox
+    name: Dropbox
+    title: Dropbox
+    feed: https://dropbox.tech/feed
+    url: https://blogs.dropbox.com/tech/
+  - id: ebay
+    name: Ebay
+    title: Ebay
+    feed: https://www.ebayinc.com/stories/news/rss/
+    url: https://www.ebayinc.com/stories/blogs/tech/
+  - id: eddie-smith
+    name: Eddie Smith
+    title: Eddie Smith
+    feed: http://www.practicallyefficient.com/feed.xml
+    url: http://www.practicallyefficient.com/
+  - id: edgar-aroutiounian
+    name: Edgar Aroutiounian
+    title: Edgar Aroutiounian
+    feed: https://hyegar.com/index.xml
+    url: https://hyegar.com/
+  - id: edward-faulkner
+    name: Edward Faulkner
+    title: Edward Faulkner
+    feed: https://eaf4.com/rss/
+    url: https://eaf4.com/
+  - id: efounders
+    name: eFounders
+    title: eFounders
+    feed: https://medium.com/feed/unexpected-token
+    url: https://medium.com/unexpected-token
+  - id: elegant-code
+    name: Elegant Code
+    title: Elegant Code
+    feed: https://elegantcode.com/feed/
+    url: http://elegantcode.com/
+  - id: eli-bendersky
+    name: Eli Bendersky
+    title: Eli Bendersky
+    feed: https://eli.thegreenplace.net/feeds/all.atom.xml
+    url: http://eli.thegreenplace.net/
+  - id: eric-elliot
+    name: Eric Elliot
+    title: Eric Elliot
+    feed: https://medium.com/feed/javascript-scene
+    url: https://medium.com/javascript-scene/
+  - id: eric-lippert
+    name: Eric Lippert
+    title: Eric Lippert
+    feed: https://ericlippert.com/feed/
+    url: https://ericlippert.com/
+  - id: erik-runyon
+    name: Erik Runyon
+    title: Erik Runyon
+    feed: https://erikrunyon.com/feed.xml
+    url: https://erikrunyon.com/
+  - id: erlang-solutions
+    name: Erlang Solutions
+    title: Erlang Solutions
+    feed: https://www.erlang-solutions.com/feed/
+    url: https://www.erlang-solutions.com/blog.html
+  - id: evan-hahn
+    name: Evan Hahn
+    title: Evan Hahn
+    feed: https://evanhahn.com/blog/index.xml
+    url: http://evanhahn.com/
+  - id: evan-jones
+    name: Evan Jones
+    title: Evan Jones
+    feed: http://www.evanjones.ca/index.rss
+    url: http://www.evanjones.ca/chronological.html
+  - id: evan-miller
+    name: Evan Miller
+    title: Evan Miller
+    feed: http://www.evanmiller.org/news.xml
+    url: http://www.evanmiller.org/
+  - id: evil-martians
+    name: Evil Martians
+    title: Evil Martians
+    feed: https://evilmartians.com/chronicles.atom
+    url: https://evilmartians.com/chronicles/
+  - id: expedia
+    name: Expedia
+    title: Expedia
+    feed: https://medium.com/feed/expedia-group-tech
+    url: https://medium.com/expedia-group-tech
+  - id: facebook
+    name: Facebook
+    title: Facebook
+    feed: https://engineering.fb.com/feed/
+    url: https://code.facebook.com/posts/
+  - id: federico-cargnelutti
+    name: Federico Cargnelutti
+    title: Federico Cargnelutti
+    feed: https://blog.fedecarg.com/feed/
+    url: https://blog.fedecarg.com/
+  - id: feedzai
+    name: Feedzai
+    title: Feedzai
+    feed: https://medium.com/feed/feedzaitech
+    url: https://medium.com/feedzaitech
+  - id: filippo-valsorda
+    name: Filippo Valsorda
+    title: Filippo Valsorda
+    feed: https://words.filippo.io/rss/
+    url: https://blog.filippo.io/
+  - id: findmypast
+    name: Findmypast
+    title: Findmypast
+    feed: https://tech.findmypast.com/feed.xml
+    url: http://tech.findmypast.com/
+  - id: finn-no
+    name: Finn.no
+    title: Finn.no
+    feed: http://tech.finn.no/atom.xml
+    url: http://tech.finn.no/
+  - id: flickr
+    name: Flickr
+    title: Flickr
+    feed: https://code.flickr.net/feed/
+    url: http://code.flickr.net/
+  - id: freek-van-der-herten
+    name: Freek Van der Herten
+    title: Freek Van der Herten
+    feed: https://freek.dev/feed
+    url: https://murze.be/
+  - id: freeletics
+    name: Freeletics
+    title: Freeletics
+    feed: https://freeletics.engineering/feed.xml
+    url: https://freeletics.engineering/
+  - id: gamechanger
+    name: GameChanger
+    title: GameChanger
+    feed: http://tech.gc.com/atom.xml
+    url: http://tech.gc.com/
+  - id: github
+    name: GitHub
+    title: GitHub
+    feed: https://github.blog/engineering.atom
+    url: https://githubengineering.com/
+  - id: github-old
+    name: GitHub Old
+    title: GitHub Old
+    feed: https://github.blog/feed/
+    url: https://github.com/blog/category/engineering
+  - id: gleb-bahmutov
+    name: Gleb Bahmutov
+    title: Gleb Bahmutov
+    feed: https://glebbahmutov.com/blog/atom.xml
+    url: https://glebbahmutov.com/blog/
+  - id: gocardless
+    name: GoCardless
+    title: GoCardless
+    feed: https://gocardless.com/content-platform/rss/resources.xml
+    url: https://gocardless.com/blog/tagged/engineering/
+  - id: gosquared
+    name: GoSquared
+    title: GoSquared
+    feed: https://www.gosquared.com/blog/feed
+    url: https://engineering.gosquared.com/
+  - id: grab
+    name: Grab
+    title: Grab
+    feed: http://engineering.grab.com/feed.xml
+    url: http://engineering.grab.com/
+  - id: graham-king
+    name: Graham King
+    title: Graham King
+    feed: https://www.darkcoding.net/index.xml
+    url: https://www.darkcoding.net/
+  - id: grofers
+    name: Grofers
+    title: Grofers
+    feed: https://lambda.blinkit.com/feed
+    url: https://lambda.grofers.com/
+  - id: groupon
+    name: Groupon
+    title: Groupon
+    feed: https://medium.com/feed/groupon-eng
+    url: https://engineering.groupon.com/
+  - id: guardian
+    name: Guardian
+    title: Guardian
+    feed: https://www.theguardian.com/info/developer-blog/rss
+    url: https://www.theguardian.com/info/developer-blog
+  - id: guido-van-rossum
+    name: Guido van Rossum
+    title: Guido van Rossum
+    feed: http://neopythonic.blogspot.com/feeds/posts/default
+    url: http://neopythonic.blogspot.com/
+  - id: hackerearth
+    name: HackerEarth
+    title: HackerEarth
+    feed: http://engineering.hackerearth.com/rss
+    url: http://engineering.hackerearth.com/
+  - id: haptik
+    name: Haptik
+    title: Haptik
+    feed: https://www.haptik.ai/tech/rss.xml
+    url: https://haptik.ai/tech/
+  - id: harry-s
+    name: Harry's
+    title: Harry's
+    feed: https://medium.com/feed/harrys-engineering
+    url: http://engineering.harrys.com/
+  - id: hashrocket
+    name: Hashrocket
+    title: Hashrocket
+    feed: https://hashrocket.com/blog.rss
+    url: https://hashrocket.com/blog
+  - id: hayden-james
+    name: Hayden James
+    title: Hayden James
+    feed: https://haydenjames.io/feed
+    url: https://haydenjames.io/
+  - id: helpshift
+    name: Helpshift
+    title: Helpshift
+    feed: https://medium.com/feed/helpshift-engineering
+    url: https://medium.com/helpshift-engineering/
+  - id: henrik-lau-eriksson
+    name: Henrik Lau Eriksson
+    title: Henrik Lau Eriksson
+    feed: https://conductofcode.io/feed.xml
+    url: https://conductofcode.io/
+  - id: henrik-warne
+    name: Henrik Warne
+    title: Henrik Warne
+    feed: https://henrikwarne.com/feed/
+    url: https://henrikwarne.com/
+  - id: high-scalability
+    name: High Scalability
+    title: High Scalability
+    feed: https://highscalability.com/rss/
+    url: http://highscalability.com/
+  - id: hootsuite
+    name: Hootsuite
+    title: Hootsuite
+    feed: https://medium.com/feed/hootsuite-engineering
+    url: http://code.hootsuite.com/
+  - id: hostinger
+    name: Hostinger
+    title: Hostinger
+    feed: https://www.hostinger.com/blog/feed
+    url: https://www.hostinger.com/blog/engineering/
+  - id: housing-com
+    name: Housing.com
+    title: Housing.com
+    feed: https://medium.com/feed/engineering-housing
+    url: https://medium.com/engineering-housing
+  - id: hubspot
+    name: HubSpot
+    title: HubSpot
+    feed: https://product.hubspot.com/blog/rss.xml
+    url: http://product.hubspot.com/blog/topic/engineering
+  - id: huon-wilson
+    name: Huon Wilson
+    title: Huon Wilson
+    feed: http://huonw.github.io/blog/atom.xml
+    url: http://huonw.github.io/
+  - id: hypriot
+    name: Hypriot
+    title: Hypriot
+    feed: https://blog.hypriot.com/index.xml
+    url: http://blog.hypriot.com/
+  - id: ian-hummel
+    name: Ian Hummel
+    title: Ian Hummel
+    feed: https://themodernlife.github.io/feed.xml
+    url: https://themodernlife.github.io/
+  - id: idontgetoutmuch-s-weblog
+    name: Idontgetoutmuch's Weblog
+    title: Idontgetoutmuch's Weblog
+    feed: https://idontgetoutmuch.wordpress.com/feed/
+    url: https://idontgetoutmuch.wordpress.com/
+  - id: ilija-eftimov
+    name: Ilija Eftimov
+    title: Ilija Eftimov
+    feed: http://ieftimov.com/index.xml
+    url: http://ieftimov.com/
+  - id: ilya-grigorik
+    name: Ilya Grigorik
+    title: Ilya Grigorik
+    feed: https://ilya.grigorik.com/essays/rss/
+    url: https://www.igvita.com/
+  - id: indeed
+    name: Indeed
+    title: Indeed
+    feed: https://engineering.indeedblog.com/feed/
+    url: http://engineering.indeedblog.com/blog/
+  - id: itamar-turner-trauring
+    name: Itamar Turner-Trauring
+    title: Itamar Turner-Trauring
+    feed: https://codewithoutrules.com/atom.xml
+    url: https://codewithoutrules.com
+  - id: jacopo-tarantino
+    name: Jacopo Tarantino
+    title: Jacopo Tarantino
+    feed: https://jack.ofspades.com/rss/index.html
+    url: https://jack.ofspades.com/
+  - id: jake-wharton
+    name: Jake Wharton
+    title: Jake Wharton
+    feed: https://jakewharton.com/atom.xml
+    url: http://jakewharton.com/blog
+  - id: jake-yesbeck
+    name: Jake Yesbeck
+    title: Jake Yesbeck
+    feed: http://jakeyesbeck.com/atom.xml
+    url: http://jakeyesbeck.com/
+  - id: james-hague
+    name: James Hague
+    title: James Hague
+    feed: http://prog21.dadgum.com/atom.xml
+    url: http://prog21.dadgum.com/
+  - id: james-long
+    name: James Long
+    title: James Long
+    feed: https://archive.jlongster.com/atom.xml
+    url: http://jlongster.com/archive
+  - id: jamis-buck
+    name: Jamis Buck
+    title: Jamis Buck
+    feed: http://feeds.feedburner.com/buckblog
+    url: http://weblog.jamisbuck.org/
+  - id: jan-lelis
+    name: Jan Lelis
+    title: Jan Lelis
+    feed: https://idiosyncratic-ruby.com/feed.xml
+    url: https://idiosyncratic-ruby.com/
+  - id: jane-street
+    name: Jane Street
+    title: Jane Street
+    feed: https://blogs.janestreet.com/feed.xml
+    url: https://blogs.janestreet.com/category/ocaml/
+  - id: jay-fields
+    name: Jay Fields
+    title: Jay Fields
+    feed: http://blog.jayfields.com/feeds/posts/default
+    url: http://blog.jayfields.com
+  - id: jeff-atwood
+    name: Jeff Atwood
+    title: Jeff Atwood
+    feed: https://blog.codinghorror.com/rss/
+    url: https://blog.codinghorror.com/
+  - id: jeff-preshing
+    name: Jeff Preshing
+    title: Jeff Preshing
+    feed: http://preshing.com/feed
+    url: http://preshing.com/
+  - id: jeremy-kun
+    name: Jeremy Kun
+    title: Jeremy Kun
+    feed: https://www.jeremykun.com/index.xml
+    url: https://jeremykun.com/
+  - id: jerry-gamblin
+    name: Jerry Gamblin
+    title: Jerry Gamblin
+    feed: https://jerrygamblin.com/feed/
+    url: https://jerrygamblin.com/
+  - id: jesal-gadhia
+    name: Jesal Gadhia
+    title: Jesal Gadhia
+    feed: https://jes.al/atom.xml
+    url: https://jes.al/
+  - id: jessie-frazelle
+    name: Jessie Frazelle
+    title: Jessie Frazelle
+    feed: https://blog.jessfraz.com/index.xml
+    url: https://blog.jessfraz.com/
+  - id: jobteaser
+    name: JobTeaser
+    title: JobTeaser
+    feed: https://medium.com/feed/jobteaser-dev-team
+    url: https://medium.com/jobteaser-dev-team/
+  - id: joe-nelson
+    name: Joe Nelson
+    title: Joe Nelson
+    feed: https://begriffs.com/atom.xml
+    url: https://begriffs.com/
+  - id: joel-spolsky
+    name: Joel Spolsky
+    title: Joel Spolsky
+    feed: https://www.joelonsoftware.com/feed/
+    url: https://www.joelonsoftware.com/
+  - id: johannes-brodwall
+    name: Johannes Brodwall
+    title: Johannes Brodwall
+    feed: http://johannesbrodwall.com/index.xml
+    url: http://johannesbrodwall.com/
+  - id: jon-skeet
+    name: Jon Skeet
+    title: Jon Skeet
+    feed: https://codeblog.jonskeet.uk/feed/
+    url: https://codeblog.jonskeet.uk/
+  - id: jonathan-snook
+    name: Jonathan Snook
+    title: Jonathan Snook
+    feed: https://snook.ca/jonathan/index.rdf
+    url: https://snook.ca/
+  - id: jooq
+    name: jOOQ
+    title: jOOQ
+    feed: https://blog.jooq.org/feed/
+    url: https://blog.jooq.org/
+  - id: josh-haberman
+    name: Josh Haberman
+    title: Josh Haberman
+    feed: https://blog.reverberate.org/feed.xml
+    url: http://blog.reverberate.org/
+  - id: josh-sherman
+    name: Josh Sherman
+    title: Josh Sherman
+    feed: https://joshtronic.com/feed/
+    url: https://joshtronic.com/
+  - id: juan-treminio
+    name: Juan Treminio
+    title: Juan Treminio
+    feed: https://jtreminio.com/feed
+    url: https://jtreminio.com
+  - id: julia-evans
+    name: Julia Evans
+    title: Julia Evans
+    feed: https://jvns.ca/atom.xml
+    url: https://jvns.ca/
+  - id: junior-grossi
+    name: Junior Grossi
+    title: Junior Grossi
+    feed: https://blog.jgrossi.com/feed/
+    url: https://blog.jgrossi.com/
+  - id: justin-weiss
+    name: Justin Weiss
+    title: Justin Weiss
+    feed: https://www.justinweiss.com/atom.xml
+    url: https://www.justinweiss.com/articles/archives/
+  - id: k-harrison
+    name: K. Harrison
+    title: K. Harrison
+    feed: https://useyourloaf.com/blog/rss.xml
+    url: https://useyourloaf.com/
+  - id: kevin-burke
+    name: Kevin Burke
+    title: Kevin Burke
+    feed: https://kevin.burke.dev/feed/
+    url: https://kev.inburke.com/
+  - id: khan-academy
+    name: Khan Academy
+    title: Khan Academy
+    feed: http://engineering.khanacademy.org/rss
+    url: http://engineering.khanacademy.org
+  - id: kirill-shevchenko
+    name: Kirill Shevchenko
+    title: Kirill Shevchenko
+    feed: https://medium.com/feed/@kirill_shevch
+    url: https://medium.com/@kirill_shevch
+  - id: kogan-com
+    name: Kogan.com
+    title: Kogan.com
+    feed: https://devblog.kogan.com/blog?format=rss
+    url: https://devblog.kogan.com/
+  - id: kotlin
+    name: Kotlin
+    title: Kotlin
+    feed: https://blog.jetbrains.com/kotlin/feed/
+    url: https://blog.jetbrains.com/kotlin/
+  - id: kyle-kingsbury
+    name: Kyle Kingsbury
+    title: Kyle Kingsbury
+    feed: https://aphyr.com/posts.atom
+    url: https://aphyr.com/
+  - id: lambda-the-ultimate
+    name: Lambda the Ultimate
+    title: Lambda the Ultimate
+    feed: http://lambda-the-ultimate.org/rss.xml
+    url: http://lambda-the-ultimate.org/
+  - id: laravel
+    name: Laravel
+    title: Laravel
+    feed: https://feed.laravel-news.com/
+    url: https://laravel-news.com/blog/
+  - id: larry-land
+    name: Larry Land
+    title: Larry Land
+    feed: https://lg.io/feed.xml
+    url: https://lg.io/
+  - id: lazarus-lazaridis
+    name: Lazarus Lazaridis
+    title: Lazarus Lazaridis
+    feed: https://iridakos.com/feed.xml
+    url: https://iridakos.com
+  - id: lea-verou
+    name: Lea Verou
+    title: Lea Verou
+    feed: http://lea.verou.me/feed.xml
+    url: http://lea.verou.me/
+  - id: life-plus-linux
+    name: Life Plus Linux
+    title: Life Plus Linux
+    feed: http://lifepluslinux.blogspot.com/feeds/posts/default
+    url: http://lifepluslinux.blogspot.in/
+  - id: localytics
+    name: Localytics
+    title: Localytics
+    feed: https://eng.localytics.com/rss/
+    url: http://eng.localytics.com/
+  - id: luciano-mammino
+    name: Luciano Mammino
+    title: Luciano Mammino
+    feed: https://loige.co/rss.xml
+    url: https://loige.co/
+  - id: maptiler
+    name: MapTiler
+    title: MapTiler
+    feed: https://www.maptiler.com/news/feed/posts.xml
+    url: https://www.maptiler.com/blog/
+  - id: marcelo-rinesi
+    name: Marcelo Rinesi
+    title: Marcelo Rinesi
+    feed: https://blog.rinesi.com/feed/
+    url: https://blog.rinesi.com/
+  - id: marco-pivetta
+    name: Marco Pivetta
+    title: Marco Pivetta
+    feed: https://ocramius.github.io/atom.xml
+    url: http://ocramius.github.io/
+  - id: marek-majkowski
+    name: Marek Majkowski
+    title: Marek Majkowski
+    feed: https://idea.popcount.org/rss.xml
+    url: https://idea.popcount.org/
+  - id: mark-seaborn
+    name: Mark Seaborn
+    title: Mark Seaborn
+    feed: http://lackingrhoticity.blogspot.com/feeds/posts/default
+    url: http://lackingrhoticity.blogspot.de/
+  - id: martin-fowler
+    name: Martin Fowler
+    title: Martin Fowler
+    feed: https://martinfowler.com/feed.atom
+    url: https://martinfowler.com/
+  - id: mary-rose-cook
+    name: Mary Rose Cook
+    title: Mary Rose Cook
+    feed: https://maryrosecook.com/blog/feed.xml
+    url: https://maryrosecook.com/blog/
+  - id: matt-aimonetti
+    name: Matt Aimonetti
+    title: Matt Aimonetti
+    feed: https://matt.aimonetti.net/posts/index.xml
+    url: https://matt.aimonetti.net/
+  - id: matt-cutts
+    name: Matt Cutts
+    title: Matt Cutts
+    feed: https://www.mattcutts.com/blog/feed/
+    url: https://www.mattcutts.com/blog/
+  - id: matt-might
+    name: Matt Might
+    title: Matt Might
+    feed: http://matt.might.net/articles/feed.rss
+    url: http://matt.might.net/articles/
+  - id: matt-warren
+    name: Matt Warren
+    title: Matt Warren
+    feed: http://mattwarren.org/atom.xml
+    url: http://mattwarren.org/
+  - id: matthew-green
+    name: Matthew Green
+    title: Matthew Green
+    feed: https://blog.cryptographyengineering.com/feed/
+    url: https://blog.cryptographyengineering.com/
+  - id: medium
+    name: Medium
+    title: Medium
+    feed: https://medium.engineering/feed
+    url: https://medium.com/medium-eng
+  - id: michael-crump
+    name: Michael Crump
+    title: Michael Crump
+    feed: https://www.michaelcrump.net/feed.xml
+    url: https://michaelcrump.net/
+  - id: michael-herman
+    name: Michael Herman
+    title: Michael Herman
+    feed: https://mherman.org/feed.xml
+    url: http://mherman.org/
+  - id: microsoft-python-engineering
+    name: Microsoft Python Engineering
+    title: Microsoft Python Engineering
+    feed: https://devblogs.microsoft.com/python/feed/
+    url: https://blogs.msdn.microsoft.com/pythonengineering/
+  - id: miguel-quinones
+    name: Miguel Quinones
+    title: Miguel Quinones
+    feed: https://www.miqu.me/atom.xml
+    url: https://www.miqu.me/
+  - id: mike-ash
+    name: Mike Ash
+    title: Mike Ash
+    feed: http://www.mikeash.com/pyblog/rss.py
+    url: https://www.mikeash.com/pyblog/
+  - id: mike-fogus
+    name: Mike Fogus
+    title: Mike Fogus
+    feed: http://blog.fogus.me/feed/
+    url: http://blog.fogus.me/
+  - id: miro-cupak
+    name: Miro Cupak
+    title: Miro Cupak
+    feed: https://mirocupak.com/feed.xml
+    url: https://mirocupak.com/
+  - id: monica-dinculescu
+    name: Monica Dinculescu
+    title: Monica Dinculescu
+    feed: https://meowni.ca/atom.xml
+    url: https://meowni.ca/
+  - id: monstermuffin
+    name: Monstermuffin
+    title: Monstermuffin
+    feed: https://blog.monstermuffin.org/index.xml
+    url: https://blog.monstermuffin.org/
+  - id: mozilla-hacks
+    name: Mozilla Hacks
+    title: Mozilla Hacks
+    feed: https://hacks.mozilla.org/feed/
+    url: https://hacks.mozilla.org/
+  - id: mozilla-release-engineering
+    name: Mozilla Release Engineering
+    title: Mozilla Release Engineering
+    feed: https://planet.mozilla.org/releng/atom.xml
+    url: https://planet.mozilla.org/releng/
+  - id: mykhailo-kozik
+    name: Mykhailo Kozik
+    title: Mykhailo Kozik
+    feed: http://feeds.feedburner.com/mishadoff
+    url: http://mishadoff.com/
+  - id: nate-berkopec
+    name: Nate Berkopec
+    title: Nate Berkopec
+    feed: https://www.nateberkopec.com/feed.xml
+    url: http://www.nateberkopec.com/
+  - id: nelson-elhage
+    name: Nelson Elhage
+    title: Nelson Elhage
+    feed: https://blog.nelhage.com/atom.xml
+    url: https://blog.nelhage.com/
+  - id: net
+    name: .NET
+    title: .NET
+    feed: https://devblogs.microsoft.com/dotnet/feed/
+    url: https://blogs.msdn.microsoft.com/dotnet/
+  - id: nic-raboy
+    name: Nic Raboy
+    title: Nic Raboy
+    feed: https://www.thepolyglotdeveloper.com/blog/index.xml
+    url: https://www.thepolyglotdeveloper.com/blog/
+  - id: nick-craver
+    name: Nick Craver
+    title: Nick Craver
+    feed: https://nickcraver.com/blog/feed.xml
+    url: https://nickcraver.com/blog/
+  - id: nick-desaulniers
+    name: Nick Desaulniers
+    title: Nick Desaulniers
+    feed: https://nickdesaulniers.github.io/index.xml
+    url: https://nickdesaulniers.github.io/
+  - id: nicolas-liochon
+    name: Nicolas Liochon
+    title: Nicolas Liochon
+    feed: http://blog.thislongrun.com/feeds/posts/default
+    url: http://blog.thislongrun.com/
+  - id: nikola-brez-njak
+    name: Nikola Brežnjak
+    title: Nikola Brežnjak
+    feed: https://nikola-breznjak.com/blog/feed/atom/
+    url: http://www.nikola-breznjak.com/blog/
+  - id: nordic-apis
+    name: Nordic APIs
+    title: Nordic APIs
+    feed: https://nordicapis.com/feed/
+    url: https://nordicapis.com/blog/
+  - id: npr-apps
+    name: NPR Apps
+    title: NPR Apps
+    feed: https://blog.apps.npr.org/atom.xml
+    url: http://blog.apps.npr.org/
+  - id: nshipster
+    name: NSHipster
+    title: NSHipster
+    feed: http://nshipster.com/feed.xml
+    url: http://nshipster.com/
+  - id: nvidia
+    name: Nvidia
+    title: Nvidia
+    feed: https://blogs.nvidia.com/feed/
+    url: https://blogs.nvidia.com/
+  - id: octo-technology
+    name: OCTO Technology
+    title: OCTO Technology
+    feed: https://blog.octo.com/feed
+    url: https://blog.octo.com/en/
+  - id: ofer-zelig
+    name: Ofer Zelig
+    title: Ofer Zelig
+    feed: https://fullstack.info/feed/
+    url: https://fullstack.info
+  - id: okta
+    name: Okta
+    title: Okta
+    feed: https://developer.okta.com/feed.xml
+    url: https://developer.okta.com/blog/
+  - id: ole-begemann
+    name: Ole Begemann
+    title: Ole Begemann
+    feed: https://oleb.net/blog/atom.xml
+    url: https://oleb.net/blog/
+  - id: oona-ra-isa-nen
+    name: Oona Räisänen
+    title: Oona Räisänen
+    feed: https://www.windytan.com/feeds/posts/default
+    url: http://www.windytan.com/
+  - id: opendns
+    name: OpenDNS
+    title: OpenDNS
+    feed: https://umbrella.cisco.com/feed
+    url: https://engineering.opendns.com/
+  - id: palantir
+    name: Palantir
+    title: Palantir
+    feed: https://blog.palantir.com/feed
+    url: https://blog.palantir.com/
+  - id: pamela-fox
+    name: Pamela Fox
+    title: Pamela Fox
+    feed: http://blog.pamelafox.org/feeds/posts/default
+    url: http://blog.pamelafox.org/
+  - id: panorama-education
+    name: Panorama Education
+    title: Panorama Education
+    feed: https://medium.com/feed/building-panorama-education
+    url: http://engineering.panoramaed.com/
+  - id: pat-shaughnessy
+    name: Pat Shaughnessy
+    title: Pat Shaughnessy
+    feed: http://feeds2.feedburner.com/patshaughnessy
+    url: http://patshaughnessy.net/
+  - id: paul-irish
+    name: Paul Irish
+    title: Paul Irish
+    feed: https://feeds.feedburner.com/paul-irish
+    url: https://www.paulirish.com/
+  - id: paul-lewis
+    name: Paul Lewis
+    title: Paul Lewis
+    feed: https://aerotwist.com/blog/feed/
+    url: https://aerotwist.com/blog/
+  - id: pawe-chudzik
+    name: Paweł Chudzik
+    title: Paweł Chudzik
+    feed: https://blog.pchudzik.com/index.xml
+    url: https://blog.pchudzik.com/
+  - id: paypal
+    name: Paypal
+    title: Paypal
+    feed: https://medium.com/feed/paypal-tech
+    url: https://www.paypal-engineering.com/
+  - id: peter-norvig
+    name: Peter Norvig
+    title: Peter Norvig
+    feed: http://www.norvig.com/rss-feed.xml
+    url: http://norvig.com/
+  - id: peteris-krumins
+    name: Peteris Krumins
+    title: Peteris Krumins
+    feed: https://catonmat.net/feed
+    url: http://www.catonmat.net/blog/
+  - id: petr-mitrichev
+    name: Petr Mitrichev
+    title: Petr Mitrichev
+    feed: https://blog.mitrichev.ch/feeds/posts/default
+    url: http://petr-mitrichev.blogspot.com/
+  - id: philip-walton
+    name: Philip Walton
+    title: Philip Walton
+    feed: https://feeds.feedburner.com/philipwalton
+    url: https://philipwalton.com/
+  - id: philipp-oppermann
+    name: Philipp Oppermann
+    title: Philipp Oppermann
+    feed: https://os.phil-opp.com/rss.xml
+    url: https://os.phil-opp.com/
+  - id: pinterest
+    name: Pinterest
+    title: Pinterest
+    feed: https://medium.com/feed/@Pinterest_Engineering
+    url: https://medium.com/@Pinterest_Engineering
+  - id: pony-foo
+    name: Pony Foo
+    title: Pony Foo
+    feed: https://feeds.feedburner.com/ponyfoo
+    url: https://ponyfoo.com/
+  - id: postman
+    name: Postman
+    title: Postman
+    feed: https://medium.com/feed/better-practices
+    url: https://medium.com/better-practices
+  - id: postmark
+    name: Postmark
+    title: Postmark
+    feed: https://postmarkapp.com/blog/feed.atom
+    url: https://postmarkapp.com/blog
+  - id: pubnub
+    name: "PubNub:"
+    title: "PubNub:"
+    feed: https://www.pubnub.com/feed/blog/
+    url: https://www.pubnub.com/blog/
+  - id: rachel-kroll
+    name: Rachel Kroll
+    title: Rachel Kroll
+    feed: https://rachelbythebay.com/w/atom.xml
+    url: https://rachelbythebay.com/w/
+  - id: radek-pazdera
+    name: Radek Pazdera
+    title: Radek Pazdera
+    feed: http://radek.io/rss
+    url: http://radek.io
+  - id: ramon-fried
+    name: Ramon Fried
+    title: Ramon Fried
+    feed: https://nativeguru.wordpress.com/feed/
+    url: https://nativeguru.wordpress.com/
+  - id: ray-wenderlich
+    name: Ray Wenderlich
+    title: Ray Wenderlich
+    feed: https://www.raywenderlich.com/feed
+    url: https://www.raywenderlich.com/
+  - id: raymond-chen
+    name: Raymond Chen
+    title: Raymond Chen
+    feed: https://devblogs.microsoft.com/oldnewthing/feed
+    url: https://blogs.msdn.microsoft.com/oldnewthing/
+  - id: rea-group
+    name: REA Group
+    title: REA Group
+    feed: https://www.rea-group.com/category/tech/feed/
+    url: https://www.rea-group.com/category/tech/
+  - id: reactjs-news
+    name: ReactJS News
+    title: ReactJS News
+    feed: https://reactjsnews.com/feed.xml
+    url: https://reactjsnews.com
+  - id: real-python
+    name: Real Python
+    title: Real Python
+    feed: https://realpython.com/atom.xml
+    url: https://realpython.com/blog/
+  - id: red
+    name: Red
+    title: Red
+    feed: https://www.red-lang.org/feeds/posts/default
+    url: http://www.red-lang.org
+  - id: reginald-braithwaite
+    name: Reginald Braithwaite
+    title: Reginald Braithwaite
+    feed: https://raganwald.com/atom.xml
+    url: http://raganwald.com/#essays
+  - id: regular-geek
+    name: Regular Geek
+    title: Regular Geek
+    feed: https://regulargeek.com/feed/
+    url: http://regulargeek.com/
+  - id: remind
+    name: Remind
+    title: Remind
+    feed: http://engineering.remind.com/feed.xml
+    url: http://engineering.remind.com/
+  - id: retailmenot
+    name: RetailMeNot
+    title: RetailMeNot
+    feed: https://engineering.ziffmedia.com/feed
+    url: https://medium.com/retailmenot-engineering/
+  - id: risingstack
+    name: RisingStack
+    title: RisingStack
+    feed: https://blog.risingstack.com/feed/
+    url: https://blog.risingstack.com/
+  - id: rob-allen
+    name: Rob Allen
+    title: Rob Allen
+    feed: https://akrabat.com/feed/
+    url: https://akrabat.com/
+  - id: robert-c-martin
+    name: Robert C. Martin
+    title: Robert C. Martin
+    feed: http://blog.cleancoder.com/atom.xml
+    url: http://blog.cleancoder.com/
+  - id: robin-ward
+    name: Robin Ward
+    title: Robin Ward
+    feed: https://eviltrout.com/feed.xml
+    url: https://eviltrout.com/
+  - id: robin-wilson
+    name: Robin Wilson
+    title: Robin Wilson
+    feed: https://blog.rtwilson.com/feed/
+    url: http://blog.rtwilson.com/
+  - id: rocksdb
+    name: RocksDB
+    title: RocksDB
+    feed: http://rocksdb.org/feed.xml
+    url: http://rocksdb.org/blog
+  - id: rosehosting
+    name: RoseHosting
+    title: RoseHosting
+    feed: https://www.rosehosting.com/blog/feed/
+    url: https://www.rosehosting.com/blog/
+  - id: ruslan-spivak
+    name: Ruslan Spivak
+    title: Ruslan Spivak
+    feed: https://ruslanspivak.com/feeds/all.atom.xml
+    url: https://ruslanspivak.com/
+  - id: rust
+    name: Rust
+    title: Rust
+    feed: https://blog.rust-lang.org/feed.xml
+    url: https://blog.rust-lang.org/
+  - id: sam-saffron
+    name: Sam Saffron
+    title: Sam Saffron
+    feed: http://samsaffron.com/posts.rss
+    url: https://samsaffron.com/
+  - id: schakko
+    name: Schakko
+    title: Schakko
+    feed: https://www.schakko.de/feed/
+    url: https://schakko.de
+  - id: scott-hanselman
+    name: Scott Hanselman
+    title: Scott Hanselman
+    feed: http://feeds.hanselman.com/ScottHanselman
+    url: http://www.hanselman.com/blog/
+  - id: scott-johnson
+    name: Scott Johnson
+    title: Scott Johnson
+    feed: http://fuzzyblog.io/blog/feed.xml
+    url: http://www.fuzzyblog.io/blog/
+  - id: sensible
+    name: Sensible
+    title: Sensible
+    feed: https://blog.sensible.io/rss
+    url: http://blog.sensible.io/
+  - id: serverless
+    name: Serverless
+    title: Serverless
+    feed: https://www.serverless.com/blog/rss.xml
+    url: https://serverless.com/blog/
+  - id: sitepoint
+    name: SitePoint
+    title: SitePoint
+    feed: https://sitepoint.com/sitepoint.rss
+    url: https://sitepoint.com
+  - id: skyscanner
+    name: Skyscanner
+    title: Skyscanner
+    feed: https://medium.com/feed/@SkyscannerEng
+    url: http://codevoyagers.com/
+  - id: slack
+    name: Slack
+    title: Slack
+    feed: https://slack.engineering/rss
+    url: https://slack.engineering/
+  - id: small-improvements
+    name: Small Improvements
+    title: Small Improvements
+    feed: https://tech.small-improvements.com/rss
+    url: https://tech.small-improvements.com/
+  - id: soundcloud
+    name: Soundcloud
+    title: Soundcloud
+    feed: https://developers.soundcloud.com/blog/blog.rss
+    url: https://developers.soundcloud.com/blog/
+  - id: spotify
+    name: Spotify
+    title: Spotify
+    feed: https://engineering.atspotify.com/feed
+    url: https://labs.spotify.com/
+  - id: squarespace
+    name: Squarespace
+    title: Squarespace
+    feed: https://engineering.squarespace.com/blog?format=rss
+    url: https://engineering.squarespace.com/
+  - id: srinivas-tamada
+    name: Srinivas Tamada
+    title: Srinivas Tamada
+    feed: https://www.9lessons.info/feeds/posts/default
+    url: https://www.9lessons.info/
+  - id: stack-abuse
+    name: Stack Abuse
+    title: Stack Abuse
+    feed: https://stackabuse.com/rss/
+    url: http://www.stackabuse.com/
+  - id: stack-overflow
+    name: Stack Overflow
+    title: Stack Overflow
+    feed: https://stackoverflow.blog/feed
+    url: https://stackoverflow.blog/engineering/
+  - id: stanko-tadic
+    name: Stanko Tadić
+    title: Stanko Tadić
+    feed: https://muffinman.io/atom.xml
+    url: https://muffinman.io
+  - id: stephen-colebourne
+    name: Stephen Colebourne
+    title: Stephen Colebourne
+    feed: https://blog.joda.org/feeds/posts/default
+    url: http://blog.joda.org/
+  - id: steve-bellovin
+    name: Steve Bellovin
+    title: Steve Bellovin
+    feed: https://www.cs.columbia.edu/~smb/blog/control/blog.xml
+    url: https://www.cs.columbia.edu/~smb/blog/control/
+  - id: steve-yegge
+    name: Steve Yegge
+    title: Steve Yegge
+    feed: https://steve-yegge.blogspot.com/feeds/posts/default
+    url: https://steve-yegge.blogspot.com/
+  - id: stitch-fix
+    name: Stitch Fix
+    title: Stitch Fix
+    feed: https://multithreaded.stitchfix.com/feed.xml
+    url: http://multithreaded.stitchfix.com/blog/
+  - id: strava
+    name: Strava
+    title: Strava
+    feed: https://medium.com/feed/strava-engineering
+    url: https://medium.com/strava-engineering/
+  - id: stripe
+    name: Stripe
+    title: Stripe
+    feed: https://stripe.com/blog/feed.rss
+    url: https://stripe.com/blog
+  - id: surveymonkey
+    name: SurveyMonkey
+    title: SurveyMonkey
+    feed: https://www.surveymonkey.com/feed/
+    url: https://engineering.surveymonkey.com/
+  - id: swizec-teller
+    name: Swizec Teller
+    title: Swizec Teller
+    feed: https://swizec.com/rss.xml
+    url: https://swizec.com/blog/
+  - id: t-j-maher
+    name: T.J. Maher
+    title: T.J. Maher
+    feed: https://www.tjmaher.com/feeds/posts/default
+    url: http://adventuresinautomation.blogspot.com/
+  - id: tania-rascia
+    name: Tania Rascia
+    title: Tania Rascia
+    feed: https://tania.dev/rss.xml
+    url: https://tania.dev/
+  - id: teamwork
+    name: Teamwork
+    title: Teamwork
+    feed: https://engineroom.teamwork.com/feed
+    url: https://engineroom.teamwork.com/
+  - id: the-coded-self
+    name: The Coded Self
+    title: The Coded Self
+    feed: https://www.thecodedself.com/feed.xml
+    url: http://www.thecodedself.com
+  - id: the-daily-wtf
+    name: The Daily WTF
+    title: The Daily WTF
+    feed: https://syndication.thedailywtf.com/TheDailyWtf
+    url: http://thedailywtf.com/
+  - id: thomas-young
+    name: Thomas Young
+    title: Thomas Young
+    feed: http://upcoder.com/feed
+    url: http://upcoder.com
+  - id: thoughtbot
+    name: Thoughtbot
+    title: Thoughtbot
+    feed: https://feeds.feedburner.com/GiantRobotsSmashingIntoOtherGiantRobots
+    url: https://robots.thoughtbot.com/
+  - id: thumbtack
+    name: Thumbtack
+    title: Thumbtack
+    feed: https://medium.com/feed/thumbtack-engineering
+    url: https://www.thumbtack.com/engineering/
+  - id: tikhon-jelvis
+    name: Tikhon Jelvis
+    title: Tikhon Jelvis
+    feed: http://jelv.is/blog/rss.xml
+    url: http://jelv.is/blog/
+  - id: timescale
+    name: Timescale
+    title: Timescale
+    feed: https://www.timescale.com/blog/rss/
+    url: https://blog.timescale.com/
+  - id: tinder
+    name: Tinder
+    title: Tinder
+    feed: https://medium.com/feed/tinder
+    url: https://tech.gotinder.com/
+  - id: toptal
+    name: Toptal
+    title: Toptal
+    feed: https://www.toptal.com/blog.rss
+    url: https://www.toptal.com/blog/
+  - id: transferwise
+    name: Transferwise
+    title: Transferwise
+    feed: https://medium.com/feed/wise-engineering
+    url: http://tech.transferwise.com/
+  - id: trivago
+    name: Trivago
+    title: Trivago
+    feed: http://tech.trivago.com/rss.xml
+    url: http://tech.trivago.com/
+  - id: truecar
+    name: TrueCar
+    title: TrueCar
+    feed: https://medium.com/feed/driven-by-code
+    url: https://www.drivenbycode.com/
+  - id: twilio
+    name: Twilio
+    title: Twilio
+    feed: https://www.twilio.com/blog/feed
+    url: https://www.twilio.com/blog/
+  - id: una-kravets
+    name: Una Kravets
+    title: Una Kravets
+    feed: https://una.im/rss.xml
+    url: https://una.im/
+  - id: undocumented-matlab
+    name: Undocumented Matlab
+    title: Undocumented Matlab
+    feed: https://undocumentedmatlab.com/feed
+    url: http://undocumentedmatlab.com/
+  - id: vanilla-java
+    name: Vanilla Java
+    title: Vanilla Java
+    feed: http://blog.vanillajava.blog/feeds/posts/default
+    url: http://vanillajava.blogspot.com/
+  - id: vinted
+    name: Vinted
+    title: Vinted
+    feed: https://vinted.engineering//atom.xml
+    url: http://engineering.vinted.com/
+  - id: vlad-mihalcea
+    name: Vlad Mihalcea
+    title: Vlad Mihalcea
+    feed: https://vladmihalcea.com/feed/
+    url: https://vladmihalcea.com/
+  - id: vngrs
+    name: VNGRS
+    title: VNGRS
+    feed: https://medium.com/feed/vngrs
+    url: http://blog.vngrs.com/
+  - id: wayfair
+    name: Wayfair
+    title: Wayfair
+    feed: https://www.aboutwayfair.com/careers/tech-blog.rss
+    url: http://engineering.wayfair.com/
+  - id: wemake-services
+    name: Wemake.services
+    title: Wemake.services
+    feed: https://medium.com/feed/wemake-services
+    url: https://medium.com/wemake-services
+  - id: wilfred-hughes
+    name: Wilfred Hughes
+    title: Wilfred Hughes
+    feed: http://www.wilfred.me.uk/rss.xml
+    url: http://www.wilfred.me.uk/
+  - id: wingify
+    name: Wingify
+    title: Wingify
+    feed: http://engineering.wingify.com/atom.xml
+    url: http://engineering.wingify.com/
+  - id: wojtek-gawron-ski
+    name: Wojtek Gawroński
+    title: Wojtek Gawroński
+    feed: http://www.afronski.pl/feed.xml
+    url: http://www.afronski.pl/
+  - id: yammer
+    name: Yammer
+    title: Yammer
+    feed: https://medium.com/feed/yammer-engineering
+    url: https://medium.com/yammer-engineering
+  - id: yegor-bugayenko
+    name: Yegor Bugayenko
+    title: Yegor Bugayenko
+    feed: https://www.yegor256.com/rss.xml
+    url: http://www.yegor256.com/
+  - id: yifan-lu
+    name: Yifan Lu
+    title: Yifan Lu
+    feed: http://yifan.lu/feed.xml
+    url: http://yifan.lu/
+  - id: zach-holman
+    name: Zach Holman
+    title: Zach Holman
+    feed: https://zachholman.com/atom.xml
+    url: https://zachholman.com/
+  - id: zendesk
+    name: Zendesk
+    title: Zendesk
+    feed: https://zendesk.engineering/feed
+    url: https://medium.com/zendesk-engineering
+  - id: zolmeister
+    name: Zolmeister
+    title: Zolmeister
+    feed: https://zolmeister.com/feeds/posts/default
+    url: https://zolmeister.com/
+  - id: bytebytego
+    name: ByteByteGo
+    title: ByteByteGo
+    feed: https://blog.bytebytego.com/feed
+    url: https://blog.bytebytego.com

@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import { posts, sites } from '../lib/data.mjs';
+import { support } from '../lib/site.mjs';
+const links = [
+  support.githubSponsors && { href: support.githubSponsors, label: 'GitHub Sponsors' },
+  support.kofi && { href: support.kofi, label: 'Ko-fi' },
+].filter(Boolean);
+---
+<Base title="Support — devreads.fyi">
+  <div class="page-head">
+    <h1 style="font-family: var(--mono);">$ man support</h1>
+    <p>devreads.fyi is an independent, open-source aggregator — {posts.length.toLocaleString()} posts from {sites.length} engineering blogs, refreshed four times a day.</p>
+  </div>
+  <div style="max-width: 560px; font-size: 14px; color: var(--muted); line-height: 1.7;">
+    <p>It links out to every publisher and never rehosts their writing. Running it costs little (a domain and some electrons), and it makes money only in ways that respect both readers and writers: no tracking, no paywalls, nothing wrapped around anyone's content.</p>
+    <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// ways to help</p>
+    <ul style="padding-left: 20px;">
+      <li>Star or contribute on <a href="https://github.com/iamsunny/devreads.fyi" target="_blank" rel="noopener" style="text-decoration: underline;">GitHub</a> — adding a good blog to <code>sites.yml</code> is the most valuable PR there is.</li>
+      {links.map((l) => (
+        <li><a href={l.href} target="_blank" rel="noopener" style="text-decoration: underline;">{l.label}</a> — chip in toward the domain.</li>
+      ))}
+      <li>Share a tag page or the <a href={`${import.meta.env.BASE_URL}digest/`} style="text-decoration: underline;">weekly digest</a> with your team.</li>
+      {support.sponsorEmail && (
+        <li>Sponsor a week: <a href={`mailto:${support.sponsorEmail}`} style="text-decoration: underline;">{support.sponsorEmail}</a> — one tasteful text slot, clearly labeled, never in the reading list.</li>
+      )}
+    </ul>
+  </div>
+</Base>

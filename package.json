@@ -1,0 +1,19 @@
+{
+  "name": "engineering-blogs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Aggregator for engineering blogs: scheduled RSS ingest, static site with instant search",
+  "scripts": {
+    "import:opml": "node scripts/import-opml.mjs",
+    "ingest": "node ingest/run.mjs",
+    "build": "astro build && node scripts/build-search-index.mjs",
+    "dev": "astro dev",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.8.0",
+    "rss-parser": "^3.13.0",
+    "yaml": "^2.7.0"
+  }
+}

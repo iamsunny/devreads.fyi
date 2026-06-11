@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import Listing from '../../components/Listing.astro';
+import { posts, tagSlug, tagBySlug } from '../../lib/data.mjs';
+
+export function getStaticPaths() {
+  return [...tagBySlug.keys()].map((slug) => ({ params: { slug } }));
+}
+const slug = Astro.params.slug;
+const tag = tagBySlug.get(slug);
+const all = posts.filter((p) => p.tags?.some((t) => tagSlug(t) === slug));
+const tagged = all.slice(0, 300);
+---
+<Base title={`#${tag} — devreads.fyi`}>
+  <div class="page-head">
+    <h1>#{tag}</h1>
+    <p>{all.length} posts{all.length > 300 ? ' (showing latest 300 — use search for the rest)' : ''}</p>
+  </div>
+  <Listing posts={tagged} />
+</Base>
