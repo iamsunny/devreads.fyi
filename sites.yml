@@ -1,0 +1,729 @@
+sites:
+  - id: "0xadada"
+    name: "0xADADA"
+    feed: https://0xadada.pub/rss.xml
+    url: https://0xadada.pub/
+  - id: 8th-light
+    name: 8th Light
+    feed: https://8thlight.com/insights/feed/rss.xml
+    url: https://8thlight.com/blog/
+  - id: advanced-web-machinery
+    name: Advanced Web Machinery
+    feed: https://advancedweb.hu/atom.xml
+    url: https://advancedweb.hu/
+  - id: airbnb
+    name: Airbnb
+    feed: https://medium.com/feed/airbnb-engineering
+    url: https://medium.com/airbnb-engineering
+  - id: alex-russell
+    name: Alex Russell
+    feed: https://infrequently.org/feed/
+    url: https://infrequently.org/
+  - id: allthingsdistributed
+    name: All Things Distributed
+    feed: https://www.allthingsdistributed.com/atom.xml
+    url: https://www.allthingsdistributed.com/
+  - id: amit-merchant
+    name: Amit Merchant
+    feed: https://www.amitmerchant.com/feed.xml
+    url: https://www.amitmerchant.com/
+  - id: android
+    name: Android
+    feed: https://android-developers.googleblog.com/feeds/posts/default
+    url: https://android-developers.blogspot.com/
+  - id: ariya-hidayat
+    name: Ariya Hidayat
+    feed: https://ariya.io/index.xml
+    url: https://ariya.io/
+  - id: atlassian
+    name: Inside Atlassian
+    feed: https://atlassianblog.wpengine.com/feed/
+    url: https://www.atlassian.com/blog
+  - id: atomic-object
+    name: Atomic Object
+    feed: https://spin.atomicobject.com/feed/
+    url: https://spin.atomicobject.com/
+  - id: auth0
+    name: Auth0
+    feed: https://auth0.com/blog/rss.xml
+    url: https://auth0.com/blog/
+  - id: aws
+    name: AWS
+    feed: https://aws.amazon.com/blogs/aws/feed/
+    url: https://aws.amazon.com/blogs/aws/
+  - id: babbel
+    name: Babbel
+    feed: https://cms.babbel.news/feed/?post_type=english_edition
+    url: https://bytes.babbel.com/en/
+  - id: bumble
+    name: Bumble
+    feed: https://medium.com/feed/bumble-tech
+    url: https://medium.com/bumble-tech
+  - id: bazaarvoice
+    name: Bazaarvoice
+    feed: https://blog.developer.bazaarvoice.com/feed/
+    url: https://blog.developer.bazaarvoice.com/
+  - id: bbc
+    name: BBC
+    feed: https://medium.com/feed/bbc-product-technology
+    url: https://medium.com/bbc-design-engineering/
+  - id: ben-nadel
+    name: Ben Nadel
+    feed: https://www.bennadel.com/index.cfm?event=blog.rss
+    url: https://www.bennadel.com/
+  - id: blender
+    name: Blender
+    feed: https://code.blender.org/rss
+    url: https://code.blender.org/
+  - id: bohops
+    name: Bohops
+    feed: https://bohops.com/feed/
+    url: https://bohops.com/
+  - id: booking
+    name: Booking.com Engineering
+    feed: https://medium.com/feed/booking-com-development
+    url: https://medium.com/booking-com-development
+  - id: bootstrap-com
+    name: Bootstrap.com
+    feed: https://blog.getbootstrap.com/feed.xml
+    url: https://blog.getbootstrap.com/
+  - id: canva
+    name: Canva
+    feed: https://www.canva.dev/blog/engineering/feed.xml
+    url: https://engineering.canva.com
+  - id: carlos-becker
+    name: Carlos Becker
+    feed: https://carlosbecker.com/index.xml
+    url: https://carlosbecker.com
+  - id: clever
+    name: Clever
+    feed: https://engineering.clever.com/rss
+    url: https://engineering.clever.com/
+  - id: cloudflare
+    name: Cloudflare
+    feed: https://blog.cloudflare.com/rss
+    url: https://blog.cloudflare.com/
+  - id: codrops
+    name: Codrops
+    feed: https://tympanus.net/codrops/feed/
+    url: https://tympanus.net/codrops/
+  - id: confluent
+    name: Confluent
+    feed: https://www.confluent.io/rss.xml
+    url: https://www.confluent.io/blog
+  - id: cred
+    name: CRED Engineering
+    feed: https://engineering.cred.club/feed
+    url: https://engineering.cred.club/
+  - id: criteo
+    name: Criteo
+    feed: https://medium.com/feed/criteo-engineering
+    url: https://medium.com/criteo-labs
+  - id: crystal
+    name: Crystal
+    feed: https://crystal-lang.org/feed.xml
+    url: https://crystal-lang.org/
+  - id: dan-luu
+    name: Dan Luu
+    feed: https://danluu.com/atom.xml
+    url: https://danluu.com/
+  - id: databricks
+    name: Databricks
+    feed: https://www.databricks.com/feed
+    url: https://databricks.com/blog
+  - id: datadog
+    name: Datadog
+    feed: https://www.datadoghq.com/blog/engineering/index.xml
+    url: https://www.datadoghq.com/blog/engineering/
+  - id: dave-cheney
+    name: Dave Cheney
+    feed: https://dave.cheney.net/feed
+    url: https://dave.cheney.net/
+  - id: david-walsh
+    name: David Walsh
+    feed: https://davidwalsh.name/feed/atom
+    url: https://davidwalsh.name/
+  - id: deliveroo
+    name: Deliveroo
+    feed: https://deliveroo.engineering/feed.xml
+    url: https://deliveroo.engineering/
+  - id: dennis-felsing
+    name: Dennis Felsing
+    feed: https://hookrace.net/blog/feed/
+    url: https://hookrace.net/
+  - id: discord
+    name: Discord
+    feed: https://discord.com/blog/rss.xml
+    url: https://blog.discordapp.com/
+  - id: docker
+    name: Docker
+    feed: https://www.docker.com/feed/
+    url: https://blog.docker.com/
+  - id: domenico-luciani
+    name: Domenico Luciani
+    feed: https://domenicoluciani.com/feed.xml
+    url: https://domenicoluciani.com
+  - id: drew-devault
+    name: Drew DeVault
+    feed: https://drewdevault.com/blog/index.xml
+    url: https://drewdevault.com/
+  - id: dropbox
+    name: Dropbox
+    feed: https://dropbox.tech/feed
+    url: https://blogs.dropbox.com/tech/
+  - id: ebay
+    name: Ebay
+    feed: https://www.ebayinc.com/stories/news/rss/
+    url: https://www.ebayinc.com/stories/blogs/tech/
+  - id: eli-bendersky
+    name: Eli Bendersky
+    feed: https://eli.thegreenplace.net/feeds/all.atom.xml
+    url: https://eli.thegreenplace.net/
+  - id: engineering-at-microsoft
+    name: Engineering at Microsoft
+    feed: https://devblogs.microsoft.com/engineering-at-microsoft/feed/
+    url: https://devblogs.microsoft.com/engineering-at-microsoft/
+  - id: eric-elliot
+    name: Eric Elliot
+    feed: https://medium.com/feed/javascript-scene
+    url: https://medium.com/javascript-scene/
+  - id: eric-lippert
+    name: Eric Lippert
+    feed: https://ericlippert.com/feed/
+    url: https://ericlippert.com/
+  - id: erik-bernhardsson
+    name: Erik Bernhardsson
+    feed: https://erikbern.com/atom.xml
+    url: https://erikbern.com/
+  - id: erik-runyon
+    name: Erik Runyon
+    feed: https://erikrunyon.com/feed.xml
+    url: https://erikrunyon.com/
+  - id: erlang-solutions
+    name: Erlang Solutions
+    feed: https://www.erlang-solutions.com/feed/
+    url: https://www.erlang-solutions.com/blog.html
+  - id: etsy
+    name: Etsy Code as Craft
+    feed: https://www.etsy.com/codeascraft/rss
+    url: https://www.etsy.com/codeascraft
+  - id: evil-martians
+    name: Evil Martians
+    feed: https://evilmartians.com/chronicles.atom
+    url: https://evilmartians.com/chronicles/
+  - id: expedia
+    name: Expedia
+    feed: https://medium.com/feed/expedia-group-tech
+    url: https://medium.com/expedia-group-tech
+  - id: facebook
+    name: Facebook
+    feed: https://engineering.fb.com/feed/
+    url: https://code.facebook.com/posts/
+  - id: feedzai
+    name: Feedzai
+    feed: https://medium.com/feed/feedzaitech
+    url: https://medium.com/feedzaitech
+  - id: filippo-valsorda
+    name: Filippo Valsorda
+    feed: https://words.filippo.io/rss/
+    url: https://blog.filippo.io/
+  - id: flavio-copes
+    name: Flavio Copes
+    feed: https://flaviocopes.com/rss.xml
+    url: https://flaviocopes.com/
+  - id: flipkart
+    name: Flipkart Tech
+    feed: https://blog.flipkart.tech/feed
+    url: https://blog.flipkart.tech/
+  - id: freek-van-der-herten
+    name: Freek Van der Herten
+    feed: https://freek.dev/feed
+    url: https://murze.be/
+  - id: github
+    name: GitHub
+    feed: https://github.blog/engineering.atom
+    url: https://github.blog/category/engineering/
+  - id: gleb-bahmutov
+    name: Gleb Bahmutov
+    feed: https://glebbahmutov.com/blog/atom.xml
+    url: https://glebbahmutov.com/blog/
+  - id: gocardless
+    name: GoCardless
+    feed: https://gocardless.com/content-platform/rss/resources.xml
+    url: https://gocardless.com/blog/tagged/engineering/
+  - id: google-cloud
+    name: Google Cloud
+    feed: https://cloudblog.withgoogle.com/rss/
+    url: https://cloud.google.com/blog/
+  - id: gosquared
+    name: GoSquared
+    feed: https://www.gosquared.com/blog/feed
+    url: https://engineering.gosquared.com/
+  - id: graham-king
+    name: Graham King
+    feed: https://www.darkcoding.net/index.xml
+    url: https://www.darkcoding.net/
+  - id: blinkit
+    name: Blinkit
+    feed: https://lambda.blinkit.com/feed
+    url: https://lambda.blinkit.com/
+  - id: groupon
+    name: Groupon
+    feed: https://medium.com/feed/groupon-eng
+    url: https://engineering.groupon.com/
+  - id: guardian
+    name: Guardian
+    feed: https://www.theguardian.com/info/developer-blog/rss
+    url: https://www.theguardian.com/info/developer-blog
+  - id: haptik
+    name: Haptik
+    feed: https://www.haptik.ai/tech/rss.xml
+    url: https://haptik.ai/tech/
+  - id: hashrocket
+    name: Hashrocket
+    feed: https://hashrocket.com/blog.rss
+    url: https://hashrocket.com/blog
+  - id: hayden-james
+    name: Hayden James
+    feed: https://haydenjames.io/feed
+    url: https://haydenjames.io/
+  - id: helpshift
+    name: Helpshift
+    feed: https://medium.com/feed/helpshift-engineering
+    url: https://medium.com/helpshift-engineering/
+  - id: henrik-lau-eriksson
+    name: Henrik Lau Eriksson
+    feed: https://conductofcode.io/feed.xml
+    url: https://conductofcode.io/
+  - id: henrik-warne
+    name: Henrik Warne
+    feed: https://henrikwarne.com/feed/
+    url: https://henrikwarne.com/
+  - id: heroku
+    name: Heroku
+    feed: https://blog.heroku.com/feed
+    url: https://blog.heroku.com/
+  - id: hostinger
+    name: Hostinger
+    feed: https://www.hostinger.com/blog/feed
+    url: https://www.hostinger.com/blog/engineering/
+  - id: housing-com
+    name: Housing.com
+    feed: https://medium.com/feed/engineering-housing
+    url: https://medium.com/engineering-housing
+  - id: ilya-grigorik
+    name: Ilya Grigorik
+    feed: https://ilya.grigorik.com/essays/rss/
+    url: https://www.igvita.com/
+  - id: jane-street
+    name: Jane Street
+    feed: https://blogs.janestreet.com/feed.xml
+    url: https://blogs.janestreet.com/category/ocaml/
+  - id: jeff-atwood
+    name: Jeff Atwood
+    feed: https://blog.codinghorror.com/rss/
+    url: https://blog.codinghorror.com/
+  - id: jeremy-kun
+    name: Jeremy Kun
+    feed: https://www.jeremykun.com/index.xml
+    url: https://jeremykun.com/
+  - id: jerry-gamblin
+    name: Jerry Gamblin
+    feed: https://jerrygamblin.com/feed/
+    url: https://jerrygamblin.com/
+  - id: jesal-gadhia
+    name: Jesal Gadhia
+    feed: https://jes.al/atom.xml
+    url: https://jes.al/
+  - id: jobteaser
+    name: JobTeaser
+    feed: https://medium.com/feed/jobteaser-dev-team
+    url: https://medium.com/jobteaser-dev-team/
+  - id: joe-nelson
+    name: Joe Nelson
+    feed: https://begriffs.com/atom.xml
+    url: https://begriffs.com/
+  - id: jon-skeet
+    name: Jon Skeet
+    feed: https://codeblog.jonskeet.uk/feed/
+    url: https://codeblog.jonskeet.uk/
+  - id: jonathan-snook
+    name: Jonathan Snook
+    feed: https://snook.ca/jonathan/index.rdf
+    url: https://snook.ca/
+  - id: jooq
+    name: jOOQ
+    feed: https://blog.jooq.org/feed/
+    url: https://blog.jooq.org/
+  - id: josh-sherman
+    name: Josh Sherman
+    feed: https://joshtronic.com/feed/
+    url: https://joshtronic.com/
+  - id: julia-evans
+    name: Julia Evans
+    feed: https://jvns.ca/atom.xml
+    url: https://jvns.ca/
+  - id: k-harrison
+    name: K. Harrison
+    feed: https://useyourloaf.com/blog/rss.xml
+    url: https://useyourloaf.com/
+  - id: kevin-burke
+    name: Kevin Burke
+    feed: https://kevin.burke.dev/feed/
+    url: https://kev.inburke.com/
+  - id: khalil-stemmler
+    name: Khalil Stemmler
+    feed: https://khalilstemmler.com/rss.xml
+    url: https://khalilstemmler.com/
+  - id: kirill-shevchenko
+    name: Kirill Shevchenko
+    feed: https://medium.com/feed/@kirill_shevch
+    url: https://medium.com/@kirill_shevch
+  - id: kogan-com
+    name: Kogan.com
+    feed: https://devblog.kogan.com/blog?format=rss
+    url: https://devblog.kogan.com/
+  - id: kotlin
+    name: Kotlin
+    feed: https://blog.jetbrains.com/kotlin/feed/
+    url: https://blog.jetbrains.com/kotlin/
+  - id: kyle-kingsbury
+    name: Kyle Kingsbury
+    feed: https://aphyr.com/posts.atom
+    url: https://aphyr.com/
+  - id: laravel
+    name: Laravel
+    feed: https://feed.laravel-news.com/
+    url: https://laravel-news.com/blog/
+  - id: luciano-mammino
+    name: Luciano Mammino
+    feed: https://loige.co/rss.xml
+    url: https://loige.co/
+  - id: makemytrip
+    name: MakeMyTrip Engineering
+    feed: https://tech.makemytrip.com/feed
+    url: https://tech.makemytrip.com/
+  - id: maptiler
+    name: MapTiler
+    feed: https://www.maptiler.com/news/feed/posts.xml
+    url: https://www.maptiler.com/blog/
+  - id: marcelo-rinesi
+    name: Marcelo Rinesi
+    feed: https://blog.rinesi.com/feed/
+    url: https://blog.rinesi.com/
+  - id: martin-fowler
+    name: Martin Fowler
+    feed: https://martinfowler.com/feed.atom
+    url: https://martinfowler.com/
+  - id: mary-rose-cook
+    name: Mary Rose Cook
+    feed: https://maryrosecook.com/blog/feed.xml
+    url: https://maryrosecook.com/blog/
+  - id: matt-aimonetti
+    name: Matt Aimonetti
+    feed: https://matt.aimonetti.net/posts/index.xml
+    url: https://matt.aimonetti.net/
+  - id: matt-cutts
+    name: Matt Cutts
+    feed: https://www.mattcutts.com/blog/feed/
+    url: https://www.mattcutts.com/blog/
+  - id: matthew-green
+    name: Matthew Green
+    feed: https://blog.cryptographyengineering.com/feed/
+    url: https://blog.cryptographyengineering.com/
+  - id: medium
+    name: Medium
+    feed: https://medium.engineering/feed
+    url: https://medium.com/medium-eng
+  - id: microsoft-python-engineering
+    name: Microsoft Python Engineering
+    feed: https://devblogs.microsoft.com/python/feed/
+    url: https://devblogs.microsoft.com/python/
+  - id: monica-dinculescu
+    name: Monica Dinculescu
+    feed: https://meowni.ca/atom.xml
+    url: https://meowni.ca/
+  - id: monstermuffin
+    name: Monstermuffin
+    feed: https://blog.monstermuffin.org/index.xml
+    url: https://blog.monstermuffin.org/
+  - id: mozilla-hacks
+    name: Mozilla Hacks
+    feed: https://hacks.mozilla.org/feed/
+    url: https://hacks.mozilla.org/
+  - id: nelson-elhage
+    name: Nelson Elhage
+    feed: https://blog.nelhage.com/atom.xml
+    url: https://blog.nelhage.com/
+  - id: net
+    name: .NET
+    feed: https://devblogs.microsoft.com/dotnet/feed/
+    url: https://devblogs.microsoft.com/dotnet/
+  - id: nic-raboy
+    name: Nic Raboy
+    feed: https://www.thepolyglotdeveloper.com/blog/index.xml
+    url: https://www.thepolyglotdeveloper.com/blog/
+  - id: nordic-apis
+    name: Nordic APIs
+    feed: https://nordicapis.com/feed/
+    url: https://nordicapis.com/blog/
+  - id: nvidia
+    name: Nvidia
+    feed: https://blogs.nvidia.com/feed/
+    url: https://blogs.nvidia.com/
+  - id: octo-technology
+    name: OCTO Technology
+    feed: https://blog.octo.com/feed
+    url: https://blog.octo.com/en/
+  - id: okta
+    name: Okta
+    feed: https://developer.okta.com/feed.xml
+    url: https://developer.okta.com/blog/
+  - id: ole-begemann
+    name: Ole Begemann
+    feed: https://oleb.net/blog/atom.xml
+    url: https://oleb.net/blog/
+  - id: opendns
+    name: OpenDNS
+    feed: https://umbrella.cisco.com/feed
+    url: https://engineering.opendns.com/
+  - id: palantir
+    name: Palantir
+    feed: https://blog.palantir.com/feed
+    url: https://blog.palantir.com/
+  - id: paul-lewis
+    name: Paul Lewis
+    feed: https://aerotwist.com/blog/feed/
+    url: https://aerotwist.com/blog/
+  - id: paypal
+    name: Paypal
+    feed: https://medium.com/feed/paypal-tech
+    url: https://www.paypal-engineering.com/
+  - id: philip-walton
+    name: Philip Walton
+    feed: https://feeds.feedburner.com/philipwalton
+    url: https://philipwalton.com/
+  - id: pinterest
+    name: Pinterest
+    feed: https://medium.com/feed/@Pinterest_Engineering
+    url: https://medium.com/@Pinterest_Engineering
+  - id: platform-engineering
+    name: Platform Engineering
+    feed: https://platformengineering.org/blog/rss.xml
+    url: https://platformengineering.org/blog
+  - id: postman
+    name: Postman
+    feed: https://medium.com/feed/better-practices
+    url: https://medium.com/better-practices
+  - id: postmark
+    name: Postmark
+    feed: https://postmarkapp.com/blog/feed.atom
+    url: https://postmarkapp.com/blog
+  - id: pubnub
+    name: PubNub
+    feed: https://www.pubnub.com/feed/blog/
+    url: https://www.pubnub.com/blog/
+  - id: ray-wenderlich
+    name: Ray Wenderlich
+    feed: https://www.raywenderlich.com/feed
+    url: https://www.raywenderlich.com/
+  - id: raymond-chen
+    name: Raymond Chen
+    feed: https://devblogs.microsoft.com/oldnewthing/feed
+    url: https://devblogs.microsoft.com/oldnewthing/
+  - id: rea-group
+    name: REA Group
+    feed: https://www.rea-group.com/category/tech/feed/
+    url: https://www.rea-group.com/category/tech/
+  - id: real-python
+    name: Real Python
+    feed: https://realpython.com/atom.xml
+    url: https://realpython.com/blog/
+  - id: risingstack
+    name: RisingStack
+    feed: https://blog.risingstack.com/feed/
+    url: https://blog.risingstack.com/
+  - id: rob-allen
+    name: Rob Allen
+    feed: https://akrabat.com/feed/
+    url: https://akrabat.com/
+  - id: robin-ward
+    name: Robin Ward
+    feed: https://eviltrout.com/feed.xml
+    url: https://eviltrout.com/
+  - id: rosehosting
+    name: RoseHosting
+    feed: https://www.rosehosting.com/blog/feed/
+    url: https://www.rosehosting.com/blog/
+  - id: ruslan-spivak
+    name: Ruslan Spivak
+    feed: https://ruslanspivak.com/feeds/all.atom.xml
+    url: https://ruslanspivak.com/
+  - id: rust
+    name: Rust
+    feed: https://blog.rust-lang.org/feed.xml
+    url: https://blog.rust-lang.org/
+  - id: schakko
+    name: Schakko
+    feed: https://www.schakko.de/feed/
+    url: https://schakko.de
+  - id: serverless
+    name: Serverless
+    feed: https://www.serverless.com/blog/rss.xml
+    url: https://serverless.com/blog/
+  - id: sitepoint
+    name: SitePoint
+    feed: https://sitepoint.com/sitepoint.rss
+    url: https://sitepoint.com
+  - id: slack
+    name: Slack
+    feed: https://slack.engineering/rss
+    url: https://slack.engineering/
+  - id: small-improvements
+    name: Small Improvements
+    feed: https://tech.small-improvements.com/rss
+    url: https://tech.small-improvements.com/
+  - id: soundcloud
+    name: Soundcloud
+    feed: https://developers.soundcloud.com/blog/blog.rss
+    url: https://developers.soundcloud.com/blog/
+  - id: spotify
+    name: Spotify
+    feed: https://engineering.atspotify.com/feed/
+    url: https://engineering.atspotify.com/
+  - id: squarespace
+    name: Squarespace
+    feed: https://engineering.squarespace.com/blog?format=rss
+    url: https://engineering.squarespace.com/
+  - id: srinivas-tamada
+    name: Srinivas Tamada
+    feed: https://www.9lessons.info/feeds/posts/default
+    url: https://www.9lessons.info/
+  - id: stack-overflow
+    name: Stack Overflow
+    feed: https://stackoverflow.blog/feed
+    url: https://stackoverflow.blog/engineering/
+  - id: stanko-tadic
+    name: Stanko Tadić
+    feed: https://muffinman.io/atom.xml
+    url: https://muffinman.io
+  - id: steve-bellovin
+    name: Steve Bellovin
+    feed: https://www.cs.columbia.edu/~smb/blog/control/blog.xml
+    url: https://www.cs.columbia.edu/~smb/blog/control/
+  - id: strava
+    name: Strava
+    feed: https://medium.com/feed/strava-engineering
+    url: https://medium.com/strava-engineering/
+  - id: stripe
+    name: Stripe
+    feed: https://stripe.com/blog/feed.rss
+    url: https://stripe.com/blog
+  - id: surveymonkey
+    name: SurveyMonkey
+    feed: https://www.surveymonkey.com/feed/
+    url: https://engineering.surveymonkey.com/
+  - id: swiggy
+    name: Swiggy Bytes
+    feed: https://medium.com/feed/swiggy-bytes
+    url: https://bytes.swiggy.com/
+  - id: swizec-teller
+    name: Swizec Teller
+    feed: https://swizec.com/rss.xml
+    url: https://swizec.com/blog/
+  - id: tailscale
+    name: Tailscale
+    feed: https://tailscale.com/blog/index.xml
+    url: https://tailscale.com/blog
+  - id: tania-rascia
+    name: Tania Rascia
+    feed: https://tania.dev/rss.xml
+    url: https://tania.dev/
+  - id: thoughtbot
+    name: Thoughtbot
+    feed: https://feeds.feedburner.com/GiantRobotsSmashingIntoOtherGiantRobots
+    url: https://robots.thoughtbot.com/
+  - id: thoughtworks
+    name: Thoughtworks Insights
+    feed: https://www.thoughtworks.com/rss/insights.xml
+    url: https://www.thoughtworks.com/insights
+  - id: thumbtack
+    name: Thumbtack
+    feed: https://medium.com/feed/thumbtack-engineering
+    url: https://www.thumbtack.com/engineering/
+  - id: timescale
+    name: Timescale
+    feed: https://www.timescale.com/blog/rss/
+    url: https://blog.timescale.com/
+  - id: tinder
+    name: Tinder
+    feed: https://medium.com/feed/tinder
+    url: https://tech.gotinder.com/
+  - id: toptal
+    name: Toptal
+    feed: https://www.toptal.com/blog.rss
+    url: https://www.toptal.com/blog/
+  - id: twilio
+    name: Twilio
+    feed: https://www.twilio.com/blog/feed
+    url: https://www.twilio.com/blog/
+  - id: una-kravets
+    name: Una Kravets
+    feed: https://una.im/rss.xml
+    url: https://una.im/
+  - id: upmostly
+    name: Upmostly
+    feed: https://upmostly.com/feed
+    url: https://upmostly.com/
+  - id: vlad-mihalcea
+    name: Vlad Mihalcea
+    feed: https://vladmihalcea.com/feed/
+    url: https://vladmihalcea.com/
+  - id: yelp
+    name: Yelp Engineering
+    feed: https://engineeringblog.yelp.com/feed.xml
+    url: https://engineeringblog.yelp.com/
+  - id: zach-holman
+    name: Zach Holman
+    feed: https://zachholman.com/atom.xml
+    url: https://zachholman.com/
+  - id: zendesk
+    name: Zendesk
+    feed: https://zendesk.engineering/feed
+    url: https://medium.com/zendesk-engineering
+  - id: zerodha
+    name: Zerodha Tech
+    feed: https://zerodha.tech/index.xml
+    url: https://zerodha.tech/
+  - id: bytebytego
+    name: ByteByteGo
+    feed: https://blog.bytebytego.com/feed
+    url: https://blog.bytebytego.com
+  - id: netflix
+    name: Netflix Technology Blog
+    feed: https://medium.com/feed/netflix-techblog
+    url: https://netflixtechblog.com/
+  - id: citus-data
+    name: Citus Data
+    feed: https://www.citusdata.com/feed.xml
+    url: https://www.citusdata.com/blog/
+  - id: aws-architecture
+    name: AWS Architecture
+    feed: https://aws.amazon.com/blogs/architecture/feed/
+    url: https://aws.amazon.com/blogs/architecture/
+  - id: semantic-kernel
+    name: Microsoft Semantic Kernel
+    feed: https://devblogs.microsoft.com/semantic-kernel/feed/
+    url: https://devblogs.microsoft.com/semantic-kernel/
+  - id: openai-engineering
+    name: OpenAI Engineering
+    feed: https://openai.com/blog/rss.xml
+    url: https://openai.com/blog/
+  - id: pragmatic-engineer
+    name: The Pragmatic Engineer
+    feed: https://newsletter.pragmaticengineer.com/feed
+    url: https://blog.pragmaticengineer.com/
+  - id: arpit-bhayani
+    name: Arpit Bhayani
+    feed: https://arpitbhayani.me/rss.xml
+    url: https://arpitbhayani.me

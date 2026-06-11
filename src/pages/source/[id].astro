@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import Listing from '../../components/Listing.astro';
+import { sites, posts, state, postCountBySite } from '../../lib/data.mjs';
+
+export function getStaticPaths() {
+  return sites.map((s) => ({ params: { id: s.id }, props: { site: s } }));
+}
+const { site } = Astro.props;
+const st = state[site.id] ?? {};
+const sitePosts = posts.filter((p) => p.siteId === site.id).slice(0, 300);
+const count = postCountBySite.get(site.id) ?? 0;
+const oldest = sitePosts.at(-1)?.published;
+---
+<Base title={`${site.name} - devreads.fyi`}>
+  <div class="page-head">
+    <h1>{site.name}</h1>
+    <p>
+      <a href={site.url} target="_blank" rel="noopener" style="text-decoration: underline;">{site.url}</a>
+      · {count} posts{oldest ? ` · history since ${new Date(oldest).getFullYear()}` : ''}
+      · <span class={`badge ${st.status ?? 'new'}`}>{st.status ?? 'new'}</span>
+    </p>
+  </div>
+  {!st.backfilledAt && st.lastPolledAt && (
+    <p style="color: var(--muted); font-size: 13.5px;">
+      Backfill hasn't completed yet - {count} posts so far.
+      {st.lastError && ` Last attempt failed (${st.lastError}); it retries on every pull and is quarantined after 8 consecutive failures.`}
+    </p>
+  )}
+  <Listing posts={sitePosts} showSource={false} />
+</Base>

@@ -1,0 +1,47 @@
+---
+// Auto-generated weekly digest: the past 7 days of posts, at most two per
+// source so prolific blogs don't drown out the rest. Regenerates on every
+// build (4x/day), so it's always the rolling "this week in engineering".
+import Base from '../layouts/Base.astro';
+import Listing from '../components/Listing.astro';
+import { posts, siteById } from '../lib/data.mjs';
+import { support } from '../lib/site.mjs';
+
+const WEEK_MS = 7 * 86400e3;
+const MAX_PER_SOURCE = 2;
+const MAX_PICKS = 30;
+
+const since = Date.now() - WEEK_MS;
+const weekPosts = posts.filter((p) => p.published && Date.parse(p.published) >= since);
+const perSource = new Map();
+const picks = [];
+for (const p of weekPosts) {
+  const n = perSource.get(p.siteId) ?? 0;
+  if (n >= MAX_PER_SOURCE) continue;
+  perSource.set(p.siteId, n + 1);
+  picks.push(p);
+  if (picks.length >= MAX_PICKS) break;
+}
+const sourceCount = new Set(weekPosts.map((p) => p.siteId)).size;
+const weekOf = new Date(since).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+---
+<Base title="Weekly digest - devreads.fyi" description="This week in engineering blogs - a rolling 7-day digest">
+  <div class="page-head">
+    <h1 style="font-family: var(--mono);">$ this --week</h1>
+    <p>{weekPosts.length} posts from {sourceCount} sources since {weekOf} - showing up to {MAX_PER_SOURCE} per source.</p>
+  </div>
+  {support.buttondown && (
+    <form
+      action={`https://buttondown.com/api/emails/embed-subscribe/${support.buttondown}`}
+      method="post"
+      target="_blank"
+      style="display: flex; gap: 8px; margin: 14px 0 4px; max-width: 420px;"
+    >
+      <input type="email" name="email" required placeholder="you@example.com" style="flex: 1; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--fg); padding: 7px 10px; font: inherit; font-size: 13.5px;" />
+      <button type="submit" style="border: 1px solid var(--accent); border-radius: 8px; background: var(--accent-bg); color: var(--accent); font: inherit; font-size: 13.5px; padding: 7px 14px; cursor: pointer;">Get this weekly</button>
+    </form>
+  )}
+  {picks.length === 0 && <p class="search-empty">// quiet week - nothing new in the last 7 days</p>}
+  <Listing posts={picks} />
+  <span slot="footer-right"><a href={`${import.meta.env.BASE_URL}feed.xml`} style="text-decoration: underline;">RSS</a></span>
+</Base>

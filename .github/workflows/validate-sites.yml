@@ -1,0 +1,23 @@
+name: Validate sites.yml
+
+on:
+  pull_request:
+    paths:
+      - sites.yml
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate new sites (https, title, live feed with results)
+        run: node scripts/validate-sites.mjs
+        env:
+          BASE_REF: ${{ github.base_ref }}

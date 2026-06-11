@@ -1,0 +1,10 @@
+// Cloudflare Workers config: this site is static assets only (no server code).
+// The name must match the existing Worker exactly - changing it would deploy a
+// brand-new Worker instead of updating devreads.fyi.
+{
+  "name": "devreads-fyi",
+  "compatibility_date": "2026-06-01",
+  "assets": {
+    "directory": "./dist"
+  }
+}

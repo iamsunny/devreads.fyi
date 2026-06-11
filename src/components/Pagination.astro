@@ -1,0 +1,12 @@
+---
+const { page, total } = Astro.props;
+const root = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
+const prevHref = page === 2 ? root : `${root}page/${page - 1}/`;
+---
+{total > 1 && (
+  <nav class="pager" aria-label="Pagination">
+    {page > 1 && <a href={prevHref}>← Newer</a>}
+    <span>Page {page} of {total}</span>
+    {page < total && <a href={`${root}page/${page + 1}/`}>Older →</a>}
+  </nav>
+)}

@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import { posthogKey } from '../lib/site.mjs';
+---
+<Base title="Privacy - devreads.fyi">
+  <div class="page-head">
+    <h1 style="font-family: var(--mono);">$ cat privacy</h1>
+    <p>Short version: no accounts, no cookies, {posthogKey ? 'and only anonymous usage statistics' : 'no analytics'}.</p>
+  </div>
+  <div style="max-width: 560px; font-size: 14px; color: var(--muted); line-height: 1.7;">
+    <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// what stays on your device</p>
+    <p>There are no accounts and no cookies. Your theme choice, saved posts and read marker are stored in your browser's localStorage and are never transmitted anywhere. Clearing site data removes them.</p>
+    {posthogKey && (
+      <>
+        <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// usage analytics</p>
+        <p>The site measures anonymous usage with <a href="https://posthog.com" target="_blank" rel="noopener" style="text-decoration: underline;">PostHog</a> (US-hosted): page views, referrers, rough device and browser type, and which blogs readers click through to. No profiles are built for anonymous visitors, session recording is disabled, and nothing follows you across other sites.</p>
+      </>
+    )}
+    <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// what third parties see</p>
+    <p>The site is served by Cloudflare, which processes standard request logs (such as IP addresses) to deliver pages and protect against abuse. Post thumbnails load directly from each publisher's servers, so those servers see your IP address when an image loads; the referrer is suppressed. When you open a post, the link carries a <code>utm_source=devreads.fyi</code> parameter so publishers can see that this site sent them a reader. It identifies the site, not you.</p>
+    <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// if this ever changes</p>
+    <p>If the site ever adds ads or a newsletter, this page will describe exactly what that involves before it happens. Questions or concerns: email <a data-u="contact" data-d="devreads.fyi" style="text-decoration: underline; cursor: pointer;">contact [at] devreads [dot] fyi</a> or open an issue on <a href="https://github.com/iamsunny/devreads.fyi" target="_blank" rel="noopener" style="text-decoration: underline;">GitHub</a>.</p>
+  </div>
+</Base>
