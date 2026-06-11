@@ -22,7 +22,7 @@ export function GET(context) {
   <channel>
     <title>devreads.fyi</title>
     <link>${esc(context.site ?? 'http://localhost:4321')}</link>
-    <description>$ tail -f engineering — every engineering blog, one feed</description>
+    <description>$ tail -f engineering - every engineering blog, one feed</description>
 ${items}
   </channel>
 </rss>`;

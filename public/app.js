@@ -84,7 +84,7 @@
     if (!el) return;
     const items = Object.values(loadSaved()).sort((a, b) => (b.savedAt ?? '').localeCompare(a.savedAt ?? ''));
     if (!items.length) {
-      el.innerHTML = '<p class="search-empty">// nothing saved yet — press <kbd>s</kbd> on any post</p>';
+      el.innerHTML = '<p class="search-empty">// nothing saved yet - press <kbd>s</kbd> on any post</p>';
       return;
     }
     el.innerHTML = items
@@ -146,7 +146,7 @@
       await ensureIndex();
     } catch {
       resultsEl.innerHTML =
-        '<p class="search-empty">// search index not available (dev mode) — run npm run build</p>';
+        '<p class="search-empty">// search index not available (dev mode) - run npm run build</p>';
       return;
     }
     const fill = (select, values) => {
@@ -183,7 +183,7 @@
       index = await ensureIndex();
     } catch {
       resultsEl.innerHTML =
-        '<p class="search-empty">// search index not available (dev mode) — run npm run build</p>';
+        '<p class="search-empty">// search index not available (dev mode) - run npm run build</p>';
       return;
     }
     if (seq !== searchSeq) return;

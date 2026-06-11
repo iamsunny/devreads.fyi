@@ -4,6 +4,12 @@
   "private": true,
   "type": "module",
   "description": "Aggregator for engineering blogs: scheduled RSS ingest, static site with instant search",
+  "license": "MIT",
+  "author": "Sunny Sharma",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamsunny/devreads.fyi.git"
+  },
   "scripts": {
     "import:opml": "node scripts/import-opml.mjs",
     "ingest": "node ingest/run.mjs",

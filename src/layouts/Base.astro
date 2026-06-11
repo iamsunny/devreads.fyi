@@ -1,6 +1,6 @@
 ---
 import { posts } from '../lib/data.mjs';
-const { title = 'devreads.fyi — engineering reads', description = '$ tail -f engineering — every engineering blog, one feed' } = Astro.props;
+const { title = 'devreads.fyi - engineering reads', description = '$ tail -f engineering - every engineering blog, one feed' } = Astro.props;
 const root = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 const postCount = posts.length.toLocaleString('en-US');
 const faviconSvg =

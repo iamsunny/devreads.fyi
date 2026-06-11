@@ -7,12 +7,12 @@ const rows = sites
   .sort((a, b) => a.site.name.localeCompare(b.site.name));
 const healthy = rows.filter((r) => r.st.status === 'active').length;
 const failing = rows.filter((r) => ['failing', 'quarantined'].includes(r.st.status)).length;
-const fmt = (iso) => (iso ? new Date(iso).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '—');
+const fmt = (iso) => (iso ? new Date(iso).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '-');
 ---
-<Base title="Sources — devreads.fyi">
+<Base title="Sources - devreads.fyi">
   <div class="page-head">
     <h1>Sources</h1>
-    <p>{rows.length} sites · {healthy} healthy · {failing} failing. Add a site by appending one entry to <code>sites.yml</code> — it backfills automatically on the next pull.</p>
+    <p>{rows.length} sites · {healthy} healthy · {failing} failing. Add a site by appending one entry to <code>sites.yml</code> - it backfills automatically on the next pull.</p>
   </div>
   <table class="sources">
     <thead><tr><th>Source</th><th>Status</th><th>Posts</th><th>Last pull</th><th>Issue</th></tr></thead>
@@ -21,7 +21,7 @@ const fmt = (iso) => (iso ? new Date(iso).toLocaleString('en-GB', { day: 'numeri
         <tr>
           <td><a class="src" href={`${root}source/${site.id}/`} style="font-weight: 600;">{site.name}</a></td>
           <td><span class={`badge ${st.status}`}>{st.status}</span></td>
-          <td>{count || '—'}</td>
+          <td>{count || '-'}</td>
           <td>{fmt(st.lastPolledAt)}</td>
           <td style="color: var(--danger); font-size: 12px; max-width: 220px; overflow-wrap: anywhere;">{st.lastError ?? ''}</td>
         </tr>

@@ -62,10 +62,10 @@ for (const s of added) {
     const res = await fetchUrl(s.feed, { timeoutMs: 25000 });
     const feed = await parseFeed(res.text);
     const count = feed.items?.length ?? 0;
-    if (!count) fail(`${label}: feed fetched but returned 0 items — not a usable feed`);
+    if (!count) fail(`${label}: feed fetched but returned 0 items - not a usable feed`);
     else console.log(`  ok: ${label} (${count} items, "${feed.title ?? ''}")`);
   } catch (err) {
-    fail(`${label}: feed fetch failed — ${err?.message ?? err}`);
+    fail(`${label}: feed fetch failed - ${err?.message ?? err}`);
   }
 }
 

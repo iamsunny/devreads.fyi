@@ -12,7 +12,7 @@ const sitePosts = posts.filter((p) => p.siteId === site.id).slice(0, 300);
 const count = postCountBySite.get(site.id) ?? 0;
 const oldest = sitePosts.at(-1)?.published;
 ---
-<Base title={`${site.name} — devreads.fyi`}>
+<Base title={`${site.name} - devreads.fyi`}>
   <div class="page-head">
     <h1>{site.name}</h1>
     <p>
@@ -23,7 +23,7 @@ const oldest = sitePosts.at(-1)?.published;
   </div>
   {!st.backfilledAt && st.lastPolledAt && (
     <p style="color: var(--muted); font-size: 13.5px;">
-      Backfill hasn't completed yet — {count} posts so far.
+      Backfill hasn't completed yet - {count} posts so far.
       {st.lastError && ` Last attempt failed (${st.lastError}); it retries on every pull and is quarantined after 8 consecutive failures.`}
     </p>
   )}
