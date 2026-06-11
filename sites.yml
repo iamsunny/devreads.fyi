@@ -473,12 +473,7 @@ sites:
     name: GitHub
     title: GitHub
     feed: https://github.blog/engineering.atom
-    url: https://githubengineering.com/
-  - id: github-old
-    name: GitHub Old
-    title: GitHub Old
-    feed: https://github.blog/feed/
-    url: https://github.com/blog/category/engineering
+    url: https://github.blog/engineering
   - id: gleb-bahmutov
     name: Gleb Bahmutov
     title: Gleb Bahmutov
