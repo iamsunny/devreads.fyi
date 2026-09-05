@@ -2,7 +2,7 @@
   "0xadada": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:55.534Z",
+    "lastPolledAt": "2026-09-05T15:05:19.115Z",
     "etag": "W/\"6797f7d2-bea78\"",
     "lastModified": "Mon, 27 Jan 2025 21:17:06 GMT",
     "lastSuccessAt": "2026-06-11T02:55:06.853Z",
@@ -13,10 +13,10 @@
   "8th-light": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:55.600Z",
+    "lastPolledAt": "2026-09-05T15:05:19.149Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:55.600Z",
+    "lastSuccessAt": "2026-09-05T15:05:19.149Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:06.914Z",
     "backfillDepth": 25
@@ -24,10 +24,10 @@
   "advanced-web-machinery": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:55.602Z",
-    "etag": "W/\"6a384e7f-3f814\"",
-    "lastModified": "Sun, 21 Jun 2026 20:50:07 GMT",
-    "lastSuccessAt": "2026-09-05T10:28:55.602Z",
+    "lastPolledAt": "2026-09-05T15:05:19.151Z",
+    "etag": "W/\"6a384e7e-3f814\"",
+    "lastModified": "Sun, 21 Jun 2026 20:50:06 GMT",
+    "lastSuccessAt": "2026-09-05T15:05:19.151Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:06.915Z",
     "backfillDepth": 10
@@ -35,10 +35,10 @@
   "airbnb": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:55.603Z",
+    "lastPolledAt": "2026-09-05T15:05:19.152Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:55.603Z",
+    "lastSuccessAt": "2026-09-05T15:05:19.152Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:06.916Z",
     "backfillDepth": 10
@@ -46,7 +46,7 @@
   "alex-russell": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:55.604Z",
+    "lastPolledAt": "2026-09-05T15:05:19.153Z",
     "etag": "\"a67ce4623f13dc9b442c884da423dadb-ssl-df\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-04T05:25:35.729Z",
@@ -57,7 +57,7 @@
   "amit-merchant": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:55.606Z",
+    "lastPolledAt": "2026-09-05T15:05:19.155Z",
     "etag": "W/\"90da05702f3c7d767e19e6e586810c1e\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-04T11:14:38.895Z",
@@ -68,7 +68,7 @@
   "android": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:55.607Z",
+    "lastPolledAt": "2026-09-05T15:05:19.156Z",
     "etag": "W/\"6a64b1f8ceb69278a86bb5d630cb7f66ff40e2e779fae7bd075efcd9c4d93739\"",
     "lastModified": "Wed, 02 Sep 2026 20:24:56 GMT",
     "lastSuccessAt": "2026-09-03T16:20:11.790Z",
@@ -79,7 +79,7 @@
   "ariya-hidayat": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:55.608Z",
+    "lastPolledAt": "2026-09-05T15:05:19.156Z",
     "etag": "\"6a1d2062-3087\"",
     "lastModified": "Mon, 01 Jun 2026 06:02:10 GMT",
     "lastSuccessAt": "2026-06-11T02:55:06.919Z",
@@ -90,10 +90,10 @@
   "atomic-object": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:55.611Z",
-    "etag": "\"ea0f387935a26b2882e8f28d93ebb03a\"",
-    "lastModified": "Fri, 04 Sep 2026 13:13:17 GMT",
-    "lastSuccessAt": "2026-09-04T16:15:43.906Z",
+    "lastPolledAt": "2026-09-05T15:05:19.159Z",
+    "etag": "\"729705d53818be5004d8f84bc7da94ad\"",
+    "lastModified": "Sat, 05 Sep 2026 12:00:36 GMT",
+    "lastSuccessAt": "2026-09-05T15:05:19.159Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:06.920Z",
     "backfillDepth": 110
@@ -101,10 +101,10 @@
   "auth0": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:55.612Z",
+    "lastPolledAt": "2026-09-05T15:05:19.160Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:55.612Z",
+    "lastSuccessAt": "2026-09-05T15:05:19.160Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:06.921Z",
     "backfillDepth": 10
@@ -112,7 +112,7 @@
   "aws": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:56.305Z",
+    "lastPolledAt": "2026-09-05T15:05:19.395Z",
     "etag": null,
     "lastModified": "Thu, 03 Sep 2026 02:30:45 GMT",
     "lastSuccessAt": "2026-09-03T04:14:42.551Z",
@@ -123,10 +123,10 @@
   "babbel": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:56.321Z",
+    "lastPolledAt": "2026-09-05T15:05:19.481Z",
     "etag": "\"b9e0010e67eb41e27d5d544934da763e\"",
     "lastModified": "Thu, 03 Sep 2026 17:27:04 GMT",
-    "lastSuccessAt": "2026-09-05T10:28:56.321Z",
+    "lastSuccessAt": "2026-09-05T15:05:19.481Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:07.721Z",
     "backfillDepth": 10
@@ -134,7 +134,7 @@
   "bazaarvoice": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:56.420Z",
+    "lastPolledAt": "2026-09-05T15:05:19.613Z",
     "etag": "W/\"3310bb80eecaf4a907b54b3fa3f9d171\"",
     "lastModified": "Thu, 25 Jun 2026 15:50:07 GMT",
     "lastSuccessAt": "2026-06-25T18:56:20.492Z",
@@ -145,10 +145,10 @@
   "blender": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:56.716Z",
-    "etag": "\"6ba1164614428e261f8927ec66b44ebb\"",
-    "lastModified": "Sat, 05 Sep 2026 10:28:59 GMT",
-    "lastSuccessAt": "2026-09-05T10:28:56.716Z",
+    "lastPolledAt": "2026-09-05T15:05:19.824Z",
+    "etag": "\"2ef595d499f6068ac6b84428153f7965\"",
+    "lastModified": "Sat, 05 Sep 2026 15:05:22 GMT",
+    "lastSuccessAt": "2026-09-05T15:05:19.824Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:08.851Z",
     "backfillDepth": 110
@@ -156,7 +156,7 @@
   "bohops": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:56.763Z",
+    "lastPolledAt": "2026-09-05T15:05:19.849Z",
     "etag": null,
     "lastModified": "Mon, 10 Aug 2026 09:38:36 GMT",
     "lastSuccessAt": "2026-09-05T10:28:56.763Z",
@@ -167,7 +167,7 @@
   "bootstrap-com": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:56.825Z",
+    "lastPolledAt": "2026-09-05T15:05:19.887Z",
     "etag": "W/\"6a75dcfb-4dd1\"",
     "lastModified": "Fri, 07 Aug 2026 13:26:19 GMT",
     "lastSuccessAt": "2026-08-07T19:09:35.867Z",
@@ -178,7 +178,7 @@
   "canva": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:56.847Z",
+    "lastPolledAt": "2026-09-05T15:05:20.028Z",
     "etag": "W/\"35502a6136c1e76a68cf61a176db521d\"",
     "lastModified": "Fri, 04 Sep 2026 07:05:01 GMT",
     "lastSuccessAt": "2026-09-04T11:14:39.761Z",
@@ -189,7 +189,7 @@
   "carlos-becker": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:56.998Z",
+    "lastPolledAt": "2026-09-05T15:05:20.037Z",
     "etag": "W/\"9e2678a76f7328212e9dfbbd53f79905\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-05T04:16:42.098Z",
@@ -200,7 +200,7 @@
   "clever": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.046Z",
+    "lastPolledAt": "2026-09-05T15:05:20.054Z",
     "etag": "\"739c47ac92a7a664b754cfeeb9d8f2a6\"",
     "lastModified": "Wed, 07 Aug 2024 18:51:03 GMT",
     "lastSuccessAt": "2026-06-11T02:55:10.909Z",
@@ -211,7 +211,7 @@
   "cloudflare": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.105Z",
+    "lastPolledAt": "2026-09-05T15:05:20.055Z",
     "etag": null,
     "lastModified": "Thu, 03 Sep 2026 21:05:27 GMT",
     "lastSuccessAt": "2026-09-04T04:27:57.548Z",
@@ -222,10 +222,10 @@
   "codrops": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.149Z",
+    "lastPolledAt": "2026-09-05T15:05:20.057Z",
     "etag": null,
-    "lastModified": "Sat, 05 Sep 2026 10:00:39 GMT",
-    "lastSuccessAt": "2026-09-05T10:28:57.149Z",
+    "lastModified": "Sat, 05 Sep 2026 14:52:09 GMT",
+    "lastSuccessAt": "2026-09-05T15:05:20.057Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:11.137Z",
     "backfillDepth": 110
@@ -233,7 +233,7 @@
   "confluent": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.203Z",
+    "lastPolledAt": "2026-09-05T15:05:20.108Z",
     "etag": "\"fb00e24f3cf76175a54db62290eeca53-ssl-df\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-05T04:16:42.293Z",
@@ -244,7 +244,7 @@
   "dan-luu": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.236Z",
+    "lastPolledAt": "2026-09-05T15:05:20.199Z",
     "etag": "W/\"6a9a3c6d-636b93\"",
     "lastModified": "Fri, 04 Sep 2026 03:35:09 GMT",
     "lastSuccessAt": "2026-09-04T11:14:40.117Z",
@@ -255,10 +255,10 @@
   "bumble": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:58.976Z",
+    "lastPolledAt": "2026-09-05T15:05:22.348Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:58.976Z",
+    "lastSuccessAt": "2026-09-05T15:05:22.348Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:13.658Z",
     "backfillDepth": 10
@@ -266,7 +266,7 @@
   "databricks": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.257Z",
+    "lastPolledAt": "2026-09-05T15:05:20.227Z",
     "etag": "W/\"45218a9ae7dc5f15b8a982a4d28bbb66\"",
     "lastModified": "Sat, 05 Sep 2026 02:24:39 GMT",
     "lastSuccessAt": "2026-09-05T04:16:42.472Z",
@@ -277,10 +277,10 @@
   "dave-cheney": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.365Z",
+    "lastPolledAt": "2026-09-05T15:05:20.281Z",
     "etag": "W/\"50b721097a1950085839dcdc45c0d80a\"",
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:57.365Z",
+    "lastSuccessAt": "2026-09-05T15:05:20.281Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:15.351Z",
     "backfillDepth": 220
@@ -288,7 +288,7 @@
   "david-walsh": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.393Z",
+    "lastPolledAt": "2026-09-05T15:05:20.329Z",
     "etag": null,
     "lastModified": "Thu, 20 Nov 2025 00:40:04 GMT",
     "lastSuccessAt": "2026-06-11T02:55:15.375Z",
@@ -299,7 +299,7 @@
   "deliveroo": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.415Z",
+    "lastPolledAt": "2026-09-05T15:05:20.386Z",
     "etag": "W/\"69ba7e07-1626c\"",
     "lastModified": "Wed, 18 Mar 2026 10:27:19 GMT",
     "lastSuccessAt": "2026-09-04T20:42:21.828Z",
@@ -310,10 +310,10 @@
   "bbc": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:01.859Z",
+    "lastPolledAt": "2026-09-05T15:05:25.340Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:01.859Z",
+    "lastSuccessAt": "2026-09-05T15:05:25.340Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:15.776Z",
     "backfillDepth": 10
@@ -321,7 +321,7 @@
   "dennis-felsing": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.421Z",
+    "lastPolledAt": "2026-09-05T15:05:20.436Z",
     "etag": "W/\"6a0feab8-13dd77\"",
     "lastModified": "Fri, 22 May 2026 05:33:44 GMT",
     "lastSuccessAt": "2026-06-11T02:55:16.051Z",
@@ -332,10 +332,10 @@
   "discord": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.460Z",
+    "lastPolledAt": "2026-09-05T15:05:20.482Z",
     "etag": null,
     "lastModified": "Fri, 04 Sep 2026 08:54:15 GMT",
-    "lastSuccessAt": "2026-09-05T10:28:57.460Z",
+    "lastSuccessAt": "2026-09-05T15:05:20.482Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:16.129Z",
     "backfillDepth": 100
@@ -343,10 +343,10 @@
   "docker": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.490Z",
+    "lastPolledAt": "2026-09-05T15:05:20.546Z",
     "etag": "\"efa2f5d537406dc9ff46a2a5ac33be3d\"",
     "lastModified": "Fri, 04 Sep 2026 19:12:32 GMT",
-    "lastSuccessAt": "2026-09-05T10:28:57.490Z",
+    "lastSuccessAt": "2026-09-05T15:05:20.546Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:16.562Z",
     "backfillDepth": 110
@@ -354,7 +354,7 @@
   "domenico-luciani": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.585Z",
+    "lastPolledAt": "2026-09-05T15:05:20.587Z",
     "etag": "W/\"6a7000c9-60f2d\"",
     "lastModified": "Mon, 03 Aug 2026 02:45:29 GMT",
     "lastSuccessAt": "2026-08-03T03:47:43.620Z",
@@ -365,10 +365,10 @@
   "drew-devault": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.592Z",
+    "lastPolledAt": "2026-09-05T15:05:20.640Z",
     "etag": null,
     "lastModified": "Fri, 04 Sep 2026 10:42:43 GMT",
-    "lastSuccessAt": "2026-09-05T10:28:57.592Z",
+    "lastSuccessAt": "2026-09-05T15:05:20.640Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:16.949Z",
     "backfillDepth": 32
@@ -376,10 +376,10 @@
   "dropbox": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.600Z",
+    "lastPolledAt": "2026-09-05T15:05:20.649Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:57.600Z",
+    "lastSuccessAt": "2026-09-05T15:05:20.649Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:17.061Z",
     "backfillDepth": 10
@@ -387,10 +387,10 @@
   "ebay": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.651Z",
+    "lastPolledAt": "2026-09-05T15:05:20.669Z",
     "etag": "\"66c6e36f08063053ddd7dabca42d10be-gzip\"",
-    "lastModified": "Sat, 05 Sep 2026 09:33:39 GMT",
-    "lastSuccessAt": "2026-09-05T10:28:57.651Z",
+    "lastModified": "Sat, 05 Sep 2026 14:34:07 GMT",
+    "lastSuccessAt": "2026-09-05T15:05:20.669Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:17.155Z",
     "backfillDepth": 30
@@ -398,7 +398,7 @@
   "eric-lippert": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.866Z",
+    "lastPolledAt": "2026-09-05T15:05:20.958Z",
     "etag": null,
     "lastModified": "Sat, 05 Sep 2026 01:14:22 GMT",
     "lastSuccessAt": "2026-09-05T10:28:57.866Z",
@@ -409,7 +409,7 @@
   "erik-runyon": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.951Z",
+    "lastPolledAt": "2026-09-05T15:05:21.060Z",
     "etag": "\"cfd6cdf8ee94ba4ebc26a51bd4eb256f-ssl-df\"",
     "lastModified": null,
     "lastSuccessAt": "2026-06-21T18:44:05.965Z",
@@ -420,10 +420,10 @@
   "criteo": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:07.271Z",
+    "lastPolledAt": "2026-09-05T15:05:30.797Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:07.271Z",
+    "lastSuccessAt": "2026-09-05T15:05:30.797Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:19.935Z",
     "backfillDepth": 10
@@ -431,7 +431,7 @@
   "erlang-solutions": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.999Z",
+    "lastPolledAt": "2026-09-05T15:05:21.148Z",
     "etag": "\"d4c0aa01f5e3bbea0e9a8f0b55e7657a\"",
     "lastModified": "Thu, 03 Sep 2026 13:51:45 GMT",
     "lastSuccessAt": "2026-09-03T16:20:14.430Z",
@@ -442,7 +442,7 @@
   "evil-martians": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:58.159Z",
+    "lastPolledAt": "2026-09-05T15:05:21.223Z",
     "etag": "\"a6b866885a81c18339ab332412acfbe7-ssl-df\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-05T04:16:43.244Z",
@@ -453,7 +453,7 @@
   "facebook": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:58.209Z",
+    "lastPolledAt": "2026-09-05T15:05:21.321Z",
     "etag": "W/\"f6284f622e23570ad98a9a9a2424bac5\"",
     "lastModified": "Wed, 02 Sep 2026 23:29:52 GMT",
     "lastSuccessAt": "2026-09-03T16:20:14.607Z",
@@ -464,10 +464,10 @@
   "filippo-valsorda": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:58.312Z",
+    "lastPolledAt": "2026-09-05T15:05:21.409Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:58.312Z",
+    "lastSuccessAt": "2026-09-05T15:05:21.409Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:22.767Z",
     "backfillDepth": 10
@@ -475,10 +475,10 @@
   "freek-van-der-herten": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:58.492Z",
+    "lastPolledAt": "2026-09-05T15:05:21.545Z",
     "etag": null,
-    "lastModified": "Sat, 05 Sep 2026 10:21:48 GMT",
-    "lastSuccessAt": "2026-09-05T10:28:58.492Z",
+    "lastModified": "Sat, 05 Sep 2026 14:58:16 GMT",
+    "lastSuccessAt": "2026-09-05T15:05:21.545Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:22.887Z",
     "backfillDepth": 20
@@ -486,7 +486,7 @@
   "github": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:58.599Z",
+    "lastPolledAt": "2026-09-05T15:05:21.602Z",
     "etag": "W/\"77dd5b03216d81906f605fc17782fad1\"",
     "lastModified": "Fri, 04 Sep 2026 21:39:46 GMT",
     "lastSuccessAt": "2026-09-05T04:16:43.520Z",
@@ -497,7 +497,7 @@
   "gleb-bahmutov": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:58.632Z",
+    "lastPolledAt": "2026-09-05T15:05:21.683Z",
     "etag": "W/\"6a9774ab-9538b\"",
     "lastModified": "Wed, 02 Sep 2026 00:58:19 GMT",
     "lastSuccessAt": "2026-09-02T04:20:21.570Z",
@@ -508,10 +508,10 @@
   "gocardless": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:58.652Z",
+    "lastPolledAt": "2026-09-05T15:05:21.693Z",
     "etag": "W/\"1c59d3-1a06cbde760\"",
     "lastModified": "Fri, 04 Sep 2026 14:06:20 GMT",
-    "lastSuccessAt": "2026-09-05T10:28:58.652Z",
+    "lastSuccessAt": "2026-09-05T15:05:21.693Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:24.461Z",
     "backfillDepth": 500
@@ -519,7 +519,7 @@
   "gosquared": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:58.846Z",
+    "lastPolledAt": "2026-09-05T15:05:21.884Z",
     "etag": "\"324377b7261cc3a4beb1611901edd124\"",
     "lastModified": "Wed, 11 Mar 2026 15:47:53 GMT",
     "lastSuccessAt": "2026-06-11T02:55:24.604Z",
@@ -530,7 +530,7 @@
   "graham-king": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:58.923Z",
+    "lastPolledAt": "2026-09-05T15:05:21.985Z",
     "etag": "\"68a9ff14-189a7\"",
     "lastModified": "Sat, 23 Aug 2025 17:49:08 GMT",
     "lastSuccessAt": "2026-06-11T02:55:26.607Z",
@@ -541,10 +541,10 @@
   "blinkit": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:59.027Z",
+    "lastPolledAt": "2026-09-05T15:05:22.072Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:59.027Z",
+    "lastSuccessAt": "2026-09-05T15:05:22.072Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:26.797Z",
     "backfillDepth": 10
@@ -552,10 +552,10 @@
   "eric-elliot": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:10.154Z",
+    "lastPolledAt": "2026-09-05T15:05:33.501Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:10.154Z",
+    "lastSuccessAt": "2026-09-05T15:05:33.501Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:27.009Z",
     "backfillDepth": 10
@@ -563,10 +563,10 @@
   "guardian": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:59.358Z",
-    "etag": "W/\"hash1308817198255462584\"",
+    "lastPolledAt": "2026-09-05T15:05:22.812Z",
+    "etag": "W/\"hash-2657149418311030956\"",
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:59.358Z",
+    "lastSuccessAt": "2026-09-05T15:05:22.812Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:28.013Z",
     "backfillDepth": 20
@@ -574,10 +574,10 @@
   "haptik": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:59.770Z",
+    "lastPolledAt": "2026-09-05T15:05:22.832Z",
     "etag": "W/\"c3192a7e9c9d2a5ccf5917f86ade9d4a\"",
     "lastModified": "Tue, 11 Aug 2026 08:07:03 GMT",
-    "lastSuccessAt": "2026-09-05T10:28:59.770Z",
+    "lastSuccessAt": "2026-09-05T15:05:22.832Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:28.678Z",
     "backfillDepth": 10
@@ -585,7 +585,7 @@
   "hashrocket": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:00.065Z",
+    "lastPolledAt": "2026-09-05T15:05:22.840Z",
     "etag": "W/\"c746ccf6eb9a4b9b011ebf3e1f21e127\"",
     "lastModified": "Sat, 14 Mar 2026 14:07:48 GMT",
     "lastSuccessAt": "2026-06-11T02:55:28.690Z",
@@ -596,10 +596,10 @@
   "hayden-james": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:00.078Z",
+    "lastPolledAt": "2026-09-05T15:05:22.887Z",
     "etag": "W/\"695d5ddf6a3fe5d38485a5c3d5f49dd8\"",
     "lastModified": "Thu, 03 Sep 2026 18:41:58 GMT",
-    "lastSuccessAt": "2026-09-05T10:29:00.078Z",
+    "lastSuccessAt": "2026-09-05T15:05:22.887Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:29.047Z",
     "backfillDepth": 20
@@ -607,7 +607,7 @@
   "henrik-lau-eriksson": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:00.152Z",
+    "lastPolledAt": "2026-09-05T15:05:23.327Z",
     "etag": "W/\"66efe650-26854\"",
     "lastModified": "Sun, 22 Sep 2024 09:41:36 GMT",
     "lastSuccessAt": "2026-06-11T02:55:29.086Z",
@@ -618,10 +618,10 @@
   "expedia": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:12.838Z",
+    "lastPolledAt": "2026-09-05T15:05:36.466Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:12.838Z",
+    "lastSuccessAt": "2026-09-05T15:05:36.466Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:29.447Z",
     "backfillDepth": 10
@@ -629,7 +629,7 @@
   "henrik-warne": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:00.312Z",
+    "lastPolledAt": "2026-09-05T15:05:23.414Z",
     "etag": null,
     "lastModified": "Sat, 15 Aug 2026 15:50:43 GMT",
     "lastSuccessAt": "2026-09-05T10:29:00.312Z",
@@ -640,7 +640,7 @@
   "hostinger": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:00.535Z",
+    "lastPolledAt": "2026-09-05T15:05:23.582Z",
     "etag": "W/\"3bc72317f45233db90cbafe2f113728f\"",
     "lastModified": "Fri, 04 Sep 2026 17:43:40 GMT",
     "lastSuccessAt": "2026-09-04T20:42:24.777Z",
@@ -651,10 +651,10 @@
   "feedzai": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:15.549Z",
+    "lastPolledAt": "2026-09-05T15:05:39.255Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:15.549Z",
+    "lastSuccessAt": "2026-09-05T15:05:39.255Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:31.665Z",
     "backfillDepth": 10
@@ -662,7 +662,7 @@
   "ilya-grigorik": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:00.817Z",
+    "lastPolledAt": "2026-09-05T15:05:23.723Z",
     "etag": "W/\"ab2a-7VVhUSOdP8I1PCPLCaDitgCcIZE\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-03T11:06:02.202Z",
@@ -673,7 +673,7 @@
   "jane-street": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:00.876Z",
+    "lastPolledAt": "2026-09-05T15:05:23.750Z",
     "etag": "\"6a9b097a-123f3\"",
     "lastModified": "Fri, 04 Sep 2026 18:10:02 GMT",
     "lastSuccessAt": "2026-09-04T20:42:25.553Z",
@@ -684,7 +684,7 @@
   "jeff-atwood": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:00.897Z",
+    "lastPolledAt": "2026-09-05T15:05:23.820Z",
     "etag": "W/\"3ca20-AShFrLA/Lq2LIewrhCvUn8hiV8o\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-03T11:06:02.698Z",
@@ -695,10 +695,10 @@
   "groupon": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:18.430Z",
+    "lastPolledAt": "2026-09-05T15:05:42.099Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:18.430Z",
+    "lastSuccessAt": "2026-09-05T15:05:42.099Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:33.795Z",
     "backfillDepth": 10
@@ -706,7 +706,7 @@
   "jeremy-kun": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:00.988Z",
+    "lastPolledAt": "2026-09-05T15:05:23.915Z",
     "etag": "\"ddc22f968627fa786e808b86cdfeba38-ssl-df\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-04T20:42:25.934Z",
@@ -717,10 +717,10 @@
   "jerry-gamblin": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:01.088Z",
+    "lastPolledAt": "2026-09-05T15:05:24.066Z",
     "etag": "\"9da2045a07b3b600c7e307b649327e01-gzip\"",
     "lastModified": "Wed, 12 Aug 2026 14:48:18 GMT",
-    "lastSuccessAt": "2026-09-05T10:29:01.088Z",
+    "lastSuccessAt": "2026-09-05T15:05:24.066Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:34.524Z",
     "backfillDepth": 110
@@ -728,7 +728,7 @@
   "jesal-gadhia": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:01.370Z",
+    "lastPolledAt": "2026-09-05T15:05:24.269Z",
     "etag": "W/\"68fd1262-26a6e\"",
     "lastModified": "Sat, 25 Oct 2025 18:09:38 GMT",
     "lastSuccessAt": "2026-06-11T02:55:34.972Z",
@@ -739,7 +739,7 @@
   "joe-nelson": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:01.940Z",
+    "lastPolledAt": "2026-09-05T15:05:24.810Z",
     "etag": null,
     "lastModified": "Mon, 22 Jun 2026 15:22:39 GMT",
     "lastSuccessAt": "2026-07-04T19:33:58.099Z",
@@ -750,7 +750,7 @@
   "jon-skeet": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:02.039Z",
+    "lastPolledAt": "2026-09-05T15:05:25.079Z",
     "etag": null,
     "lastModified": "Mon, 24 Aug 2026 13:13:46 GMT",
     "lastSuccessAt": "2026-09-05T10:29:02.039Z",
@@ -761,10 +761,10 @@
   "helpshift": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:21.307Z",
+    "lastPolledAt": "2026-09-05T15:05:44.976Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:21.307Z",
+    "lastSuccessAt": "2026-09-05T15:05:44.976Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:36.230Z",
     "backfillDepth": 10
@@ -772,7 +772,7 @@
   "jonathan-snook": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:02.144Z",
+    "lastPolledAt": "2026-09-05T15:05:25.197Z",
     "lastError": null,
     "etag": "\"7df8-659f8daecaa69\"",
     "lastModified": "Wed, 26 Aug 2026 20:13:39 GMT",
@@ -783,7 +783,7 @@
   "jooq": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:02.209Z",
+    "lastPolledAt": "2026-09-05T15:05:25.573Z",
     "etag": "W/\"9d60be625f327b7db3cfe112cfb73c89\"",
     "lastModified": "Thu, 07 May 2026 11:26:46 GMT",
     "lastSuccessAt": "2026-06-11T02:55:36.736Z",
@@ -794,7 +794,7 @@
   "josh-sherman": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:02.560Z",
+    "lastPolledAt": "2026-09-05T15:05:25.651Z",
     "etag": "\"6a943a06-d32c\"",
     "lastModified": "Sun, 30 Aug 2026 14:11:18 GMT",
     "lastSuccessAt": "2026-08-30T16:36:05.304Z",
@@ -805,7 +805,7 @@
   "julia-evans": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:02.662Z",
+    "lastPolledAt": "2026-09-05T15:05:25.887Z",
     "etag": "\"954fb8efee8e9e490fff25630afd1ff8-ssl-df\"",
     "lastModified": null,
     "lastSuccessAt": "2026-07-22T14:18:07.734Z",
@@ -816,7 +816,7 @@
   "k-harrison": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:02.671Z",
+    "lastPolledAt": "2026-09-05T15:05:25.926Z",
     "etag": "W/\"6a871e60-210bb\"",
     "lastModified": "Thu, 20 Aug 2026 15:33:52 GMT",
     "lastSuccessAt": "2026-08-20T18:54:27.285Z",
@@ -827,10 +827,10 @@
   "housing-com": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:24.200Z",
+    "lastPolledAt": "2026-09-05T15:05:47.960Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:24.200Z",
+    "lastSuccessAt": "2026-09-05T15:05:47.960Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:38.059Z",
     "backfillDepth": 10
@@ -838,7 +838,7 @@
   "kevin-burke": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:02.701Z",
+    "lastPolledAt": "2026-09-05T15:05:26.146Z",
     "etag": "\"7c1502ba52fe61c6b5caf7204145aeff\"",
     "lastModified": "Wed, 17 Jun 2026 19:59:27 GMT",
     "lastSuccessAt": "2026-06-18T01:24:07.545Z",
@@ -849,7 +849,7 @@
   "kogan-com": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:03.307Z",
+    "lastPolledAt": "2026-09-05T15:05:26.692Z",
     "etag": "W/\"ef92bec37fe646c77d3ceeea398ed419\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-05T04:16:47.575Z",
@@ -860,7 +860,7 @@
   "kotlin": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:03.539Z",
+    "lastPolledAt": "2026-09-05T15:05:27.166Z",
     "etag": "\"ad8a920bce26679932866a489e948e20\"",
     "lastModified": "Fri, 04 Sep 2026 13:59:03 GMT",
     "lastSuccessAt": "2026-09-04T16:15:50.710Z",
@@ -871,7 +871,7 @@
   "kyle-kingsbury": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:03.577Z",
+    "lastPolledAt": "2026-09-05T15:05:27.167Z",
     "etag": "e937d9a6400a156c4d8e9dadfe1db0ab1ab38250",
     "lastModified": null,
     "lastSuccessAt": "2026-06-12T18:53:39.938Z",
@@ -882,10 +882,10 @@
   "jobteaser": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:26.995Z",
+    "lastPolledAt": "2026-09-05T15:05:50.632Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:26.995Z",
+    "lastSuccessAt": "2026-09-05T15:05:50.632Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:40.610Z",
     "backfillDepth": 10
@@ -893,10 +893,10 @@
   "laravel": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:03.893Z",
-    "etag": "\"6a9be60a-3e11\"",
-    "lastModified": "Sat, 05 Sep 2026 09:51:06 GMT",
-    "lastSuccessAt": "2026-09-05T10:29:03.893Z",
+    "lastPolledAt": "2026-09-05T15:05:27.204Z",
+    "etag": "\"6a9c2da4-3e11\"",
+    "lastModified": "Sat, 05 Sep 2026 14:56:36 GMT",
+    "lastSuccessAt": "2026-09-05T15:05:27.204Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:40.863Z",
     "backfillDepth": 5
@@ -904,7 +904,7 @@
   "luciano-mammino": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:04.070Z",
+    "lastPolledAt": "2026-09-05T15:05:27.407Z",
     "etag": "W/\"6a9b5f8e-4246e0\"",
     "lastModified": "Sat, 05 Sep 2026 00:17:18 GMT",
     "lastSuccessAt": "2026-09-05T04:16:48.547Z",
@@ -915,10 +915,10 @@
   "maptiler": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:04.557Z",
+    "lastPolledAt": "2026-09-05T15:05:27.980Z",
     "etag": "W/\"21e21-1a06b748af8\"",
     "lastModified": "Fri, 04 Sep 2026 08:06:35 GMT",
-    "lastSuccessAt": "2026-09-05T10:29:04.557Z",
+    "lastSuccessAt": "2026-09-05T15:05:27.980Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:41.698Z",
     "backfillDepth": 236
@@ -926,7 +926,7 @@
   "marcelo-rinesi": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:04.626Z",
+    "lastPolledAt": "2026-09-05T15:05:28.030Z",
     "etag": null,
     "lastModified": "Sat, 05 Sep 2026 04:59:37 GMT",
     "lastSuccessAt": "2026-09-05T10:29:04.626Z",
@@ -937,7 +937,7 @@
   "martin-fowler": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:04.770Z",
+    "lastPolledAt": "2026-09-05T15:05:28.183Z",
     "etag": "\"2f3e8-65a8736476f80\"",
     "lastModified": "Wed, 02 Sep 2026 22:03:58 GMT",
     "lastSuccessAt": "2026-09-03T04:14:52.469Z",
@@ -948,7 +948,7 @@
   "mary-rose-cook": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:04.818Z",
+    "lastPolledAt": "2026-09-05T15:05:28.298Z",
     "etag": "W/\"6a38bc89-9d81\"",
     "lastModified": "Mon, 22 Jun 2026 04:39:37 GMT",
     "lastSuccessAt": "2026-06-22T08:25:02.315Z",
@@ -959,7 +959,7 @@
   "matt-aimonetti": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.055Z",
+    "lastPolledAt": "2026-09-05T15:05:28.447Z",
     "etag": "\"0005aef87713e21f0b32d56cfd1a6374-ssl-df\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-05T04:16:49.623Z",
@@ -970,7 +970,7 @@
   "matt-cutts": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.126Z",
+    "lastPolledAt": "2026-09-05T15:05:28.453Z",
     "etag": "\"273df2e9bb06890792ea0c854cbcd56c\"",
     "lastModified": null,
     "lastSuccessAt": "2026-06-11T02:55:43.382Z",
@@ -981,7 +981,7 @@
   "matthew-green": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.203Z",
+    "lastPolledAt": "2026-09-05T15:05:28.543Z",
     "etag": null,
     "lastModified": "Fri, 21 Aug 2026 11:15:17 GMT",
     "lastSuccessAt": "2026-09-05T10:29:05.203Z",
@@ -992,10 +992,10 @@
   "kirill-shevchenko": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:29.656Z",
+    "lastPolledAt": "2026-09-05T15:05:53.601Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:29.656Z",
+    "lastSuccessAt": "2026-09-05T15:05:53.601Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:43.789Z",
     "backfillDepth": 10
@@ -1003,10 +1003,10 @@
   "medium": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.227Z",
+    "lastPolledAt": "2026-09-05T15:05:28.562Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:05.227Z",
+    "lastSuccessAt": "2026-09-05T15:05:28.562Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:44.011Z",
     "backfillDepth": 10
@@ -1014,7 +1014,7 @@
   "microsoft-python-engineering": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.270Z",
+    "lastPolledAt": "2026-09-05T15:05:28.657Z",
     "etag": "W/\"ee27e29801a361af10ce7082a634e4a6\"",
     "lastModified": "Thu, 03 Sep 2026 19:32:43 GMT",
     "lastSuccessAt": "2026-09-03T20:56:26.384Z",
@@ -1025,7 +1025,7 @@
   "monica-dinculescu": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.289Z",
+    "lastPolledAt": "2026-09-05T15:05:28.693Z",
     "lastError": null,
     "etag": "W/\"6a8dfd86-c54ee\"",
     "lastModified": "Tue, 25 Aug 2026 20:39:34 GMT",
@@ -1036,7 +1036,7 @@
   "monstermuffin": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.522Z",
+    "lastPolledAt": "2026-09-05T15:05:28.713Z",
     "etag": "W/\"ca77709e76bac629c3f091c8feb3915e\"",
     "lastModified": null,
     "lastSuccessAt": "2026-08-06T14:31:04.737Z",
@@ -1047,7 +1047,7 @@
   "mozilla-hacks": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.568Z",
+    "lastPolledAt": "2026-09-05T15:05:28.951Z",
     "etag": "\"96c4593ca1f564757a09b63a9c563900\"",
     "lastModified": "Mon, 24 Aug 2026 15:50:35 GMT",
     "lastSuccessAt": "2026-08-24T18:53:39.532Z",
@@ -1058,7 +1058,7 @@
   "nelson-elhage": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.635Z",
+    "lastPolledAt": "2026-09-05T15:05:29.040Z",
     "etag": "\"5b2ae9eec2e293572f6ae5a000bd0161-ssl-df\"",
     "lastModified": null,
     "lastSuccessAt": "2026-08-30T20:58:53.395Z",
@@ -1069,7 +1069,7 @@
   "nic-raboy": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.699Z",
+    "lastPolledAt": "2026-09-05T15:05:29.104Z",
     "etag": "\"3bb647fadbdb1b30a4426009e80f9846-ssl-df\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-04T20:42:29.396Z",
@@ -1080,7 +1080,7 @@
   "nordic-apis": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.773Z",
+    "lastPolledAt": "2026-09-05T15:05:29.161Z",
     "etag": "\"bdaa8a8d444dca6ab78289cc33d6e795\"",
     "lastModified": "Fri, 04 Sep 2026 13:07:18 GMT",
     "lastSuccessAt": "2026-09-04T16:15:53.279Z",
@@ -1091,7 +1091,7 @@
   "nvidia": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.838Z",
+    "lastPolledAt": "2026-09-05T15:05:29.202Z",
     "etag": "\"fe1b228870bb484582271e19b7cc0c75-gzip\"",
     "lastModified": "Fri, 04 Sep 2026 19:51:11 GMT",
     "lastSuccessAt": "2026-09-04T20:42:29.447Z",
@@ -1102,7 +1102,7 @@
   "octo-technology": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.876Z",
+    "lastPolledAt": "2026-09-05T15:05:29.245Z",
     "etag": "W/\"4261c18f24267aa35a734e790122d30e\"",
     "lastModified": "Fri, 04 Sep 2026 14:42:02 GMT",
     "lastSuccessAt": "2026-09-04T16:15:53.403Z",
@@ -1113,7 +1113,7 @@
   "okta": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.886Z",
+    "lastPolledAt": "2026-09-05T15:05:29.267Z",
     "etag": "W/\"36e5e946f4fea347da8ed79a689c9aae\"",
     "lastModified": "Wed, 26 Aug 2026 14:58:57 GMT",
     "lastSuccessAt": "2026-08-26T19:58:26.755Z",
@@ -1124,7 +1124,7 @@
   "ole-begemann": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.918Z",
+    "lastPolledAt": "2026-09-05T15:05:29.345Z",
     "etag": "\"40598-647a52a7e7019-gzip\"",
     "lastModified": "Mon, 05 Jan 2026 14:49:28 GMT",
     "lastSuccessAt": "2026-06-11T02:55:49.094Z",
@@ -1135,7 +1135,7 @@
   "net": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.689Z",
+    "lastPolledAt": "2026-09-05T15:05:29.094Z",
     "etag": "W/\"c497eca7cc0baeea48723874d9cda213\"",
     "lastModified": "Fri, 04 Sep 2026 17:49:05 GMT",
     "lastSuccessAt": "2026-09-04T20:42:29.432Z",
@@ -1146,7 +1146,7 @@
   "opendns": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:05.936Z",
+    "lastPolledAt": "2026-09-05T15:05:29.361Z",
     "etag": "\"06b444ec39274b28d4d90588cdd7c4dd\"",
     "lastModified": "Sun, 30 Aug 2026 19:49:23 GMT",
     "lastSuccessAt": "2026-08-31T22:45:40.182Z",
@@ -1157,10 +1157,10 @@
   "palantir": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:06.014Z",
+    "lastPolledAt": "2026-09-05T15:05:29.387Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:06.014Z",
+    "lastSuccessAt": "2026-09-05T15:05:29.387Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:50.256Z",
     "backfillDepth": 10
@@ -1168,7 +1168,7 @@
   "paul-lewis": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:06.268Z",
+    "lastPolledAt": "2026-09-05T15:05:29.439Z",
     "etag": "W/\"6999d842-1133\"",
     "lastModified": "Sat, 21 Feb 2026 16:07:30 GMT",
     "lastSuccessAt": "2026-06-11T02:55:50.534Z",
@@ -1179,10 +1179,10 @@
   "paypal": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:32.269Z",
+    "lastPolledAt": "2026-09-05T15:05:56.230Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:32.269Z",
+    "lastSuccessAt": "2026-09-05T15:05:56.230Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:51.304Z",
     "backfillDepth": 10
@@ -1190,10 +1190,10 @@
   "philip-walton": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:06.358Z",
+    "lastPolledAt": "2026-09-05T15:05:29.663Z",
     "etag": null,
     "lastModified": "Mon, 24 Aug 2026 08:24:23 GMT",
-    "lastSuccessAt": "2026-09-05T10:29:06.358Z",
+    "lastSuccessAt": "2026-09-05T15:05:29.663Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:53.034Z",
     "backfillDepth": 44
@@ -1201,10 +1201,10 @@
   "postmark": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:07.655Z",
+    "lastPolledAt": "2026-09-05T15:05:31.001Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:07.655Z",
+    "lastSuccessAt": "2026-09-05T15:05:31.001Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:54.096Z",
     "backfillDepth": 10
@@ -1212,10 +1212,10 @@
   "pinterest": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:34.932Z",
+    "lastPolledAt": "2026-09-05T15:05:58.938Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:34.932Z",
+    "lastSuccessAt": "2026-09-05T15:05:58.938Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:54.499Z",
     "backfillDepth": 10
@@ -1223,7 +1223,7 @@
   "pubnub": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:07.986Z",
+    "lastPolledAt": "2026-09-05T15:05:31.337Z",
     "etag": null,
     "lastModified": "Fri, 04 Sep 2026 16:15:55 GMT",
     "lastSuccessAt": "2026-09-04T16:15:55.773Z",
@@ -1234,7 +1234,7 @@
   "ray-wenderlich": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:08.004Z",
+    "lastPolledAt": "2026-09-05T15:05:31.355Z",
     "etag": "W/\"00d0234f7573a838d54616618259e5cb\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-04T20:42:31.574Z",
@@ -1245,7 +1245,7 @@
   "rea-group": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:08.814Z",
+    "lastPolledAt": "2026-09-05T15:05:32.260Z",
     "etag": null,
     "lastModified": "Fri, 04 Sep 2026 20:00:00 GMT",
     "lastSuccessAt": "2026-09-04T20:42:32.162Z",
@@ -1256,7 +1256,7 @@
   "raymond-chen": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:08.800Z",
+    "lastPolledAt": "2026-09-05T15:05:32.251Z",
     "etag": "W/\"4686e60ea65ad8fbea16eb910aaec4a8\"",
     "lastModified": "Sat, 05 Sep 2026 04:19:25 GMT",
     "lastSuccessAt": "2026-09-05T10:29:08.800Z",
@@ -1267,10 +1267,10 @@
   "real-python": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:09.720Z",
+    "lastPolledAt": "2026-09-05T15:05:33.113Z",
     "etag": null,
-    "lastModified": "Sat, 05 Sep 2026 10:25:55 GMT",
-    "lastSuccessAt": "2026-09-05T10:29:09.720Z",
+    "lastModified": "Sat, 05 Sep 2026 15:00:03 GMT",
+    "lastSuccessAt": "2026-09-05T15:05:33.113Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:57.275Z",
     "backfillDepth": 50
@@ -1278,18 +1278,18 @@
   "postman": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:37.589Z",
+    "lastPolledAt": "2026-09-05T15:06:01.833Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:37.589Z",
+    "lastSuccessAt": "2026-09-05T15:06:01.833Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:57.676Z",
     "backfillDepth": 10
   },
   "risingstack": {
-    "status": "failing",
-    "failCount": 1,
-    "lastPolledAt": "2026-09-05T10:29:09.850Z",
+    "status": "active",
+    "failCount": 0,
+    "lastPolledAt": "2026-09-05T15:05:33.210Z",
     "etag": null,
     "lastModified": "Mon, 03 Aug 2026 06:37:45 GMT",
     "lastSuccessAt": "2026-08-03T15:10:50.958Z",
@@ -1300,10 +1300,10 @@
   "rob-allen": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:10.336Z",
+    "lastPolledAt": "2026-09-05T15:05:33.965Z",
     "etag": "\"ead3077798b40e00fe374664607891d3\"",
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:10.336Z",
+    "lastSuccessAt": "2026-09-05T15:05:33.965Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:58.652Z",
     "backfillDepth": 110
@@ -1311,7 +1311,7 @@
   "robin-ward": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:11.017Z",
+    "lastPolledAt": "2026-09-05T15:05:34.788Z",
     "etag": "\"a3c2be057313b5beaed3fa47fa4cef91-ssl-df\"",
     "lastModified": null,
     "lastSuccessAt": "2026-08-21T18:51:14.207Z",
@@ -1322,7 +1322,7 @@
   "rosehosting": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:11.252Z",
+    "lastPolledAt": "2026-09-05T15:05:34.804Z",
     "etag": "W/\"241c262b600b76dbdabf4bae43086629\"",
     "lastModified": "Wed, 12 Aug 2026 17:30:00 GMT",
     "lastSuccessAt": "2026-08-13T07:47:40.431Z",
@@ -1333,7 +1333,7 @@
   "ruslan-spivak": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:11.353Z",
+    "lastPolledAt": "2026-09-05T15:05:34.839Z",
     "etag": "W/\"69e61539-197649\"",
     "lastModified": "Mon, 20 Apr 2026 11:59:53 GMT",
     "lastSuccessAt": "2026-06-11T02:55:59.278Z",
@@ -1344,7 +1344,7 @@
   "rust": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:11.736Z",
+    "lastPolledAt": "2026-09-05T15:05:35.072Z",
     "etag": "W/\"6a997328-20e4e\"",
     "lastModified": "Thu, 03 Sep 2026 13:16:24 GMT",
     "lastSuccessAt": "2026-09-03T16:20:27.146Z",
@@ -1355,7 +1355,7 @@
   "schakko": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:11.751Z",
+    "lastPolledAt": "2026-09-05T15:05:35.085Z",
     "etag": "\"23a1c1d0d7f7cef70d09d55cf80537a9\"",
     "lastModified": "Wed, 21 May 2025 08:14:43 GMT",
     "lastSuccessAt": "2026-06-11T02:55:59.625Z",
@@ -1366,10 +1366,10 @@
   "serverless": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:12.618Z",
+    "lastPolledAt": "2026-09-05T15:05:35.209Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:12.618Z",
+    "lastSuccessAt": "2026-09-05T15:05:35.209Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:55:59.853Z",
     "backfillDepth": 423
@@ -1377,10 +1377,10 @@
   "sitepoint": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:13.050Z",
+    "lastPolledAt": "2026-09-05T15:05:35.663Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:13.050Z",
+    "lastSuccessAt": "2026-09-05T15:05:35.663Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:00.436Z",
     "backfillDepth": 100
@@ -1388,7 +1388,7 @@
   "slack": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:13.146Z",
+    "lastPolledAt": "2026-09-05T15:05:35.967Z",
     "etag": "W/\"9e62e1ce5207e2161c803dac900dd615\"",
     "lastModified": "Tue, 14 Jul 2026 16:10:08 GMT",
     "lastSuccessAt": "2026-07-14T19:40:07.760Z",
@@ -1399,7 +1399,7 @@
   "small-improvements": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:13.238Z",
+    "lastPolledAt": "2026-09-05T15:05:36.100Z",
     "etag": "W/\"d23fc46e5aafcd8ef1e36a559457f417\"",
     "lastModified": "Tue, 12 May 2026 13:59:59 GMT",
     "lastSuccessAt": "2026-06-11T02:56:01.515Z",
@@ -1410,7 +1410,7 @@
   "soundcloud": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:13.379Z",
+    "lastPolledAt": "2026-09-05T15:05:36.144Z",
     "etag": "W/\"6a96c821-318103\"",
     "lastModified": "Tue, 01 Sep 2026 12:42:09 GMT",
     "lastSuccessAt": "2026-09-01T16:32:15.262Z",
@@ -1421,10 +1421,10 @@
   "spotify": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:13.886Z",
+    "lastPolledAt": "2026-09-05T15:05:36.692Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:13.886Z",
+    "lastSuccessAt": "2026-09-05T15:05:36.692Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:02.097Z",
     "backfillDepth": 5
@@ -1432,7 +1432,7 @@
   "squarespace": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:13.929Z",
+    "lastPolledAt": "2026-09-05T15:05:36.754Z",
     "etag": "W/\"ad84c688258f3cb43657049b64f64f6e\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-05T04:16:57.230Z",
@@ -1443,10 +1443,10 @@
   "srinivas-tamada": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:14.179Z",
+    "lastPolledAt": "2026-09-05T15:05:36.951Z",
     "etag": null,
     "lastModified": "Wed, 26 Aug 2026 13:58:04 GMT",
-    "lastSuccessAt": "2026-09-05T10:29:14.179Z",
+    "lastSuccessAt": "2026-09-05T15:05:36.951Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:03.307Z",
     "backfillDepth": 25
@@ -1454,7 +1454,7 @@
   "stack-overflow": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:14.291Z",
+    "lastPolledAt": "2026-09-05T15:05:37.028Z",
     "etag": "\"7f932e404e4bf8f1cfe4cc9fc9d08f3a-ssl-df\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-04T16:16:01.209Z",
@@ -1465,7 +1465,7 @@
   "stanko-tadic": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:14.419Z",
+    "lastPolledAt": "2026-09-05T15:05:37.040Z",
     "etag": "W/\"6a96859a-17fc9d\"",
     "lastModified": "Tue, 01 Sep 2026 07:58:18 GMT",
     "lastSuccessAt": "2026-09-01T11:33:49.325Z",
@@ -1476,10 +1476,10 @@
   "steve-bellovin": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:14.524Z",
+    "lastPolledAt": "2026-09-05T15:05:37.051Z",
     "etag": "\"b906-6523303555e40-gzip\"",
     "lastModified": "Tue, 19 May 2026 22:15:13 GMT",
-    "lastSuccessAt": "2026-09-05T10:29:14.524Z",
+    "lastSuccessAt": "2026-09-05T15:05:37.051Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:05.028Z",
     "backfillDepth": 10
@@ -1487,10 +1487,10 @@
   "strava": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:40.264Z",
+    "lastPolledAt": "2026-09-05T15:06:05.122Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:40.264Z",
+    "lastSuccessAt": "2026-09-05T15:06:05.122Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:05.872Z",
     "backfillDepth": 10
@@ -1498,10 +1498,10 @@
   "stripe": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:15.128Z",
+    "lastPolledAt": "2026-09-05T15:05:37.561Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:15.128Z",
+    "lastSuccessAt": "2026-09-05T15:05:37.561Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:05.884Z",
     "backfillDepth": 10
@@ -1509,10 +1509,10 @@
   "surveymonkey": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:15.218Z",
+    "lastPolledAt": "2026-09-05T15:05:37.650Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:15.218Z",
+    "lastSuccessAt": "2026-09-05T15:05:37.650Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:05.896Z",
     "backfillDepth": 10
@@ -1520,10 +1520,10 @@
   "swizec-teller": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:15.931Z",
+    "lastPolledAt": "2026-09-05T15:05:37.727Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:15.931Z",
+    "lastSuccessAt": "2026-09-05T15:05:37.727Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:06.130Z",
     "backfillDepth": 50
@@ -1531,7 +1531,7 @@
   "tania-rascia": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:16.120Z",
+    "lastPolledAt": "2026-09-05T15:05:38.162Z",
     "etag": "\"75db125ebc0c7da8e7e6099c3e02d7c2-ssl-df\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-03T20:56:37.236Z",
@@ -1542,10 +1542,10 @@
   "thoughtbot": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:16.301Z",
-    "etag": "\"6a9beb90-4795\"",
-    "lastModified": "Sat, 05 Sep 2026 10:14:40 GMT",
-    "lastSuccessAt": "2026-09-05T10:29:16.301Z",
+    "lastPolledAt": "2026-09-05T15:05:38.330Z",
+    "etag": "\"6a9c2d60-4795\"",
+    "lastModified": "Sat, 05 Sep 2026 14:55:28 GMT",
+    "lastSuccessAt": "2026-09-05T15:05:38.330Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:06.712Z",
     "backfillDepth": 3
@@ -1553,10 +1553,10 @@
   "timescale": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:18.806Z",
+    "lastPolledAt": "2026-09-05T15:05:39.599Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:18.806Z",
+    "lastSuccessAt": "2026-09-05T15:05:39.599Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:07.316Z",
     "backfillDepth": 1
@@ -1564,7 +1564,7 @@
   "toptal": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:20.207Z",
+    "lastPolledAt": "2026-09-05T15:05:42.476Z",
     "etag": "W/\"a175e85c43086e7c9caa17008c275f4b\"",
     "lastModified": null,
     "lastSuccessAt": "2026-09-02T16:29:34.236Z",
@@ -1575,7 +1575,7 @@
   "twilio": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:20.312Z",
+    "lastPolledAt": "2026-09-05T15:05:42.533Z",
     "etag": "W/\"5a40-65ab7c90b6ce5-gzip\"",
     "lastModified": "Sat, 05 Sep 2026 08:00:58 GMT",
     "lastSuccessAt": "2026-09-05T10:29:20.312Z",
@@ -1586,7 +1586,7 @@
   "una-kravets": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:20.587Z",
+    "lastPolledAt": "2026-09-05T15:05:42.750Z",
     "etag": "W/\"3a8c89af7c0121fea10c0d8622d6f050\"",
     "lastModified": "Mon, 22 Jun 2026 22:13:33 GMT",
     "lastSuccessAt": "2026-06-23T01:13:18.307Z",
@@ -1597,7 +1597,7 @@
   "vlad-mihalcea": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:21.285Z",
+    "lastPolledAt": "2026-09-05T15:05:45.460Z",
     "etag": "W/\"6a8be831b037920196f6f5d5481ee105\"",
     "lastModified": "Fri, 04 Sep 2026 17:19:06 GMT",
     "lastSuccessAt": "2026-09-04T20:42:43.312Z",
@@ -1608,10 +1608,10 @@
   "thumbtack": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:45.974Z",
+    "lastPolledAt": "2026-09-05T15:06:10.623Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:45.974Z",
+    "lastSuccessAt": "2026-09-05T15:06:10.623Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:09.176Z",
     "backfillDepth": 10
@@ -1619,7 +1619,7 @@
   "zach-holman": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:21.607Z",
+    "lastPolledAt": "2026-09-05T15:05:45.613Z",
     "etag": "W/\"6a7397da-22afb\"",
     "lastModified": "Wed, 05 Aug 2026 20:06:50 GMT",
     "lastSuccessAt": "2026-08-06T03:29:52.613Z",
@@ -1630,10 +1630,10 @@
   "zendesk": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:21.700Z",
+    "lastPolledAt": "2026-09-05T15:05:45.906Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:21.700Z",
+    "lastSuccessAt": "2026-09-05T15:05:45.906Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:10.220Z",
     "backfillDepth": 10
@@ -1641,10 +1641,10 @@
   "bytebytego": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:21.953Z",
-    "etag": "W/\"e3027-vkY9kvbThtyWUdWdpJy2oJYbxfU\"",
+    "lastPolledAt": "2026-09-05T15:05:46.241Z",
+    "etag": "W/\"e3027-HtjPTguDk09sjRjWmKJtWNUVdiE\"",
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:21.953Z",
+    "lastSuccessAt": "2026-09-05T15:05:46.241Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:11.104Z",
     "backfillDepth": 20
@@ -1652,10 +1652,10 @@
   "citus-data": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:22.097Z",
+    "lastPolledAt": "2026-09-05T15:05:48.132Z",
     "etag": "W/\"40285745\"",
     "lastModified": "Fri, 07 Aug 2026 10:31:49 GMT",
-    "lastSuccessAt": "2026-09-05T10:29:22.097Z",
+    "lastSuccessAt": "2026-09-05T15:05:48.132Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:11.734Z",
     "backfillDepth": 6
@@ -1663,7 +1663,7 @@
   "aws-architecture": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:22.199Z",
+    "lastPolledAt": "2026-09-05T15:05:48.345Z",
     "etag": null,
     "lastModified": "Thu, 03 Sep 2026 16:50:38 GMT",
     "lastSuccessAt": "2026-09-03T20:56:43.257Z",
@@ -1674,7 +1674,7 @@
   "semantic-kernel": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:22.245Z",
+    "lastPolledAt": "2026-09-05T15:05:48.388Z",
     "etag": "W/\"93f9b9b848d73f7ffde18515eaf7c7c3\"",
     "lastModified": "Fri, 04 Sep 2026 13:00:09 GMT",
     "lastSuccessAt": "2026-09-04T16:16:09.604Z",
@@ -1685,10 +1685,10 @@
   "tinder": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:48.633Z",
+    "lastPolledAt": "2026-09-05T15:06:13.353Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:48.633Z",
+    "lastSuccessAt": "2026-09-05T15:06:13.353Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:12.373Z",
     "backfillDepth": 10
@@ -1696,10 +1696,10 @@
   "openai-engineering": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:22.324Z",
+    "lastPolledAt": "2026-09-05T15:05:48.424Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:22.324Z",
+    "lastSuccessAt": "2026-09-05T15:05:48.424Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:12.444Z",
     "backfillDepth": 500
@@ -1707,10 +1707,10 @@
   "pragmatic-engineer": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:22.464Z",
-    "etag": "W/\"921a7-4+5r8QiDQsS4Me17J0WuV3DGpK8\"",
+    "lastPolledAt": "2026-09-05T15:05:48.556Z",
+    "etag": "W/\"921a7-g9NOm2zSF+AA/38V/B/TGDZXEbg\"",
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:22.464Z",
+    "lastSuccessAt": "2026-09-05T15:05:48.556Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:12.866Z",
     "backfillDepth": 20
@@ -1718,10 +1718,10 @@
   "arpit-bhayani": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:22.656Z",
-    "etag": "W/\"68b15fd236fd1b61525a2a64e0dd2204\"",
-    "lastModified": "Sat, 05 Sep 2026 07:48:17 GMT",
-    "lastSuccessAt": "2026-09-05T10:29:22.656Z",
+    "lastPolledAt": "2026-09-05T15:05:48.741Z",
+    "etag": "W/\"6842d6405d38c654b6126b46bc86fc43\"",
+    "lastModified": "Sat, 05 Sep 2026 12:17:58 GMT",
+    "lastSuccessAt": "2026-09-05T15:05:48.741Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:13.604Z",
     "backfillDepth": 168
@@ -1729,10 +1729,10 @@
   "netflix": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:51.334Z",
+    "lastPolledAt": "2026-09-05T15:06:16.122Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:51.334Z",
+    "lastSuccessAt": "2026-09-05T15:06:16.122Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T02:56:22.163Z",
     "backfillDepth": 10
@@ -1740,10 +1740,10 @@
   "datadog": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.333Z",
+    "lastPolledAt": "2026-09-05T15:05:20.234Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:57.333Z",
+    "lastSuccessAt": "2026-09-05T15:05:20.234Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T03:12:10.522Z",
     "backfillDepth": 94
@@ -1751,10 +1751,10 @@
   "ben-nadel": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:56.623Z",
+    "lastPolledAt": "2026-09-05T15:05:19.799Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:56.623Z",
+    "lastSuccessAt": "2026-09-05T15:05:19.799Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T12:51:24.306Z",
     "backfillDepth": 30
@@ -1762,10 +1762,10 @@
   "eli-bendersky": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.683Z",
+    "lastPolledAt": "2026-09-05T15:05:20.677Z",
     "etag": "\"4ed6c-65a11b97b9a21-gzip\"",
     "lastModified": "Fri, 28 Aug 2026 01:53:53 GMT",
-    "lastSuccessAt": "2026-09-05T10:28:57.683Z",
+    "lastSuccessAt": "2026-09-05T15:05:20.677Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T12:51:26.283Z",
     "backfillDepth": 5
@@ -1773,10 +1773,10 @@
   "erik-bernhardsson": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.919Z",
+    "lastPolledAt": "2026-09-05T15:05:21.046Z",
     "etag": "\"51a34bf533e5febd60f6ecfeb6511fc8-ssl-df\"",
     "lastModified": null,
-    "lastSuccessAt": "2026-09-04T11:14:41.144Z",
+    "lastSuccessAt": "2026-09-05T15:05:21.046Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T12:51:26.608Z",
     "backfillDepth": 166
@@ -1784,10 +1784,10 @@
   "etsy": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:58.124Z",
+    "lastPolledAt": "2026-09-05T15:05:21.213Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:58.124Z",
+    "lastSuccessAt": "2026-09-05T15:05:21.213Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T12:51:26.838Z",
     "backfillDepth": 20
@@ -1795,18 +1795,18 @@
   "flavio-copes": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:58.327Z",
+    "lastPolledAt": "2026-09-05T15:05:21.448Z",
     "lastError": null,
-    "etag": "W/\"d548ed40d28097b992a2b3d303b61294\"",
+    "etag": "W/\"ea1bc9881690bc343553698251648d40\"",
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:58.327Z",
+    "lastSuccessAt": "2026-09-05T15:05:21.448Z",
     "backfilledAt": "2026-06-12T07:55:25.460Z",
     "backfillDepth": 136
   },
   "heroku": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:00.425Z",
+    "lastPolledAt": "2026-09-05T15:05:23.461Z",
     "etag": "W/\"f4a1e8fd0e4db8f4e32e7c2c38331a19\"",
     "lastModified": "Fri, 04 Sep 2026 17:34:15 GMT",
     "lastSuccessAt": "2026-09-04T20:42:24.732Z",
@@ -1817,10 +1817,10 @@
   "khalil-stemmler": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:02.890Z",
-    "etag": "\"8a32e3052a9d65bdbfeb36a92b3eaab7-ssl-df\"",
+    "lastPolledAt": "2026-09-05T15:05:26.334Z",
+    "etag": "\"c5450ac73c20f17b373bd3c99f48934f-ssl-df\"",
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:02.890Z",
+    "lastSuccessAt": "2026-09-05T15:05:26.334Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T12:51:39.201Z",
     "backfillDepth": 138
@@ -1828,18 +1828,18 @@
   "tailscale": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:16.047Z",
+    "lastPolledAt": "2026-09-05T15:05:38.093Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:16.047Z",
+    "lastSuccessAt": "2026-09-05T15:05:38.093Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T12:51:51.650Z",
     "backfillDepth": 15
   },
   "upmostly": {
-    "status": "active",
-    "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:20.774Z",
+    "status": "failing",
+    "failCount": 1,
+    "lastPolledAt": "2026-09-05T15:05:42.985Z",
     "etag": "\"f3796d94b3cec86fecb0da15610a56be-gzip\"",
     "lastModified": "Fri, 13 Oct 2023 12:09:15 GMT",
     "lastSuccessAt": "2026-06-11T12:51:55.725Z",
@@ -1850,10 +1850,10 @@
   "yelp": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:21.377Z",
+    "lastPolledAt": "2026-09-05T15:05:45.557Z",
     "etag": "W/\"6a8744c8-3c82\"",
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:21.377Z",
+    "lastSuccessAt": "2026-09-05T15:05:45.557Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T12:52:00.884Z",
     "backfillDepth": 10
@@ -1861,10 +1861,10 @@
   "cred": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.227Z",
+    "lastPolledAt": "2026-09-05T15:05:20.148Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:57.227Z",
+    "lastSuccessAt": "2026-09-05T15:05:20.148Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T14:01:02.665Z",
     "backfillDepth": 10
@@ -1872,7 +1872,7 @@
   "allthingsdistributed": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:55.605Z",
+    "lastPolledAt": "2026-09-05T15:05:19.154Z",
     "etag": "\"da575a2181d6746b1713a25724bf0f17\"",
     "lastModified": "Wed, 26 Aug 2026 16:00:16 GMT",
     "lastSuccessAt": "2026-08-26T19:58:16.930Z",
@@ -1883,7 +1883,7 @@
   "atlassian": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:55.610Z",
+    "lastPolledAt": "2026-09-05T15:05:19.158Z",
     "etag": "W/\"eacc63cc8fc4b574a12d16dece73606f\"",
     "lastModified": "Fri, 04 Sep 2026 18:18:18 GMT",
     "lastSuccessAt": "2026-09-04T20:42:20.407Z",
@@ -1894,7 +1894,7 @@
   "engineering-at-microsoft": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:57.738Z",
+    "lastPolledAt": "2026-09-05T15:05:20.911Z",
     "etag": "W/\"ee27e29801a361af10ce7082a634e4a6\"",
     "lastModified": "Thu, 03 Sep 2026 19:32:43 GMT",
     "lastSuccessAt": "2026-09-03T20:56:18.279Z",
@@ -1905,10 +1905,10 @@
   "flipkart": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:58.345Z",
+    "lastPolledAt": "2026-09-05T15:05:21.526Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:58.345Z",
+    "lastSuccessAt": "2026-09-05T15:05:21.526Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T16:52:36.731Z",
     "backfillDepth": 10
@@ -1916,21 +1916,21 @@
   "google-cloud": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:28:58.654Z",
+    "lastPolledAt": "2026-09-05T15:05:21.717Z",
     "lastError": null,
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:28:58.654Z",
+    "lastSuccessAt": "2026-09-05T15:05:21.717Z",
     "backfilledAt": "2026-06-11T16:56:12.812Z",
     "backfillDepth": 20
   },
   "booking": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:04.540Z",
+    "lastPolledAt": "2026-09-05T15:05:28.073Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:04.540Z",
+    "lastSuccessAt": "2026-09-05T15:05:28.073Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T16:52:42.344Z",
     "backfillDepth": 10
@@ -1938,10 +1938,10 @@
   "makemytrip": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:04.187Z",
+    "lastPolledAt": "2026-09-05T15:05:27.523Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:04.187Z",
+    "lastSuccessAt": "2026-09-05T15:05:27.523Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T16:52:43.987Z",
     "backfillDepth": 10
@@ -1949,7 +1949,7 @@
   "platform-engineering": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:06.526Z",
+    "lastPolledAt": "2026-09-05T15:05:29.816Z",
     "etag": null,
     "lastModified": "Fri, 04 Sep 2026 16:59:59 GMT",
     "lastSuccessAt": "2026-09-04T20:42:30.375Z",
@@ -1960,7 +1960,7 @@
   "thoughtworks": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:17.445Z",
+    "lastPolledAt": "2026-09-05T15:05:39.378Z",
     "etag": null,
     "lastModified": "Fri, 04 Sep 2026 17:19:54 GMT",
     "lastSuccessAt": "2026-09-04T20:42:39.473Z",
@@ -1971,7 +1971,7 @@
   "zerodha": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:21.925Z",
+    "lastPolledAt": "2026-09-05T15:05:46.139Z",
     "etag": "W/\"6a93b4ef-2f1d\"",
     "lastModified": "Sun, 30 Aug 2026 04:43:27 GMT",
     "lastSuccessAt": "2026-08-30T05:15:48.712Z",
@@ -1982,10 +1982,10 @@
   "swiggy": {
     "status": "active",
     "failCount": 0,
-    "lastPolledAt": "2026-09-05T10:29:43.118Z",
+    "lastPolledAt": "2026-09-05T15:06:07.821Z",
     "etag": null,
     "lastModified": null,
-    "lastSuccessAt": "2026-09-05T10:29:43.118Z",
+    "lastSuccessAt": "2026-09-05T15:06:07.821Z",
     "lastError": null,
     "backfilledAt": "2026-06-11T16:53:23.428Z",
     "backfillDepth": 10
