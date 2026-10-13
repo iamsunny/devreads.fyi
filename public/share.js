@@ -56,7 +56,9 @@
       let url;
       try { url = new URL(row.dataset.url); } catch { return; }
       if (!['https:', 'http:'].includes(url.protocol)) return;
-      const data = { title: row.dataset.title || 'Article', url: row.dataset.url };
+      // Attribute every sharing path, retaining the publisher's query and fragment.
+      url.searchParams.set('utm_source', 'devreads.fyi');
+      const data = { title: row.dataset.title || 'Article', url: url.toString() };
       if (window.matchMedia?.('(pointer: coarse)').matches && typeof navigator.share === 'function') {
         try {
           if (!navigator.canShare || navigator.canShare(data)) {

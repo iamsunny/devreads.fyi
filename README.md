@@ -10,11 +10,12 @@ Live at [devreads.fyi](https://devreads.fyi).
 - Instant search across every post (title, summary, tags) with source and tag filters, fully client-side
 - Keyboard-first: `/` search, `j`/`k` navigate, `o` open, `s` save, `Esc` close
 - Saved posts and "new since last visit" tracking, stored in your browser
-- Article sharing beside each bookmark: Copy link, LinkedIn, X, and Bluesky; native sharing on supported touch devices, with a selectable URL if clipboard access fails
+- Article sharing beside each bookmark: Copy link, LinkedIn, X, and Bluesky; native sharing on supported touch devices, with a selectable URL if clipboard access fails. Every shared publisher URL carries `utm_source=devreads.fyi`, retaining existing query parameters and fragments
 - Searchable topic directory at `/tags`, with article counts and existing topic feeds
 - Rolling weekly digest at `/digest`
 - RSS re-export at `/feed.xml` and OPML at `/opml.xml`
 - Light and dark (terminal) themes
+- Wide desktop layout with a single-column reading feed and a three-column Tags directory, adapting to smaller screens
 - Realtime cumulative page-view counter in the footer, with no visitor identifiers
 
 ## How it works

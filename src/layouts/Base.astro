@@ -73,7 +73,7 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
       font: 15px/1.55 system-ui, 'Segoe UI', Roboto, sans-serif;
     }
     a { color: inherit; text-decoration: none; }
-    .wrap { max-width: 780px; margin: 0 auto; padding: 0 16px; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
     header.top {
       position: sticky; top: 0; z-index: 20; background: var(--bg);
       border-bottom: 1px solid var(--border);
@@ -120,9 +120,9 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
       background: var(--accent-bg); color: var(--accent); border-radius: 999px; font-size: 12.5px; width: fit-content;
     }
     #new-pill button { background: none; border: 0; color: inherit; font: inherit; cursor: pointer; text-decoration: underline; padding: 0; }
-    main { padding: 6px 0 40px; }
+    main.wrap { padding-top: 12px; padding-bottom: 48px; }
     h2.day { font-size: 12px; font-weight: 600; color: var(--faint); text-transform: uppercase; letter-spacing: .05em; margin: 22px 0 4px; font-family: var(--mono); }
-    .row { display: flex; gap: 12px; padding: 13px 10px; border-radius: 10px; position: relative; }
+    .row { display: flex; gap: 14px; padding: 16px 12px; border-radius: 10px; position: relative; }
     .row + .row { border-top: 1px solid var(--border); }
     .row:hover, .row.sel { background: var(--surface); }
     .row.sel { outline: 1px solid var(--border); }
@@ -156,6 +156,7 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
     }
     .summary {
       margin: 3px 0 6px; font-size: 13.5px; color: var(--muted);
+      max-width: 100ch; line-height: 1.6;
       display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
     }
     .tags { margin: 0; display: flex; gap: 6px; flex-wrap: wrap; }
