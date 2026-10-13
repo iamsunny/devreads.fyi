@@ -34,6 +34,8 @@ sites.yml -> ingest worker (scheduled) -> data/posts/*.ndjson + data/state.json
 
 The implementation is copied from [iamsunny/visit-counter](https://github.com/iamsunny/visit-counter). Deploy that repository's Durable Object Worker first, then deploy this site's existing `devreads-fyi` Worker. `wrangler.jsonc` preserves both custom domains and enables Worker-first asset routing so page requests reach the counter handler. The Durable Object class and stable object name `devreads.fyi` must remain unchanged to retain totals. There is no public increment endpoint.
 
+The total includes 144,948 historical Cloudflare zone page views imported once through private counter Worker configuration. Live views are added on top. The kit's `docs/historical-pageviews.json` records the historical period and metric differences; redeploying this site or the counter does not reapply the import.
+
 `npm run dev` and `npm run preview` serve Astro without Cloudflare bindings; use the counter kit's local integration/runtime tests for counter development. To update shared code, sync `pages/lib/counter.ts` to `worker/lib/counter.ts`, `static-worker/index.ts` to `worker/index.ts` (adjust its import), and the widget to `public/visit-counter.js`. Re-run the kit's tests and this site's build before deployment.
 
 To roll back, restore the previous static-only `wrangler.jsonc`, remove the footer widget/script and `worker/` integration, then rebuild and redeploy this site. Retain the separate counter Worker and namespace to preserve its stored total.

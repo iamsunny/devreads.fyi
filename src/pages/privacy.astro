@@ -11,7 +11,7 @@ import { posthogKey } from '../lib/site.mjs';
     <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// what stays on your device</p>
     <p>There are no accounts and no cookies. Your theme choice, saved posts and read marker are stored in your browser's localStorage and are never transmitted anywhere. Clearing site data removes them.</p>
     <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// shared page-view counter</p>
-    <p>The footer shows a cumulative count of page views, including reloads, recorded by the site's Cloudflare Worker. The counter stores only the total: no cookies, IP addresses or visitor identifiers. It does not identify unique people or track you across pages. Live updates use a same-origin WebSocket connection.</p>
+    <p>The footer shows a cumulative count of page views, including reloads, recorded by the site's Cloudflare Worker. Its starting total includes historical aggregate page views from Cloudflare analytics. The counter stores aggregate counts: no cookies, IP addresses or visitor identifiers. It does not identify unique people or track you across pages. Live updates use a same-origin WebSocket connection.</p>
     {posthogKey && (
       <>
         <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// usage analytics</p>
