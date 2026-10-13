@@ -13,8 +13,3 @@ export const support = {
   // Direct sponsorship contact, e.g. 'sponsor@devreads.fyi'
   sponsorEmail: '',
 };
-
-// PostHog project API key (public, write-only, safe to commit), e.g. 'phc_...'.
-// Empty = no analytics script is rendered and the privacy page says so.
-// When set: anonymous web analytics only; session recording is hard-disabled.
-export const posthogKey = 'phc_sivNC47K6qSMaVxcqMFbbxRQ3QcGkZRpLKuvde8RbtdV';

@@ -1,23 +1,21 @@
 ---
 import Base from '../layouts/Base.astro';
-import { posthogKey } from '../lib/site.mjs';
 ---
 <Base title="Privacy - devreads.fyi">
   <div class="page-head">
     <h1 style="font-family: var(--mono);">$ cat privacy</h1>
-    <p>Short version: no accounts, no cookies, {posthogKey ? 'and only anonymous usage statistics' : 'and a shared page-view count'}.</p>
+    <p>Short version: no accounts, a shared page-view count, and analytics cookie choices managed by CookieHub.</p>
   </div>
   <div style="max-width: 560px; font-size: 14px; color: var(--muted); line-height: 1.7;">
     <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// what stays on your device</p>
-    <p>There are no accounts and no cookies. Your theme choice, saved posts and read marker are stored in your browser's localStorage and are never transmitted anywhere. Clearing site data removes them.</p>
+    <p>There are no accounts. Your theme choice, saved posts and read marker are stored in your browser's localStorage and are never transmitted anywhere. Clearing site data removes them.</p>
+    <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// cookie choices</p>
+    <p><a href="https://www.cookiehub.com" target="_blank" rel="noopener" style="text-decoration: underline;">CookieHub</a> manages cookie consent and remembers your choices in a necessary consent cookie. You can review or change those choices using <a href="#" class="ch2-open-settings-btn" style="text-decoration: underline;">cookie settings</a> here or in the footer. CookieHub processes consent records and technical information needed to provide this service.</p>
     <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// shared page-view counter</p>
     <p>The footer shows a cumulative count of page views, including reloads, recorded by the site's Cloudflare Worker. Its starting total includes historical aggregate page views from Cloudflare analytics. The counter stores aggregate counts: no cookies, IP addresses or visitor identifiers. It does not identify unique people or track you across pages. Live updates use a same-origin WebSocket connection.</p>
-    {posthogKey && (
-      <>
-        <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// usage analytics</p>
-        <p>The site measures anonymous usage with <a href="https://posthog.com" target="_blank" rel="noopener" style="text-decoration: underline;">PostHog</a> (US-hosted): page views, referrers, rough device and browser type, and which blogs readers click through to. No profiles are built for anonymous visitors, session recording is disabled, and nothing follows you across other sites.</p>
-      </>
-    )}
+    <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// usage analytics</p>
+    <p>The site uses <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="text-decoration: underline;">Google Analytics 4</a> to measure page views and site usage, including referrers and browser and device information. CookieHub controls Google's consent signals. Analytics cookies and storage depend on your consent choices and the configured regional settings.</p>
+    <p>Google Consent Mode is currently configured in advanced mode. Google may receive limited cookieless measurement requests before analytics consent is granted. Changing your cookie settings updates the signals used for future measurements.</p>
     <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// what third parties see</p>
     <p>The site is served by Cloudflare, which processes standard request logs (such as IP addresses) to deliver pages and protect against abuse. Post thumbnails load directly from each publisher's servers, so those servers see your IP address when an image loads; the referrer is suppressed. When you open a post, the link carries a <code>utm_source=devreads.fyi</code> parameter so publishers can see that this site sent them a reader. It identifies the site, not you.</p>
     <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// if this ever changes</p>

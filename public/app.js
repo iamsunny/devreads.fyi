@@ -33,7 +33,6 @@
   function tagOutbound(e) {
     const a = e.target.closest?.('a[href^="http"]');
     if (!a || a.host === location.host) return;
-    window.posthog?.capture?.('outbound_click', { destination: a.host });
     const orig = a.getAttribute('href');
     a.href = outUrl(a.href);
     setTimeout(() => a.setAttribute('href', orig));

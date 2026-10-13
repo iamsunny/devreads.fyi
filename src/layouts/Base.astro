@@ -1,6 +1,5 @@
 ---
 import { posts } from '../lib/data.mjs';
-import { posthogKey } from '../lib/site.mjs';
 const { title = 'devreads.fyi - engineering reads', description = '$ tail -f engineering - every engineering blog, one feed' } = Astro.props;
 const root = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 const postCount = posts.length.toLocaleString('en-US');
@@ -13,6 +12,33 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    // CookieHub updates these defaults with the visitor's consent choices.
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 700,
+    });
+  </script>
+  <script is:inline src="https://cdn.cookiehub.eu/c2/fa59a1b5.js"></script>
+  <script is:inline type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.cookiehub) {
+        var cpm = {};
+        window.cookiehub.load(cpm);
+      }
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-VR4M09Z7LQ"></script>
+  <script is:inline>
+    gtag('js', new Date());
+    gtag('config', 'G-VR4M09Z7LQ');
+  </script>
   <script is:inline>document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';</script>
   <title>{title}</title>
   <meta name="description" content={description} />
@@ -29,26 +55,6 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
   <meta name="twitter:image" content={new URL('og.png', Astro.site ?? 'https://devreads.fyi').href} />
   <link rel="icon" href={favicon} />
   <link rel="alternate" type="application/rss+xml" title="devreads.fyi" href={`${root}feed.xml`} />
-  {posthogKey && (
-    <script is:inline define:vars={{ posthogKey }}>
-      (function () {
-        var s = document.createElement('script');
-        s.src = 'https://us-assets.i.posthog.com/static/array.js';
-        s.async = true;
-        s.onload = function () {
-          window.posthog.init(posthogKey, {
-            api_host: 'https://us.i.posthog.com',
-            ui_host: 'https://us.posthog.com',
-            person_profiles: 'identified_only',
-            disable_session_recording: true,
-            capture_pageview: true,
-            capture_pageleave: true,
-          });
-        };
-        document.head.appendChild(s);
-      })();
-    </script>
-  )}
   <style is:global>
     :root {
       color-scheme: light;
@@ -243,6 +249,7 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
       <span><kbd>/</kbd> search</span>
       <span><a href={`${root}support/`} style="text-decoration: underline;">support</a></span>
       <span><a href={`${root}privacy/`} style="text-decoration: underline;">privacy</a></span>
+      <span><a href="#" class="ch2-open-settings-btn" style="text-decoration: underline;">cookie settings</a></span>
       <span class="right">
         <slot name="footer-right" />
         <span class="visit-count" title="Cumulative page views, including imported Cloudflare history and reloads.">page views: <span data-visit-counter>—</span></span>

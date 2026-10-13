@@ -40,6 +40,12 @@ The total includes 144,948 historical Cloudflare zone page views imported once t
 
 To roll back, restore the previous static-only `wrangler.jsonc`, remove the footer widget/script and `worker/` integration, then rebuild and redeploy this site. Retain the separate counter Worker and namespace to preserve its stored total.
 
+## Cookie consent and analytics
+
+The shared layout loads CookieHub domain code `fa59a1b5` before Google Analytics 4 tag `G-VR4M09Z7LQ`. Consent defaults are queued before measurement commands. The published CookieHub configuration enables Google Consent Mode v2 in advanced mode, so Google can send cookieless measurements before analytics storage is granted; CookieHub manages consent updates and regional behavior. The footer's **cookie settings** link reopens the consent dialog. The privacy page describes consent storage and analytics behavior.
+
+The previous analytics loader, project key, and outbound-event tracking hook were removed. The independent Cloudflare page-view counter and outbound UTM attribution continue to work. CookieHub appearance, regional rules, and future consent settings are managed in its dashboard; no Google Tag Manager container is installed because the provided `G-` ID is a GA4 measurement tag.
+
 ## Commands
 
 ```sh
@@ -48,6 +54,7 @@ node ingest/run.mjs                 # pull all sites (backfills new ones)
 node ingest/run.mjs --limit 20      # only first 20 sites
 node ingest/run.mjs --site netflix  # one site by id
 npm run build                       # astro build + search index -> dist/
+npm run check:analytics             # verify built consent/tag markup and initialization
 npm run preview                     # serve dist/ locally
 npm run dev                         # astro dev (search needs a real build)
 ```

@@ -14,6 +14,7 @@
     "import:opml": "node scripts/import-opml.mjs",
     "ingest": "node ingest/run.mjs",
     "build": "astro build && node scripts/build-search-index.mjs",
+    "check:analytics": "node scripts/verify-analytics.mjs",
     "dev": "astro dev",
     "preview": "astro preview"
   },
