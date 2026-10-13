@@ -13,6 +13,7 @@ Live at [devreads.fyi](https://devreads.fyi).
 - Rolling weekly digest at `/digest`
 - RSS re-export at `/feed.xml` and OPML at `/opml.xml`
 - Light and dark (terminal) themes
+- Realtime cumulative page-view counter in the footer, with no visitor identifiers
 
 ## How it works
 
@@ -27,6 +28,15 @@ sites.yml -> ingest worker (scheduled) -> data/posts/*.ndjson + data/state.json
 - Each site runs a small state machine (`new -> backfilling -> active`, `failing -> quarantined` after repeated errors, retried daily). Health is visible on the Sources page.
 - Posts dedupe by feed GUID, then canonical URL (tracking params stripped), then title+date hash.
 - The webapp is fully static. Search runs in the browser against a sharded JSON index built straight from the post store, prefetched in the background.
+- Cloudflare's static-assets Worker serves the Astro build and schedules eligible HTML page-view increments through a private binding to the separately deployed `devreads-visit-counter` Durable Object. The footer reads same-origin `/api/visits` snapshots and `/api/visits/ws` updates. Only `https://devreads.fyi` counts; assets, previews, obvious crawlers, prefetches, redirects and errors are excluded. Recording is best effort and never delays page delivery.
+
+## Counter deployment
+
+The implementation is copied from [iamsunny/visit-counter](https://github.com/iamsunny/visit-counter). Deploy that repository's Durable Object Worker first, then deploy this site's existing `devreads-fyi` Worker. `wrangler.jsonc` preserves both custom domains and enables Worker-first asset routing so page requests reach the counter handler. The Durable Object class and stable object name `devreads.fyi` must remain unchanged to retain totals. There is no public increment endpoint.
+
+`npm run dev` and `npm run preview` serve Astro without Cloudflare bindings; use the counter kit's local integration/runtime tests for counter development. To update shared code, sync `pages/lib/counter.ts` to `worker/lib/counter.ts`, `static-worker/index.ts` to `worker/index.ts` (adjust its import), and the widget to `public/visit-counter.js`. Re-run the kit's tests and this site's build before deployment.
+
+To roll back, restore the previous static-only `wrangler.jsonc`, remove the footer widget/script and `worker/` integration, then rebuild and redeploy this site. Retain the separate counter Worker and namespace to preserve its stored total.
 
 ## Commands
 

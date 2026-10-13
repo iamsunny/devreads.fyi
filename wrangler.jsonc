@@ -1,10 +1,28 @@
-// Cloudflare Workers config: this site is static assets only (no server code).
+// Astro remains static; the Worker records page views and serves counter reads.
 // The name must match the existing Worker exactly - changing it would deploy a
 // brand-new Worker instead of updating devreads.fyi.
 {
   "name": "devreads-fyi",
+  "main": "worker/index.ts",
   "compatibility_date": "2026-06-01",
+  "workers_dev": true,
+  "preview_urls": true,
+  "routes": [
+    { "pattern": "devreads.fyi", "custom_domain": true },
+    { "pattern": "www.devreads.fyi", "custom_domain": true }
+  ],
   "assets": {
-    "directory": "./dist"
-  }
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "vars": { "COUNTER_MODE": "production" },
+  "durable_objects": {
+    "bindings": [{
+      "name": "VISIT_COUNTER",
+      "class_name": "VisitCounter",
+      "script_name": "devreads-visit-counter"
+    }]
+  },
+  "observability": { "enabled": true }
 }

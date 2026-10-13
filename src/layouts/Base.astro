@@ -169,7 +169,8 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
       padding: 12px 0 30px;
     }
     footer.hints .wrap { display: flex; gap: 16px; flex-wrap: wrap; }
-    footer.hints .right { margin-left: auto; font-family: var(--mono); }
+    footer.hints .right { margin-left: auto; font-family: var(--mono); display: flex; gap: 12px; flex-wrap: wrap; }
+    footer.hints .visit-count { white-space: nowrap; font-variant-numeric: tabular-nums; }
     table.sources { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 14px; }
     table.sources th { text-align: left; font-size: 12px; color: var(--faint); font-weight: 600; padding: 6px 8px; border-bottom: 1px solid var(--border); }
     table.sources td { padding: 7px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
@@ -242,7 +243,10 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
       <span><kbd>/</kbd> search</span>
       <span><a href={`${root}support/`} style="text-decoration: underline;">support</a></span>
       <span><a href={`${root}privacy/`} style="text-decoration: underline;">privacy</a></span>
-      <span class="right"><slot name="footer-right" /></span>
+      <span class="right">
+        <slot name="footer-right" />
+        <span class="visit-count" title="Total page views since the counter was enabled, including reloads.">page views: <span data-visit-counter>—</span></span>
+      </span>
     </div>
   </footer>
   <div id="search-overlay" hidden>
@@ -260,5 +264,6 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
     </div>
   </div>
   <script src={`${root}app.js`} defer></script>
+  <script is:inline src={`${root}visit-counter.js`} defer></script>
 </body>
 </html>

@@ -5,11 +5,13 @@ import { posthogKey } from '../lib/site.mjs';
 <Base title="Privacy - devreads.fyi">
   <div class="page-head">
     <h1 style="font-family: var(--mono);">$ cat privacy</h1>
-    <p>Short version: no accounts, no cookies, {posthogKey ? 'and only anonymous usage statistics' : 'no analytics'}.</p>
+    <p>Short version: no accounts, no cookies, {posthogKey ? 'and only anonymous usage statistics' : 'and a shared page-view count'}.</p>
   </div>
   <div style="max-width: 560px; font-size: 14px; color: var(--muted); line-height: 1.7;">
     <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// what stays on your device</p>
     <p>There are no accounts and no cookies. Your theme choice, saved posts and read marker are stored in your browser's localStorage and are never transmitted anywhere. Clearing site data removes them.</p>
+    <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// shared page-view counter</p>
+    <p>The footer shows a cumulative count of page views, including reloads, recorded by the site's Cloudflare Worker. The counter stores only the total: no cookies, IP addresses or visitor identifiers. It does not identify unique people or track you across pages. Live updates use a same-origin WebSocket connection.</p>
     {posthogKey && (
       <>
         <p style="font-family: var(--mono); font-size: 13px; color: var(--faint);">// usage analytics</p>
