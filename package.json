@@ -15,6 +15,7 @@
     "ingest": "node ingest/run.mjs",
     "build": "astro build && node scripts/build-search-index.mjs",
     "check:analytics": "node scripts/verify-analytics.mjs",
+    "check:sharing": "node scripts/verify-sharing-tags.mjs",
     "dev": "astro dev",
     "preview": "astro preview"
   },

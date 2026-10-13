@@ -36,6 +36,24 @@ export function tagSlug(tag) {
 }
 export const tagBySlug = new Map(indexedTags.map((t) => [tagSlug(t), t]));
 
+// A route can combine aliases such as "open source" and "open-source".
+// Count each article once, matching the existing tag page's slug-based filter.
+const countsByTagSlug = new Map();
+const aliasesByTagSlug = new Map();
+for (const tag of tagCounts.keys()) {
+  const slug = tagSlug(tag);
+  if (!aliasesByTagSlug.has(slug)) aliasesByTagSlug.set(slug, []);
+  aliasesByTagSlug.get(slug).push(tag);
+}
+for (const post of posts) {
+  for (const slug of new Set((post.tags ?? []).map(tagSlug))) {
+    countsByTagSlug.set(slug, (countsByTagSlug.get(slug) ?? 0) + 1);
+  }
+}
+export const tagDirectory = [...tagBySlug].map(([slug, tag]) => ({
+  slug, tag, count: countsByTagSlug.get(slug) ?? 0, aliases: aliasesByTagSlug.get(slug) ?? [tag],
+})).sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
+
 const MS_DAY = 86400e3;
 export function dayLabel(iso, now = Date.now()) {
   if (!iso) return 'Undated';

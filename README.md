@@ -10,6 +10,8 @@ Live at [devreads.fyi](https://devreads.fyi).
 - Instant search across every post (title, summary, tags) with source and tag filters, fully client-side
 - Keyboard-first: `/` search, `j`/`k` navigate, `o` open, `s` save, `Esc` close
 - Saved posts and "new since last visit" tracking, stored in your browser
+- Article sharing beside each bookmark: Copy link, LinkedIn, X, and Bluesky; native sharing on supported touch devices, with a selectable URL if clipboard access fails
+- Searchable topic directory at `/tags`, with article counts and existing topic feeds
 - Rolling weekly digest at `/digest`
 - RSS re-export at `/feed.xml` and OPML at `/opml.xml`
 - Light and dark (terminal) themes
@@ -55,6 +57,7 @@ node ingest/run.mjs --limit 20      # only first 20 sites
 node ingest/run.mjs --site netflix  # one site by id
 npm run build                       # astro build + search index -> dist/
 npm run check:analytics             # verify built consent/tag markup and initialization
+npm run check:sharing               # verify article controls and every tag destination/count
 npm run preview                     # serve dist/ locally
 npm run dev                         # astro dev (search needs a real build)
 ```

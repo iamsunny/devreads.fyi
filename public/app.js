@@ -32,7 +32,7 @@
   // the clean href is restored.
   function tagOutbound(e) {
     const a = e.target.closest?.('a[href^="http"]');
-    if (!a || a.host === location.host) return;
+    if (!a || a.host === location.host || a.closest('[data-share-platform]')) return;
     const orig = a.getAttribute('href');
     a.href = outUrl(a.href);
     setTimeout(() => a.setAttribute('href', orig));
@@ -124,9 +124,14 @@
     <p class="meta"><span class="src">${esc(i.source)}</span>${i.published ? `<time datetime="${esc(i.published)}">${new Date(i.published).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</time>` : ''}</p>
     <h3 class="title"><a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a></h3>
   </div>
-  <button class="save-btn saved" aria-label="Remove from saved" title="Remove">
+  <div class="post-actions">
+  <button type="button" class="share-btn" aria-label="Share article" title="Share article" aria-haspopup="menu" aria-controls="article-share-menu" aria-expanded="false">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg>
+  </button>
+  <button type="button" class="save-btn saved" aria-label="Remove from saved" title="Remove">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path class="fill" d="M6 3h12v18l-6-4.5L6 21Z" stroke-linejoin="round"/></svg>
   </button>
+  </div>
 </article>`
       )
       .join('');
@@ -314,6 +319,7 @@
       if (e.key === 'Escape') closeSearch();
       return;
     }
+    if (e.target.closest('button, a, [role="menu"], [contenteditable="true"]')) return;
     if (e.key === 'j') select(Math.min(rows.length - 1, sel + 1));
     else if (e.key === 'k') select(Math.max(0, sel - 1));
     else if (e.key === 'o' || e.key === 'Enter') {

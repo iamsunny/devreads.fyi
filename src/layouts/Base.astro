@@ -78,14 +78,14 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
       position: sticky; top: 0; z-index: 20; background: var(--bg);
       border-bottom: 1px solid var(--border);
     }
-    .top-inner { display: flex; align-items: center; gap: 14px; padding: 10px 0; }
+    .top-inner { display: flex; align-items: center; gap: 14px; padding: 10px 16px; }
     .brand { font-family: var(--mono); font-weight: 600; font-size: 15.5px; white-space: nowrap; }
     .brand .prompt, .brand .cursor { color: var(--accent); }
     @media (prefers-reduced-motion: no-preference) {
       .brand .cursor { animation: blink 1.2s steps(1) infinite; }
       @keyframes blink { 50% { opacity: 0; } }
     }
-    .tagline { font-family: var(--mono); font-size: 12px; color: var(--faint); white-space: nowrap; }
+    .tagline { font-family: var(--mono); font-size: 12px; color: var(--faint); white-space: nowrap; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
     @media (max-width: 760px) { .tagline { display: none; } }
     .searchbox {
       flex: 1; display: flex; align-items: center; gap: 8px; cursor: text;
@@ -94,10 +94,11 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
       font-family: var(--mono);
     }
     .searchbox kbd { margin-left: auto; }
+    .searchbox span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     @media (max-width: 560px) {
       .top-inner { flex-wrap: wrap; gap: 10px; }
-      nav.links { gap: 10px; font-size: 13px; margin-left: auto; }
-      .searchbox { order: 9; flex-basis: 100%; }
+      nav.links { order: 9; flex-basis: 100%; justify-content: space-between; gap: 10px; font-size: 13px; }
+      .searchbox { min-width: 0; }
       .title-line { flex-wrap: wrap; gap: 4px 10px; }
     }
     kbd {
@@ -163,10 +164,34 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
       background: var(--bg);
     }
     a.chip:hover { border-color: var(--faint); color: var(--fg); }
-    .save-btn { background: none; border: 0; color: var(--faint); cursor: pointer; padding: 2px; height: fit-content; }
-    .save-btn:hover { color: var(--fg); }
+    .post-actions { display: flex; flex-shrink: 0; align-self: flex-start; margin: -6px -6px 0 0; }
+    .save-btn, .share-btn {
+      background: none; border: 0; color: var(--muted); cursor: pointer; padding: 0;
+      width: 32px; height: 32px; display: grid; place-items: center; border-radius: 7px;
+    }
+    .save-btn:hover, .share-btn:hover, .share-btn[aria-expanded='true'] { color: var(--accent); background: var(--accent-bg); }
+    .post-actions button:focus-visible, .share-menu :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    @media (max-width: 560px), (pointer: coarse) {
+      .post-actions { flex-direction: column; }
+      .save-btn, .share-btn { width: 44px; height: 44px; }
+    }
     .save-btn.saved { color: var(--accent); }
     .save-btn.saved .fill { fill: currentColor; }
+    .share-menu {
+      position: fixed; z-index: 40; width: 220px; max-width: calc(100vw - 16px); padding: 6px;
+      max-height: calc(100dvh - 16px); overflow-y: auto; border: 1px solid var(--border); border-radius: 10px;
+      background: var(--surface); box-shadow: 0 10px 30px rgb(0 0 0 / .2); font: 12.5px/1.5 var(--mono);
+    }
+    .share-menu[hidden], .share-menu [hidden] { display: none; }
+    .share-menu [role='menuitem'] {
+      display: flex; align-items: center; width: 100%; min-height: 40px; padding: 8px 10px;
+      background: none; color: var(--fg); border: 0; border-radius: 6px; font: inherit; text-align: left; cursor: pointer;
+    }
+    .share-menu [role='menuitem']:hover, .share-menu [role='menuitem']:focus, .share-menu .copied {
+      background: var(--accent-bg); color: var(--accent);
+    }
+    .share-menu p { margin: 4px 10px; color: var(--muted); font-size: 11px; }
+    .share-menu input { width: 100%; padding: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--fg); font: inherit; }
     .pager { display: flex; align-items: center; gap: 16px; justify-content: center; margin: 26px 0; font-size: 13.5px; color: var(--muted); }
     .pager a { border: 1px solid var(--border); border-radius: 8px; padding: 6px 14px; }
     .pager a:hover { background: var(--surface); }
@@ -226,6 +251,7 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
       <nav class="links">
         <a href={root}>Latest</a>
         <a href={`${root}digest/`}>Digest</a>
+        <a href={`${root}tags/`}>Tags</a>
         <a href={`${root}sources/`}>Sources</a>
         <a href={`${root}saved/`}>Saved</a>
       </nav>
@@ -270,7 +296,16 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
       <div id="search-results" class="search-results"><p class="search-empty">// type to search</p></div>
     </div>
   </div>
+  <div id="article-share-menu" class="share-menu" role="menu" aria-label="Share article" hidden>
+    <button type="button" role="menuitem" tabindex="-1" data-share-copy>Copy link</button>
+    <a role="menuitem" tabindex="-1" data-share-platform="linkedin" target="_blank" rel="noopener noreferrer">Share on LinkedIn</a>
+    <a role="menuitem" tabindex="-1" data-share-platform="x" target="_blank" rel="noopener noreferrer">Share on X</a>
+    <a role="menuitem" tabindex="-1" data-share-platform="bluesky" target="_blank" rel="noopener noreferrer">Share on Bluesky</a>
+    <p data-share-status role="status" aria-live="polite"></p>
+    <input data-share-url aria-label="Article URL to copy" readonly hidden />
+  </div>
   <script src={`${root}app.js`} defer></script>
+  <script is:inline src={`${root}share.js`} defer></script>
   <script is:inline src={`${root}visit-counter.js`} defer></script>
 </body>
 </html>

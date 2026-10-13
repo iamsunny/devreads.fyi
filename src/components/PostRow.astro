@@ -1,5 +1,6 @@
 ---
 import { siteById, hueOf, tagCounts, MIN_TAG_COUNT, tagSlug } from '../lib/data.mjs';
+import PostActions from './PostActions.astro';
 const { post, showSource = true } = Astro.props;
 const root = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 const site = siteById.get(post.siteId);
@@ -41,7 +42,5 @@ const dateStr = post.published
       </p>
     )}
   </div>
-  <button class="save-btn" aria-label="Save post" title="Save for later">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path class="fill" d="M6 3h12v18l-6-4.5L6 21Z" stroke-linejoin="round"/></svg>
-  </button>
+  <PostActions />
 </article>

@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import { tagDirectory } from '../lib/data.mjs';
+const root = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
+---
+<Base title="Tags - devreads.fyi" description="Browse engineering articles by topic, from AI and security to programming languages and infrastructure.">
+  <div class="page-head">
+    <h1 style="font-family: var(--mono);">$ ls tags/</h1>
+    <p>{tagDirectory.length.toLocaleString('en-US')} topics, sorted by article count. Find something worth reading.</p>
+  </div>
+  <div class="tag-tools" data-tag-tools hidden>
+    <label for="tag-filter">Filter tags</label>
+    <input id="tag-filter" type="search" placeholder="e.g. security, rust, databases" autocomplete="off" aria-controls="tag-directory" />
+    <p id="tag-results" role="status" aria-live="polite"></p>
+  </div>
+  <ul class="tag-directory" id="tag-directory">
+    {tagDirectory.map(({ slug, tag, count, aliases }) => (
+      <li data-tag-search={aliases.join(' ').toLocaleLowerCase()}>
+        <a href={`${root}tag/${slug}/`}>
+          <span class="tag-name"><span class="tag-hash" aria-hidden="true">#</span>{tag}</span>
+          <span class="tag-count">{count.toLocaleString('en-US')} <span class="sr-only">articles</span></span>
+        </a>
+      </li>
+    ))}
+  </ul>
+  <p class="search-empty" data-tags-empty hidden>No matching tags. Try another topic.</p>
+  <script>
+    const input = document.querySelector<HTMLInputElement>('#tag-filter');
+    const entries = [...document.querySelectorAll<HTMLElement>('[data-tag-search]')];
+    const results = document.querySelector('#tag-results');
+    const empty = document.querySelector<HTMLElement>('[data-tags-empty]');
+    const tools = document.querySelector<HTMLElement>('[data-tag-tools]');
+    if (input && results && empty && tools) {
+      tools.hidden = false;
+      const filter = () => {
+        const tokens = input.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+        let count = 0;
+        for (const entry of entries) {
+          entry.hidden = !tokens.every(token => entry.dataset.tagSearch?.includes(token));
+          if (!entry.hidden) count++;
+        }
+        results.textContent = `${count.toLocaleString()} of ${entries.length.toLocaleString()} tags`;
+        empty.hidden = count !== 0;
+      };
+      input.addEventListener('input', filter);
+      filter();
+    }
+  </script>
+</Base>
+<style>
+  .tag-tools { margin: 22px 0 12px; }
+  .tag-tools[hidden], .tag-directory li[hidden] { display: none; }
+  .tag-tools label { display: block; font: 12px var(--mono); color: var(--muted); margin-bottom: 6px; }
+  .tag-tools input {
+    width: 100%; max-width: 420px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--surface); color: var(--fg); font: 13px var(--mono);
+  }
+  .tag-tools input:focus-visible, .tag-directory a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .tag-tools p { font: 11.5px var(--mono); color: var(--muted); margin: 8px 0 0; }
+  .tag-directory { list-style: none; padding: 0; margin: 18px 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; }
+  .tag-directory a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 10px 8px; border-bottom: 1px solid var(--border); border-radius: 5px; }
+  .tag-directory a:hover { background: var(--surface); color: var(--accent); }
+  .tag-name { overflow-wrap: anywhere; font-size: 13.5px; }
+  .tag-hash { color: var(--accent); font-family: var(--mono); margin-right: 5px; }
+  .tag-count { color: var(--muted); font: 11.5px var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  @media (max-width: 560px) { .tag-directory { grid-template-columns: minmax(0, 1fr); } }
+</style>
