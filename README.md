@@ -8,9 +8,10 @@ Live at [devreads.fyi](https://devreads.fyi).
 
 - Latest posts from 200+ engineering blogs, grouped by day, with summaries, tags, reading time and thumbnails when feeds provide them
 - Instant search across every post (title, summary, tags) with source and tag filters, fully client-side
-- Keyboard-first: `/` search, `j`/`k` navigate, `o` open, `s` save, `Esc` close
-- Saved posts and "new since last visit" tracking, stored in your browser
-- Article sharing beside each bookmark: Copy link, LinkedIn, X, and Bluesky; native sharing on supported touch devices, with a selectable URL if clipboard access fails. Every shared publisher URL carries `utm_source=devreads.fyi`, retaining existing query parameters and fragments
+- Keyboard-first: `/` search, `j`/`k` navigate, `o` open, `s` favorite, `Esc` close
+- Heart/Favorites collection: browser storage for guests, optional Google/GitHub/LinkedIn sign-in and account sync, automatic legacy bookmark migration and guest import
+- "New since last visit" tracking, stored in your browser
+- Article sharing beside each heart: Copy link, LinkedIn, X, and Bluesky; native sharing on supported touch devices, with a selectable URL if clipboard access fails. Every shared publisher URL carries `utm_source=devreads.fyi`, retaining existing query parameters and fragments
 - Searchable topic directory at `/tags`, with article counts and existing topic feeds
 - Rolling weekly digest at `/digest`
 - RSS re-export at `/feed.xml` and OPML at `/opml.xml`
@@ -49,6 +50,12 @@ The shared layout loads CookieHub domain code `fa59a1b5` before Google Analytics
 
 The previous analytics loader, project key, and outbound-event tracking hook were removed. The independent Cloudflare page-view counter and outbound UTM attribution continue to work. CookieHub appearance, regional rules, and future consent settings are managed in its dashboard; no Google Tag Manager container is installed because the provided `G-` ID is a GA4 measurement tag.
 
+## Accounts and Favorites
+
+Better Auth and Drizzle run in the existing Worker with a separate D1 application database. Google, GitHub and LinkedIn providers are gated by credentials and `AUTH_ENABLED`/`AUTH_PROVIDERS`; until configured, guest Favorites work and unfinished provider buttons stay hidden. See [authentication deployment and local development](docs/authentication.md) for provider callbacks, migrations, secret prompts, session behavior, rollback and capacity targets. `/favorites/` replaces `/saved/`, which redirects in the Worker. Account API responses are uncached and enforce session ownership.
+
+The site remains static Astro. Authentication is supplied by Worker routes; Astro dev/preview supports local guest Favorites, while `npm run dev:accounts` supplies the actual local account backend after a build and local migrations. Production/staging storage is separate from local/test data and from the historical visit counter.
+
 ## Commands
 
 ```sh
@@ -59,6 +66,8 @@ node ingest/run.mjs --site netflix  # one site by id
 npm run build                       # astro build + search index -> dist/
 npm run check:analytics             # verify built consent/tag markup and initialization
 npm run check:sharing               # verify article controls and every tag destination/count
+npm run typecheck:worker             # strict account/counter Worker type checks
+npm run test:accounts                # guest-store tests and actual workerd/D1 API tests
 npm run preview                     # serve dist/ locally
 npm run dev                         # astro dev (search needs a real build)
 ```

@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Favorites - devreads.fyi">
+  <div class="page-head">
+    <h1 style="font-family: var(--mono);">$ cat favorites</h1>
+    <p data-favorites-description>Your favorites, saved on this device.</p>
+  </div>
+  <div class="account-callout" data-guest-only>
+    <p>Keep your favorite reads close. <a href={`${import.meta.env.BASE_URL}signin/`}>Sign in</a> to save them in your account and pick up on another device.</p>
+  </div>
+  <div id="favorites-list"><p class="search-empty">Your favorites will appear here.</p></div>
+  <button class="account-button" type="button" data-favorites-more hidden>Load more favorites</button>
+  <noscript><p>Enable JavaScript to see favorites saved in this browser or your account.</p></noscript>
+</Base>

@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Account - devreads.fyi">
+  <section class="account-panel">
+    <div class="page-head"><h1 style="font-family: var(--mono);">$ whoami</h1><p>Your reading account.</p></div>
+    <p data-guest-only><a href={`${import.meta.env.BASE_URL}signin/`}>Sign in</a> to manage your account. Your browser favorites remain on this device.</p>
+    <div data-signed-in-only hidden>
+      <h2 class="account-name" data-account-name></h2><p class="account-fine" data-account-email></p>
+      <h3 class="account-section-label">Connected accounts</h3>
+      <p class="account-fine">Connect another sign-in option while signed in. You may be asked to sign in again first.</p>
+      <div class="provider-buttons" data-linked-accounts></div>
+      <button class="account-button" type="button" data-signout>Sign out</button>
+      <div class="account-danger-zone">
+        <h3 class="account-section-label">Delete account</h3>
+        <p class="account-fine">This permanently removes your account and its cloud favorites. You must have signed in within the last five minutes.</p>
+        <button class="account-button danger-button" type="button" data-delete-start>Delete my account</button>
+        <div class="account-callout" data-delete-confirm hidden>
+          <p>Delete this account and all of its synchronized favorites? This cannot be undone.</p>
+          <button class="account-button danger-button" type="button" data-delete-account>Yes, delete my account</button>
+          <button class="account-button" type="button" data-delete-cancel>Cancel</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -68,6 +68,7 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
       --border: #243029; --accent: #3fd68f; --accent-bg: #12281d; --danger: #e08379; --ok: #7bc99a;
     }
     * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
     body {
       margin: 0; background: var(--bg); color: var(--fg);
       font: 15px/1.55 system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -166,18 +167,44 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
     }
     a.chip:hover { border-color: var(--faint); color: var(--fg); }
     .post-actions { display: flex; flex-shrink: 0; align-self: flex-start; margin: -6px -6px 0 0; }
-    .save-btn, .share-btn {
+    .favorite-btn, .share-btn {
       background: none; border: 0; color: var(--muted); cursor: pointer; padding: 0;
       width: 32px; height: 32px; display: grid; place-items: center; border-radius: 7px;
     }
-    .save-btn:hover, .share-btn:hover, .share-btn[aria-expanded='true'] { color: var(--accent); background: var(--accent-bg); }
+    .favorite-btn:hover, .share-btn:hover, .share-btn[aria-expanded='true'] { color: var(--accent); background: var(--accent-bg); }
     .post-actions button:focus-visible, .share-menu :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     @media (max-width: 560px), (pointer: coarse) {
       .post-actions { flex-direction: column; }
-      .save-btn, .share-btn { width: 44px; height: 44px; }
+      .favorite-btn, .share-btn { width: 44px; height: 44px; }
     }
-    .save-btn.saved { color: var(--accent); }
-    .save-btn.saved .fill { fill: currentColor; }
+    .favorite-btn.favorited { color: var(--accent); }
+    .favorite-btn.favorited .fill { fill: currentColor; }
+    .favorite-btn:disabled { cursor: wait; opacity: .6; }
+    .account-link { font: 12px var(--mono); color: var(--accent); white-space: nowrap; }
+    .account-feedback { font-size: 12.5px; }
+    .account-feedback p { margin: 12px 0 0; color: var(--muted); }
+    .account-feedback p[data-error='true'] { color: var(--danger); }
+    .favorite-nudge { display: flex; align-items: center; gap: 12px; margin: 14px 0 0; padding: 10px 12px; background: var(--accent-bg); border: 1px solid var(--border); border-radius: 8px; font-size: 12.5px; }
+    .favorite-nudge p { margin: 0; flex: 1; }
+    .favorite-nudge a, .account-panel a, .account-callout a { color: var(--accent); text-decoration: underline; }
+    .favorite-nudge button { background: none; border: 0; color: var(--muted); cursor: pointer; min-width: 32px; min-height: 32px; }
+    .account-panel { max-width: 480px; margin: 32px auto 48px; }
+    .account-panel > p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .provider-buttons { display: grid; gap: 10px; margin: 24px 0; }
+    .account-button { min-height: 44px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--fg); font: 12.5px var(--mono); cursor: pointer; }
+    .account-button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+    .account-button:focus-visible, .account-link:focus-visible, .favorite-nudge button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .account-button:disabled { opacity: .6; cursor: default; }
+    .provider-button { display: flex; justify-content: center; align-items: center; gap: 12px; background: var(--bg); }
+    .provider-mark { font-family: sans-serif; font-size: 18px; font-weight: 700; }
+    .account-callout { margin: 20px 0; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); font-size: 13px; color: var(--muted); }
+    .account-callout p { margin: 0 0 8px; }
+    .account-callout p:last-child { margin-bottom: 0; }
+    .account-fine { font-size: 12.5px !important; color: var(--muted); line-height: 1.7; }
+    .account-name { font-size: 20px; margin-bottom: 4px; }
+    .account-section-label { font: 12px var(--mono); color: var(--muted); margin-top: 28px; }
+    .account-danger-zone { margin-top: 32px; padding-top: 4px; border-top: 1px solid var(--border); }
+    .danger-button { color: var(--danger); }
     .share-menu {
       position: fixed; z-index: 40; width: 220px; max-width: calc(100vw - 16px); padding: 6px;
       max-height: calc(100dvh - 16px); overflow-y: auto; border: 1px solid var(--border); border-radius: 10px;
@@ -254,8 +281,9 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
         <a href={`${root}digest/`}>Digest</a>
         <a href={`${root}tags/`}>Tags</a>
         <a href={`${root}sources/`}>Sources</a>
-        <a href={`${root}saved/`}>Saved</a>
+        <a href={`${root}favorites/`}>Favorites</a>
       </nav>
+      <a class="account-link" data-account-link href={`${root}signin/`} hidden>Sign in</a>
       <button id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
         <svg class="ic-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
         <svg class="ic-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -264,6 +292,14 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
   </header>
   <div class="wrap">
     <div id="new-pill"><span id="new-count"></span><button id="mark-read">Mark all read</button></div>
+    <div class="account-feedback">
+      <p id="account-status" role="status" aria-live="polite" hidden></p>
+      <button class="account-button" type="button" data-account-retry hidden>Retry sync</button>
+    </div>
+    <div class="favorite-nudge" id="favorite-nudge" hidden>
+      <p>Saved on this device. <a href={`${root}signin/`}>Sign in</a> to keep your favorites across devices.</p>
+      <button type="button" data-dismiss-nudge aria-label="Dismiss sign-in suggestion">×</button>
+    </div>
   </div>
   <main class="wrap">
     <slot />
@@ -272,7 +308,7 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
     <div class="wrap">
       <span><kbd>j</kbd> <kbd>k</kbd> navigate</span>
       <span><kbd>o</kbd> open</span>
-      <span><kbd>s</kbd> save</span>
+      <span><kbd>s</kbd> favorite</span>
       <span><kbd>/</kbd> search</span>
       <span><a href={`${root}support/`} style="text-decoration: underline;">support</a></span>
       <span><a href={`${root}privacy/`} style="text-decoration: underline;">privacy</a></span>
@@ -306,6 +342,7 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
     <input data-share-url aria-label="Article URL to copy" readonly hidden />
   </div>
   <script src={`${root}app.js`} defer></script>
+  <script is:inline type="module" src={`${root}account.js`}></script>
   <script is:inline src={`${root}share.js`} defer></script>
   <script is:inline src={`${root}visit-counter.js`} defer></script>
 </body>

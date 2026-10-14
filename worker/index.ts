@@ -1,6 +1,8 @@
 import { readEndpoint, recordVisit, shouldCount, type Env } from "./lib/counter.ts";
+import { authEndpoint, json, withCors, type AuthEnv } from './auth';
+import { favoritesEndpoint } from './favorites';
 
-export interface StaticEnv extends Env {
+export interface StaticEnv extends Env, AuthEnv {
   ASSETS: Fetcher;
 }
 
@@ -8,6 +10,16 @@ export interface StaticEnv extends Env {
 export default {
   async fetch(request: Request, env: StaticEnv, ctx: ExecutionContext): Promise<Response> {
     const pathname = new URL(request.url).pathname.replace(/\/+$/, "");
+    if (pathname.startsWith('/api/auth/') || pathname === '/api/auth' || pathname.startsWith('/api/favorites/') || pathname === '/api/favorites') {
+      try {
+        const response = pathname.startsWith('/api/auth') ? await authEndpoint(request, env) : await favoritesEndpoint(request, env);
+        return withCors(response, request, env);
+      } catch {
+        console.error('account_api_failed', { path: pathname });
+        return withCors(json({ error: 'Account service is temporarily unavailable. Try again.' }, 503), request, env);
+      }
+    }
+    if (pathname === '/saved') return Response.redirect(new URL('/favorites/' + new URL(request.url).search, request.url).href, 308);
     if (pathname === "/api/visits") return readEndpoint(request, env);
     if (pathname === "/api/visits/ws") return readEndpoint(request, env, true);
     if (pathname.startsWith("/api/visits/")) {
@@ -17,5 +29,13 @@ export default {
     const response = await env.ASSETS.fetch(request);
     if (shouldCount(request, response, env)) ctx.waitUntil(recordVisit(env));
     return response;
+  },
+  async scheduled(_event: ScheduledController, env: StaticEnv) {
+    if (!env.AUTH_DB) return;
+    const now = Date.now();
+    await env.AUTH_DB.batch([
+      env.AUTH_DB.prepare('DELETE FROM session WHERE expiresAt < ?').bind(now),
+      env.AUTH_DB.prepare('DELETE FROM verification WHERE expiresAt < ?').bind(now),
+    ]);
   },
 } satisfies ExportedHandler<StaticEnv>;

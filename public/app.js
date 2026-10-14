@@ -75,69 +75,14 @@
     }
   }
 
-  // --- saved posts ----------------------------------------------------------
-  const S_KEY = 'er:saved';
-  const loadSaved = () => {
-    try { return JSON.parse(localStorage.getItem(S_KEY) || '{}'); } catch { return {}; }
-  };
-  const saved = loadSaved();
-  const persist = () => localStorage.setItem(S_KEY, JSON.stringify(saved));
-  const syncBtn = (row) => {
-    const b = row.querySelector('.save-btn');
-    if (b) b.classList.toggle('saved', Boolean(saved[row.dataset.id]));
-  };
-  rows.forEach(syncBtn);
+  // Favorites are managed by the account module for guests and signed-in readers.
   function toggleSave(row) {
-    const id = row.dataset.id;
-    if (!id) return;
-    if (saved[id]) delete saved[id];
-    else
-      saved[id] = {
-        id,
-        url: row.dataset.url,
-        title: row.dataset.title,
-        source: row.dataset.source,
-        published: row.dataset.published || null,
-        savedAt: new Date().toISOString(),
-      };
-    persist();
-    syncBtn(row);
-    if (document.getElementById('saved-list')) renderSavedPage();
+    window.dispatchEvent(new CustomEvent('devreads:toggle-favorite', { detail: { row } }));
   }
-  document.addEventListener('click', (e) => {
-    const b = e.target.closest('.save-btn');
-    if (b) toggleSave(b.closest('.row'));
+  document.addEventListener('devreads:rows-changed', () => {
+    rows.splice(0, rows.length, ...document.querySelectorAll('.row'));
+    sel = -1;
   });
-
-  function renderSavedPage() {
-    const el = document.getElementById('saved-list');
-    if (!el) return;
-    const items = Object.values(loadSaved()).sort((a, b) => (b.savedAt ?? '').localeCompare(a.savedAt ?? ''));
-    if (!items.length) {
-      el.innerHTML = '<p class="search-empty">// nothing saved yet - press <kbd>s</kbd> on any post</p>';
-      return;
-    }
-    el.innerHTML = items
-      .map(
-        (i) => `<article class="row" data-id="${esc(i.id)}" data-url="${esc(i.url)}" data-title="${esc(i.title)}" data-source="${esc(i.source)}">
-  <div class="row-main">
-    <p class="meta"><span class="src">${esc(i.source)}</span>${i.published ? `<time datetime="${esc(i.published)}">${new Date(i.published).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</time>` : ''}</p>
-    <h3 class="title"><a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a></h3>
-  </div>
-  <div class="post-actions">
-  <button type="button" class="share-btn" aria-label="Share article" title="Share article" aria-haspopup="menu" aria-controls="article-share-menu" aria-expanded="false">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg>
-  </button>
-  <button type="button" class="save-btn saved" aria-label="Remove from saved" title="Remove">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path class="fill" d="M6 3h12v18l-6-4.5L6 21Z" stroke-linejoin="round"/></svg>
-  </button>
-  </div>
-</article>`
-      )
-      .join('');
-    el.querySelectorAll('.row').forEach(syncBtn);
-  }
-  renderSavedPage();
 
   // --- search overlay (sharded JSON index) ------------------------------------
   // Record tuple: [title, url, source, date, tags[], summary]

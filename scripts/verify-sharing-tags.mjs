@@ -14,7 +14,7 @@ async function inspect(directory) {
     const html = await readFile(filename, 'utf8');
     const rows = (html.match(/<article\b[^>]*class="row"/g) || []).length;
     assert.equal((html.match(/class="share-btn"/g) || []).length, rows, `Share controls: ${filename}`);
-    assert.equal((html.match(/class="save-btn"/g) || []).length, rows, `Bookmark controls: ${filename}`);
+    assert.equal((html.match(/class="favorite-btn"/g) || []).length, rows, `Favorite controls: ${filename}`);
     assert.equal((html.match(/id="article-share-menu"/g) || []).length, 1, `Shared menu: ${filename}`);
     assert.equal((html.match(/<script[^>]+src="[^"]*\/share\.js"[^>]*defer/g) || []).length, 1, `Deferred sharing: ${filename}`);
     assert.match(html, /href="[^"]*\/tags\/">Tags<\/a>/, `Tags navigation: ${filename}`);
@@ -24,7 +24,7 @@ async function inspect(directory) {
 }
 await inspect('dist');
 assert.ok(pages > 0 && articles > 0, 'Build the site before running this check');
-for (const asset of ['share.js', 'app.js']) {
+for (const asset of ['share.js', 'app.js', 'account.js', 'favorites-store.js']) {
   assert.equal(await readFile(`dist/${asset}`, 'utf8'), await readFile(`public/${asset}`, 'utf8'), `Stale built ${asset}`);
 }
 const directory = await readFile('dist/tags/index.html', 'utf8');
