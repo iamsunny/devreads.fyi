@@ -40,9 +40,9 @@ The implementation is copied from [iamsunny/visit-counter](https://github.com/ia
 
 The total includes 144,948 historical Cloudflare zone page views imported once through private counter Worker configuration. Live views are added on top. The kit's `docs/historical-pageviews.json` records the historical period and metric differences; redeploying this site or the counter does not reapply the import.
 
-`npm run dev` and `npm run preview` serve Astro without Cloudflare bindings; use the counter kit's local integration/runtime tests for counter development. To update shared code, sync `pages/lib/counter.ts` to `worker/lib/counter.ts`, `static-worker/index.ts` to `worker/index.ts` (adjust its import), and the widget to `public/visit-counter.js`. Re-run the kit's tests and this site's build before deployment.
+`npm run dev` and `npm run preview` serve Astro without Cloudflare bindings; use the counter kit's local integration/runtime tests for counter development. To update shared counter code, sync `pages/lib/counter.ts` to `worker/lib/counter.ts` and the widget to `public/visit-counter.js`. Merge counter-handler changes into `worker/index.ts` while preserving its account routes and scheduled cleanup. Re-run the kit's tests and this site's build before deployment.
 
-To roll back, restore the previous static-only `wrangler.jsonc`, remove the footer widget/script and `worker/` integration, then rebuild and redeploy this site. Retain the separate counter Worker and namespace to preserve its stored total.
+To roll back the counter integration, remove only its binding, routes and footer widget, then rebuild and redeploy this site. Preserve account routes and D1 storage. Retain the separate counter Worker and namespace to preserve its stored total. Account rollback is documented separately below.
 
 ## Cookie consent and analytics
 

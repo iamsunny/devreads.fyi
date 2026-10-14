@@ -13,7 +13,7 @@ Approved: Better Auth + Drizzle + Cloudflare D1 on Workers Paid; initially 5,000
 - [x] Add themed Sign in and Account pages, a dismissible local-save nudge, and account linking/deletion.
 - [x] Update privacy, deployment documentation, cleanup, and monitoring guidance.
 - [x] Run backend/runtime/browser and existing build/analytics/sharing regression checks.
-- [ ] Deploy code and verify production.
+- [x] Deploy code and verify production. Cloudflare Git build and live guest Favorites checks passed; see authentication.md for deployment and test evidence. Public provider activation remains a separate outstanding task below.
 
 ## Architecture
 

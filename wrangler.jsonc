@@ -37,7 +37,7 @@
       "script_name": "devreads-visit-counter"
     }]
   },
-  "observability": { "enabled": true },
+  "observability": { "enabled": true, "redact_query_string": true },
   "env": {
     "staging": {
       "name": "devreads-fyi-staging", "routes": [], "workers_dev": true, "preview_urls": false,

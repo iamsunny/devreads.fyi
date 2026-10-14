@@ -24,6 +24,10 @@ Apply migrations before deploying code that uses them:
 ```powershell
 npx wrangler d1 migrations apply AUTH_DB --remote
 npx wrangler d1 migrations apply AUTH_DB --remote --env staging
+# Deploy staging first when configuring real provider credentials:
+npm run build
+npx wrangler deploy --env staging
+# Production is Git-connected: a push to main builds/deploys devreads-fyi.
 ```
 
 ## OAuth applications
@@ -59,7 +63,7 @@ Guest favorites migrate from `er:saved` to `er:favorites:v1`. Successfully migra
 
 Sessions use secure HttpOnly host-only `__Secure-devreads.session_token` cookies, rolling 30-day expiry and daily renewal. Additional short-lived `devreads` OAuth-state cookies are necessary for the flow. Classify this cookie family as **necessary** in CookieHub; analytics consent must not block sign-in or account sync. Provider tokens are encrypted by Better Auth. Identity claims and account linking are checked server-side; no blanket trusted-provider bypass is enabled. Explicit provider linking and deletion require a sign-in within five minutes. An account without a verified provider email can sign in using an internal `.invalid` placeholder; that placeholder is not a contact address, and such an identity cannot be implicitly linked to another account.
 
-Favorites APIs require authenticated ownership and validate origins/JSON, record sizes and HTTP(S) URLs. Auth/Favorites responses are uncached; only exact apex/www origins receive credentialed CORS. All browser return paths are restricted to those origins. Production account APIs are unavailable on preview/worker URLs. Counter security rules remain separate.
+Favorites APIs require authenticated ownership and validate origins/JSON, record sizes and HTTP(S) URLs. Auth/Favorites responses are uncached; only exact apex/www origins receive credentialed CORS. All browser return paths are restricted to those origins. Production account APIs are unavailable on preview/worker URLs. Worker observability redacts URL query strings, including OAuth callback codes. Counter security rules remain separate.
 
 The daily cron removes expired sessions and verification records. Account deletion cascades favorites and authentication records. Restore operations may restore deleted data from backups; D1 Time Travel retention follows the Cloudflare plan.
 
@@ -86,7 +90,9 @@ Keep application and counter databases/namespaces when rolling back. Roll back t
 
 Strict Worker type checking, six unit tests and six actual workerd/D1 test groups passed. Runtime checks cover real signed sessions, forgery/expiry, owner isolation, idempotent writes, 50-record imports, 100-record pagination, origin and JSON validation, OAuth redirect initialization, recent-session checks and cascading account deletion. Ten headless Chrome test groups against the local Worker/D1 passed, including legacy migration, automatic import, a second device, account switching, failed-write rollback, partial-import retry, logout, deletion, both themes and widths from 320 to 1,440px. Provider redirect tests use dummy credentials and controlled sessions; they do not establish successful real OAuth callbacks.
 
-The static build produced 1,703 pages and indexed 26,097 posts. Existing analytics and sharing regression checks passed. Production and staging D1 databases have migration `0001` applied and distinct auth secrets stored in Cloudflare. Provider credentials remain outstanding, so `AUTH_ENABLED=false` is intentional. No test identities or fixture sessions were inserted in either remote database.
+After incorporating scheduled feed updates, the final static build produced 1,708 pages and indexed 26,168 posts. Existing analytics and sharing regression checks passed, including 64,927 article controls and 1,254 tag destinations. Linux GitHub CI passed clean npm installation, strict types, full build, account runtime tests, analytics/sharing checks and audit. The optional WASM lock entries missing from the initial Windows-generated lockfile were repaired.
+
+Production and staging D1 databases have migration `0001` applied and distinct auth secrets stored in Cloudflare. Provider credentials remain outstanding, so `AUTH_ENABLED=false` is intentional. No test identities or fixture sessions were inserted in either remote database. Production was deployed through Cloudflare's Git build for commit `290087b` (build `bed47cd8-c8ba-4ad9-8559-af85baf7401f`, version `7778a048-37e7-4e94-8d47-82aa62d79b27`). Live Chrome checks passed for guest migration, hearts, persistence, attributed sharing, hidden unconfigured providers, API origin/preview isolation and responsive pages. The existing counter read 145,221 during verification; it continues advancing. Third-party scripts were blocked and verification used prefetch headers. Real provider callbacks remain unverified.
 
 The 100k-account growth benchmark has **not** been run. Paid billing status could not be verified with the available OAuth permissions; the subscriptions read returned 403. Before the growth benchmark, confirm Workers Paid in the dashboard, enable a credentialed staging deployment, run the workload above against staging only, and record measured results. Functional tests establish application behavior, not a MAU capacity guarantee.
 
