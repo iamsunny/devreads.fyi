@@ -1,7 +1,12 @@
 ---
 import { posts } from '../lib/data.mjs';
-const { title = 'devreads.fyi - engineering reads', description = '$ tail -f engineering - every engineering blog, one feed' } = Astro.props;
+import { isUtilityPage, structuredData, serializeStructuredData } from '../lib/structured-data.mjs';
+const { title = 'devreads.fyi - engineering reads', description = 'Discover the latest engineering articles from independent and company blogs. Browse by topic or source, search the archive, and save your favorites.', items, breadcrumbs = [] } = Astro.props;
 const root = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://devreads.fyi').href;
+const home = new URL(root, Astro.site ?? 'https://devreads.fyi').href;
+const noindex = isUtilityPage(Astro.url.pathname, root);
+const schema = noindex ? null : structuredData({ canonical, home, title, description, items, breadcrumbs });
 const postCount = posts.length.toLocaleString('en-US');
 const faviconSvg =
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0e1411"/><text x="5" y="17" font-family="monospace" font-size="12" fill="#3fd68f">&gt;_</text></svg>';
@@ -42,11 +47,13 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
   <script is:inline>document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';</script>
   <title>{title}</title>
   <meta name="description" content={description} />
-  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site ?? 'https://devreads.fyi').href} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex, follow" />}
+  {schema && <script is:inline type="application/ld+json" set:html={serializeStructuredData(schema)} />}
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site ?? 'https://devreads.fyi').href} />
+  <meta property="og:url" content={canonical} />
   <meta property="og:site_name" content="devreads.fyi" />
   <meta property="og:image" content={new URL('og.png', Astro.site ?? 'https://devreads.fyi').href} />
   <meta property="og:image:width" content="1200" />
@@ -231,6 +238,8 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
     footer.hints .right { margin-left: auto; font-family: var(--mono); display: flex; gap: 12px; flex-wrap: wrap; }
     footer.hints .visit-count { white-space: nowrap; font-variant-numeric: tabular-nums; }
     table.sources { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 14px; }
+    .sources-scroll { overflow-x: auto; }
+    .sources-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
     table.sources th { text-align: left; font-size: 12px; color: var(--faint); font-weight: 600; padding: 6px 8px; border-bottom: 1px solid var(--border); }
     table.sources td { padding: 7px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
     .badge { font-size: 11.5px; border-radius: 999px; padding: 1.5px 9px; font-weight: 600; font-family: var(--mono); }
@@ -264,6 +273,13 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
     .search-empty { color: var(--faint); font-size: 13px; padding: 18px 12px; text-align: center; font-family: var(--mono); }
     .page-head h1 { font-size: 19px; margin: 18px 0 2px; }
     .page-head p { margin: 0; color: var(--muted); font-size: 13.5px; }
+    .feed-head { margin-bottom: 16px; }
+    .breadcrumbs { margin: 12px 0 2px; color: var(--muted); font: 11.5px/1.6 var(--mono); }
+    .breadcrumbs ol { display: flex; flex-wrap: wrap; gap: 4px 8px; list-style: none; margin: 0; padding: 0; }
+    .breadcrumbs li { display: flex; align-items: baseline; gap: 8px; min-width: 0; overflow-wrap: anywhere; }
+    .breadcrumbs li + li::before { content: '/'; color: var(--faint); }
+    .breadcrumbs a:hover { color: var(--accent); text-decoration: underline; }
+    .breadcrumbs a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   </style>
 </head>
 <body data-base={root}>
@@ -302,6 +318,16 @@ const favicon = 'data:image/svg+xml,' + encodeURIComponent(faviconSvg);
     </div>
   </div>
   <main class="wrap">
+    {breadcrumbs.length > 1 && (
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>{breadcrumbs.map((crumb, index) => (
+          <li>{index === breadcrumbs.length - 1
+            ? <span aria-current="page">{crumb.name}</span>
+            : <a href={crumb.url}>{crumb.name}</a>}
+          </li>
+        ))}</ol>
+      </nav>
+    )}
     <slot />
   </main>
   <footer class="hints">

@@ -19,6 +19,8 @@
     "build": "astro build && node scripts/build-search-index.mjs",
     "check:analytics": "node scripts/verify-analytics.mjs",
     "check:sharing": "node scripts/verify-sharing-tags.mjs",
+    "check:seo": "node scripts/verify-structured-data.mjs",
+    "test:seo:browser": "node tests/structured-data.browser.mjs",
     "typecheck:worker": "tsc --project tsconfig.worker.json",
     "check:worker": "wrangler deploy --dry-run --outdir .wrangler/check-build",
     "test:accounts": "node --test tests/favorites-store.test.mjs tests/auth-config.test.mjs && npm run check:worker && node --test tests/accounts.runtime.test.mjs",

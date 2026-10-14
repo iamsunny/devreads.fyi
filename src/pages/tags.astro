@@ -2,8 +2,9 @@
 import Base from '../layouts/Base.astro';
 import { tagDirectory } from '../lib/data.mjs';
 const root = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
+const items = tagDirectory.map(({ tag, slug }) => ({ title: `#${tag}`, url: `${root}tag/${slug}/` }));
 ---
-<Base title="Tags - devreads.fyi" description="Browse engineering articles by topic, from AI and security to programming languages and infrastructure.">
+<Base title="Tags - devreads.fyi" description="Browse engineering articles by topic, from AI and security to programming languages and infrastructure." items={items}>
   <div class="page-head">
     <h1 style="font-family: var(--mono);">$ ls tags/</h1>
     <p>{tagDirectory.length.toLocaleString('en-US')} topics, sorted by article count. Find something worth reading.</p>

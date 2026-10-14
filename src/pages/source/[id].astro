@@ -11,8 +11,10 @@ const st = state[site.id] ?? {};
 const sitePosts = posts.filter((p) => p.siteId === site.id).slice(0, 300);
 const count = postCountBySite.get(site.id) ?? 0;
 const oldest = sitePosts.at(-1)?.published;
+const root = import.meta.env.BASE_URL;
+const breadcrumbs = [{ name: 'Home', url: root }, { name: 'Sources', url: `${root}sources/` }, { name: site.name, url: `${root}source/${site.id}/` }];
 ---
-<Base title={`${site.name} - devreads.fyi`}>
+<Base title={`${site.name} - devreads.fyi`} description={`Browse ${count} articles from ${site.name} on devreads.fyi. Read the latest posts and follow links to the original blog.`} items={sitePosts} breadcrumbs={breadcrumbs}>
   <div class="page-head">
     <h1>{site.name}</h1>
     <p>

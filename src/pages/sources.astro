@@ -8,12 +8,14 @@ const rows = sites
 const healthy = rows.filter((r) => r.st.status === 'active').length;
 const failing = rows.filter((r) => ['failing', 'quarantined'].includes(r.st.status)).length;
 const fmt = (iso) => (iso ? new Date(iso).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '-');
+const items = rows.map(({ site }) => ({ title: site.name, url: `${root}source/${site.id}/` }));
 ---
-<Base title="Sources - devreads.fyi">
+<Base title="Sources - devreads.fyi" description={`Browse ${rows.length} independent and company engineering blogs collected by devreads.fyi. Explore each source's articles and feed status.`} items={items}>
   <div class="page-head">
     <h1>Sources</h1>
     <p>{rows.length} sites · {healthy} healthy · {failing} failing. Add a site by appending one entry to <code>sites.yml</code> - it backfills automatically on the next pull.</p>
   </div>
+  <div class="sources-scroll" role="region" aria-label="Sources feed status" tabindex="0">
   <table class="sources">
     <thead><tr><th>Source</th><th>Status</th><th>Posts</th><th>Last pull</th><th>Issue</th></tr></thead>
     <tbody>
@@ -28,5 +30,6 @@ const fmt = (iso) => (iso ? new Date(iso).toLocaleString('en-GB', { day: 'numeri
       ))}
     </tbody>
   </table>
+  </div>
   <span slot="footer-right"><a href={`${root}opml.xml`} style="text-decoration: underline;">Export OPML</a></span>
 </Base>

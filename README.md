@@ -56,6 +56,10 @@ Better Auth and Drizzle run in the existing Worker with a separate D1 applicatio
 
 The site remains static Astro. Authentication is supplied by Worker routes; Astro dev/preview supports local guest Favorites, while `npm run dev:accounts` supplies the actual local account backend after a build and local migrations. Production/staging storage is separate from local/test data and from the historical visit counter.
 
+## Search structure
+
+Public pages emit build-time Schema.org JSON-LD. The homepage identifies the WebSite; feeds and directories are CollectionPages whose ItemLists describe only their rendered entries. External article destinations stay attributed through original publisher URLs; no article authorship or publisher ownership is invented. Tag/source pages include visible breadcrumb navigation and matching BreadcrumbList data. Account, sign-in, Favorites, legacy Saved and error pages are noindex and excluded from the sitemap. Run `npm run check:seo` after building to verify graphs against rendered links, breadcrumbs, headings and sitemap contents.
+
 ## Commands
 
 ```sh
@@ -66,6 +70,8 @@ node ingest/run.mjs --site netflix  # one site by id
 npm run build                       # astro build + search index -> dist/
 npm run check:analytics             # verify built consent/tag markup and initialization
 npm run check:sharing               # verify article controls and every tag destination/count
+npm run check:seo                   # verify structured data, rendered lists, headings and indexing
+npm run test:seo:browser            # Chrome checks after build; set CHROME_PATH when needed
 npm run typecheck:worker             # strict account/counter Worker type checks
 npm run test:accounts                # guest-store tests and actual workerd/D1 API tests
 npm run preview                     # serve dist/ locally

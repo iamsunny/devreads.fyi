@@ -4,10 +4,15 @@ import Listing from '../components/Listing.astro';
 import Pagination from '../components/Pagination.astro';
 import AdSlot from '../components/AdSlot.astro';
 import { pageSlice, pageCount, posts, sites } from '../lib/data.mjs';
+const pagePosts = pageSlice(1);
 ---
-<Base>
+<Base items={pagePosts}>
+  <div class="page-head feed-head">
+    <h1 style="font-family: var(--mono);">Latest engineering reads</h1>
+    <p>New articles from independent and company engineering blogs.</p>
+  </div>
   <AdSlot />
-  <Listing posts={pageSlice(1)} />
+  <Listing posts={pagePosts} />
   <Pagination page={1} total={pageCount()} />
   <span slot="footer-right">FYI: {posts.length.toLocaleString()} posts from {sites.length} sources</span>
 </Base>

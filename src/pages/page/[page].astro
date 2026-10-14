@@ -9,9 +9,14 @@ export function getStaticPaths() {
   return Array.from({ length: Math.max(0, total - 1) }, (_, i) => ({ params: { page: String(i + 2) } }));
 }
 const page = Number(Astro.params.page);
+const pagePosts = pageSlice(page);
 ---
-<Base title={`devreads.fyi - page ${page}`}>
-  <Listing posts={pageSlice(page)} />
+<Base title={`devreads.fyi - page ${page}`} description={`Explore engineering articles on page ${page} of the devreads.fyi archive. Read posts from independent and company blogs, with links to the original publishers.`} items={pagePosts}>
+  <div class="page-head feed-head">
+    <h1 style="font-family: var(--mono);">Engineering reads - page {page}</h1>
+    <p>Earlier articles from the engineering feed.</p>
+  </div>
+  <Listing posts={pagePosts} />
   <Pagination page={page} total={pageCount()} />
   <span slot="footer-right">FYI: {posts.length.toLocaleString()} posts from {sites.length} sources</span>
 </Base>

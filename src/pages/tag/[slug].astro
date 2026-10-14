@@ -10,8 +10,10 @@ const slug = Astro.params.slug;
 const tag = tagBySlug.get(slug);
 const all = posts.filter((p) => p.tags?.some((t) => tagSlug(t) === slug));
 const tagged = all.slice(0, 300);
+const root = import.meta.env.BASE_URL;
+const breadcrumbs = [{ name: 'Home', url: root }, { name: 'Tags', url: `${root}tags/` }, { name: `#${tag}`, url: `${root}tag/${slug}/` }];
 ---
-<Base title={`#${tag} - devreads.fyi`}>
+<Base title={`#${tag} - devreads.fyi`} description={`Explore ${all.length} engineering articles tagged ${tag}. Discover posts from independent and company blogs, with links to the original publishers.`} items={tagged} breadcrumbs={breadcrumbs}>
   <div class="page-head">
     <h1>#{tag}</h1>
     <p>{all.length} posts{all.length > 300 ? ' (showing latest 300 - use search for the rest)' : ''}</p>

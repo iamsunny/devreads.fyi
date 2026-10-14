@@ -13,6 +13,7 @@ on:
       - 'migrations/**'
       - 'package*.json'
       - '*config*'
+      - 'wrangler.jsonc'
       - '.github/workflows/validate-accounts.yml'
   workflow_dispatch:
 
@@ -34,4 +35,5 @@ jobs:
       - run: npm run test:accounts
       - run: npm run check:analytics
       - run: npm run check:sharing
+      - run: npm run check:seo
       - run: npm audit --audit-level=high
