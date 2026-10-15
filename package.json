@@ -16,7 +16,7 @@
   "scripts": {
     "import:opml": "node scripts/import-opml.mjs",
     "ingest": "node ingest/run.mjs",
-    "build": "astro build && node scripts/build-search-index.mjs && node scripts/build-auth-client.mjs",
+    "build": "astro build && node scripts/build-search-index.mjs",
     "check:analytics": "node scripts/verify-analytics.mjs",
     "check:sharing": "node scripts/verify-sharing-tags.mjs",
     "check:seo": "node scripts/verify-structured-data.mjs",
@@ -32,8 +32,6 @@
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
     "astro": "7.3.8",
-    "firebase": "13.0.0",
-    "jose": "6.2.12",
     "rss-parser": "^3.13.0",
     "yaml": "^2.7.0"
   },
@@ -47,7 +45,6 @@
     "wrangler": "4.151.0"
   },
   "overrides": {
-    "@grpc/grpc-js": "1.13.6",
     "undici": "7.30.0",
     "esbuild": "0.28.1",
     "sharp": "0.35.5"

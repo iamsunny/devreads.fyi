@@ -20,7 +20,7 @@
   "vars": {
     "COUNTER_MODE": "production", "AUTH_MODE": "production",
     "AUTH_BASE_URL": "https://devreads.fyi", "AUTH_ENABLED": "false",
-    "FIREBASE_PROJECT_ID": "", "FIREBASE_API_KEY": "", "FIREBASE_AUTH_DOMAIN": "", "FIREBASE_APP_ID": ""
+    "APPWRITE_ENDPOINT": "", "APPWRITE_PROJECT_ID": ""
   },
   "triggers": { "crons": ["17 3 * * *"] },
   "d1_databases": [{
@@ -42,7 +42,7 @@
   "env": {
     "staging": {
       "name": "devreads-fyi-staging", "routes": [], "workers_dev": true, "preview_urls": false,
-      "vars": { "COUNTER_MODE": "preview", "AUTH_MODE": "staging", "AUTH_BASE_URL": "https://devreads-fyi-staging.skrajobra-2008.workers.dev", "AUTH_ENABLED": "false", "FIREBASE_PROJECT_ID": "", "FIREBASE_API_KEY": "", "FIREBASE_AUTH_DOMAIN": "", "FIREBASE_APP_ID": "" },
+      "vars": { "COUNTER_MODE": "preview", "AUTH_MODE": "staging", "AUTH_BASE_URL": "https://devreads-fyi-staging.skrajobra-2008.workers.dev", "AUTH_ENABLED": "false", "APPWRITE_ENDPOINT": "", "APPWRITE_PROJECT_ID": "" },
       "d1_databases": [{ "binding": "AUTH_DB", "database_name": "devreads-auth-staging", "database_id": "c2f5e99c-658d-475a-9091-4b8b7237a03c", "migrations_dir": "migrations" }],
       "ratelimits": [
         { "name": "AUTH_RATE_LIMITER", "namespace_id": "1003", "simple": { "limit": 30, "period": 60 } },

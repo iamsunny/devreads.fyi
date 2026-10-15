@@ -1,5 +1,5 @@
 import { readEndpoint, recordVisit, shouldCount, type Env } from "./lib/counter.ts";
-import { authEndpoint, AuthError, json, withCors, type AuthEnv } from './auth';
+import { authEndpoint, cleanupAppwrite, AuthError, json, withCors, type AuthEnv } from './auth';
 import { favoritesEndpoint } from './favorites';
 
 export interface StaticEnv extends Env, AuthEnv {
@@ -33,11 +33,6 @@ export default {
   },
   async scheduled(_event: ScheduledController, env: StaticEnv) {
     if (!env.AUTH_DB) return;
-    const now = Date.now();
-    await env.AUTH_DB.batch([
-      env.AUTH_DB.prepare('DELETE FROM session WHERE expiresAt < ?').bind(now),
-      env.AUTH_DB.prepare('DELETE FROM verification WHERE expiresAt < ?').bind(now),
-      env.AUTH_DB.prepare('DELETE FROM firebase_deleted_user WHERE expiresAt < ?').bind(now),
-    ]);
+    await cleanupAppwrite(env);
   },
 } satisfies ExportedHandler<StaticEnv>;

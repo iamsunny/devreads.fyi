@@ -1,6 +1,7 @@
-# Copy to .dev.vars (ignored by Git). Use a separate development Firebase project.
-# These are public Firebase Web app settings, not Google OAuth client secrets.
-FIREBASE_PROJECT_ID=
-FIREBASE_API_KEY=
-FIREBASE_AUTH_DOMAIN=
-FIREBASE_APP_ID=
+# Copy to .dev.vars (ignored by Git). Use a separate development Appwrite project.
+APPWRITE_ENDPOINT=https://YOUR-REGION.cloud.appwrite.io/v1
+APPWRITE_PROJECT_ID=
+# Server API key, sessions.write + users.write. Never place it in public assets.
+APPWRITE_API_KEY=
+# Generate with: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+AUTH_SESSION_SECRET=

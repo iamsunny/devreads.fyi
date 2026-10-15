@@ -9,7 +9,7 @@ Live at [devreads.fyi](https://devreads.fyi).
 - Latest posts from 200+ engineering blogs, grouped by day, with summaries, tags, reading time and thumbnails when feeds provide them
 - Instant search across every post (title, summary, tags) with source and tag filters, fully client-side
 - Keyboard-first: `/` search, `j`/`k` navigate, `o` open, `s` favorite, `Esc` close
-- Heart/Favorites collection: browser storage for guests, optional Google/GitHub/LinkedIn sign-in and account sync, automatic legacy bookmark migration and guest import
+- Heart/Favorites collection: browser storage for guests, optional Google sign-in through Appwrite and account sync, automatic legacy bookmark migration and guest import
 - "New since last visit" tracking, stored in your browser
 - Article sharing beside each heart: Copy link, LinkedIn, X, and Bluesky; native sharing on supported touch devices, with a selectable URL if clipboard access fails. Every shared publisher URL carries `utm_source=devreads.fyi`, retaining existing query parameters and fragments
 - Searchable topic directory at `/tags`, with article counts and existing topic feeds
@@ -52,7 +52,7 @@ The previous analytics loader, project key, and outbound-event tracking hook wer
 
 ## Accounts and Favorites
 
-Standard Firebase Authentication provides Google sign-in only. The Firebase SDK manages login persistence; the existing Worker verifies signed Firebase ID tokens, account status and revocation before serving per-user D1 Favorites. No Identity Platform upgrade or Firestore is required. Until Firebase is configured and `AUTH_ENABLED=true`, guest Favorites work and the Google button stays hidden. See [authentication deployment and local development](docs/authentication.md) for project setup, migrations, persistence, deletion, rollback and capacity targets. `/favorites/` replaces `/saved/`, which redirects in the Worker. Account API responses are uncached and enforce ownership; no implicit linking by email is performed.
+Appwrite provides Google sign-in only. The existing Worker handles OAuth and encrypted HttpOnly session cookies, checking the live Appwrite account/session before serving per-user D1 Favorites. No browser authentication SDK is loaded. Until Appwrite is configured and `AUTH_ENABLED=true`, guest Favorites work and the Google button stays hidden. See [authentication deployment and local development](docs/authentication.md) for setup, local commands, persistence, deletion, rollback and capacity targets. `/favorites/` replaces `/saved/`, which redirects in the Worker. Account API responses are uncached and enforce ownership. This is a fresh authentication setup; there are no existing users to migrate.
 
 The site remains static Astro. Authentication is supplied by Worker routes; Astro dev/preview supports local guest Favorites, while `npm run dev:accounts` supplies the actual local account backend after a build and local migrations. Production/staging storage is separate from local/test data and from the historical visit counter.
 
