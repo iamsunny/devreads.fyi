@@ -7,9 +7,9 @@ import Base from '../layouts/Base.astro';
     <p data-guest-only><a href={`${import.meta.env.BASE_URL}signin/`}>Sign in</a> to manage your account. Your browser favorites remain on this device.</p>
     <div data-signed-in-only hidden>
       <h2 class="account-name" data-account-name></h2><p class="account-fine" data-account-email></p>
-      <h3 class="account-section-label">Connected accounts</h3>
-      <p class="account-fine">Connect another sign-in option while signed in. You may be asked to sign in again first.</p>
-      <div class="provider-buttons" data-linked-accounts></div>
+      <h3 class="account-section-label">Sign-in method</h3>
+      <p class="account-fine">Google</p>
+      <button class="account-button" type="button" data-reauth>Confirm Google sign-in</button>
       <button class="account-button" type="button" data-signout>Sign out</button>
       <div class="account-danger-zone">
         <h3 class="account-section-label">Delete account</h3>

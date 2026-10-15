@@ -52,7 +52,7 @@ The previous analytics loader, project key, and outbound-event tracking hook wer
 
 ## Accounts and Favorites
 
-Better Auth and Drizzle run in the existing Worker with a separate D1 application database. Google, GitHub and LinkedIn providers are gated by credentials and `AUTH_ENABLED`/`AUTH_PROVIDERS`; until configured, guest Favorites work and unfinished provider buttons stay hidden. See [authentication deployment and local development](docs/authentication.md) for provider callbacks, migrations, secret prompts, session behavior, rollback and capacity targets. `/favorites/` replaces `/saved/`, which redirects in the Worker. Account API responses are uncached and enforce session ownership.
+Standard Firebase Authentication provides Google sign-in only. The Firebase SDK manages login persistence; the existing Worker verifies signed Firebase ID tokens, account status and revocation before serving per-user D1 Favorites. No Identity Platform upgrade or Firestore is required. Until Firebase is configured and `AUTH_ENABLED=true`, guest Favorites work and the Google button stays hidden. See [authentication deployment and local development](docs/authentication.md) for project setup, migrations, persistence, deletion, rollback and capacity targets. `/favorites/` replaces `/saved/`, which redirects in the Worker. Account API responses are uncached and enforce ownership; no implicit linking by email is performed.
 
 The site remains static Astro. Authentication is supplied by Worker routes; Astro dev/preview supports local guest Favorites, while `npm run dev:accounts` supplies the actual local account backend after a build and local migrations. Production/staging storage is separate from local/test data and from the historical visit counter.
 

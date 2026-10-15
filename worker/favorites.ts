@@ -1,4 +1,4 @@
-import { allowedBrowserRequest, authAvailable, authHostAllowed, createAuth, json, type AuthEnv } from './auth';
+import { allowedBrowserRequest, authAvailable, authHostAllowed, getCurrentUser, json, type AuthEnv } from './auth';
 
 interface Favorite { id: string; url: string; title: string; source: string; published: string | null; savedAt: number }
 export function validateFavorite(value: unknown): Favorite | null {
@@ -33,9 +33,10 @@ export async function favoritesEndpoint(request: Request, env: AuthEnv) {
   const validMethod = (path === '/api/favorites' && request.method === 'GET') || (['/api/favorites/status', '/api/favorites/import'].includes(path) && request.method === 'POST') || (!!itemId && ['PUT', 'DELETE'].includes(request.method));
   if (!validMethod) return json({ error: 'Method not allowed' }, 405);
   if (!authAvailable(env)) return json({ error: 'Account sync is not configured yet' }, 503);
-  const current = await createAuth(env).api.getSession({ headers: request.headers });
+  const current = await getCurrentUser(request, env);
   if (!current) return json({ error: 'Please sign in again' }, 401);
   const userId = current.user.id;
+  if (request.headers.has('X-Devreads-User') && request.headers.get('X-Devreads-User') !== userId) return json({error:'Account changed. Refresh before syncing favorites.'}, 409);
   if (env.AUTH_MODE === 'production' && !env.FAVORITES_RATE_LIMITER) return json({ error: 'Favorites are temporarily unavailable' }, 503);
   if (env.FAVORITES_RATE_LIMITER && !(await env.FAVORITES_RATE_LIMITER.limit({ key: userId })).success) return json({ error: 'Too many requests. Try again shortly.' }, 429);
   const db = env.AUTH_DB!;

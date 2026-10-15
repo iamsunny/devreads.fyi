@@ -1,5 +1,5 @@
 import { readEndpoint, recordVisit, shouldCount, type Env } from "./lib/counter.ts";
-import { authEndpoint, json, withCors, type AuthEnv } from './auth';
+import { authEndpoint, AuthError, json, withCors, type AuthEnv } from './auth';
 import { favoritesEndpoint } from './favorites';
 
 export interface StaticEnv extends Env, AuthEnv {
@@ -14,7 +14,8 @@ export default {
       try {
         const response = pathname.startsWith('/api/auth') ? await authEndpoint(request, env) : await favoritesEndpoint(request, env);
         return withCors(response, request, env);
-      } catch {
+      } catch (error) {
+        if (error instanceof AuthError) return withCors(json({error: error.message, code: error.code}, error.status), request, env);
         console.error('account_api_failed', { path: pathname });
         return withCors(json({ error: 'Account service is temporarily unavailable. Try again.' }, 503), request, env);
       }
@@ -36,6 +37,7 @@ export default {
     await env.AUTH_DB.batch([
       env.AUTH_DB.prepare('DELETE FROM session WHERE expiresAt < ?').bind(now),
       env.AUTH_DB.prepare('DELETE FROM verification WHERE expiresAt < ?').bind(now),
+      env.AUTH_DB.prepare('DELETE FROM firebase_deleted_user WHERE expiresAt < ?').bind(now),
     ]);
   },
 } satisfies ExportedHandler<StaticEnv>;

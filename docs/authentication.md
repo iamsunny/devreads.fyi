@@ -1,73 +1,57 @@
-# Authentication and Favorites deployment
+# Google sign-in with Firebase Authentication
 
-Better Auth 1.7.8 and Drizzle run in the existing static-assets Worker. The application D1 database is separate from the visit counter. Guest hearts and legacy bookmark migration work without OAuth configuration. Provider buttons appear only when the feature flag, auth secret, D1 binding and selected provider credentials are configured.
+The site uses standard Firebase Authentication for **Google only**. Astro remains static on Cloudflare Workers Static Assets; Favorites stay in D1. Better Auth and Drizzle have been removed. Firebase/Google handle OAuth and SDK-managed persistence, and the Worker verifies ID tokens before accessing any user's Favorites. No Identity Platform, Firestore, Firebase Analytics, service-account key or Google OAuth client secret is needed in the Worker.
 
-Use Node 22.12 or newer. Astro was upgraded to 7.3.8 alongside compatible build tools to resolve dependency advisories; the final dependency audit reports zero vulnerabilities.
+## Firebase setup
 
-## Databases and environments
+1. Create separate production and staging Firebase projects. Select the standard Spark/no-cost Authentication product; do not upgrade to Identity Platform for this Google-only integration. Other Firebase/Google Cloud products and existing Cloudflare usage have separate prices.
+2. Register a **Web app** in each project. Copy its public `apiKey`, `authDomain`, `projectId` and `appId` from Project settings. The API key identifies the project; it is not an admin secret. Follow Firebase's API restrictions guidance and retain the Authentication API access required by both the browser SDK and Worker REST calls.
+3. In Authentication > Sign-in method, enable **Google** and choose a support email. Disable other providers, including anonymous and email/password sign-in. Configure the app name/support/consent branding as needed in Google Cloud.
+4. In Authentication > Settings > Authorized domains, add `devreads.fyi` and `www.devreads.fyi`. In the staging project, add the staging Worker hostname. Add `localhost` explicitly in a development project when testing locally. Keep the default project Firebase auth domain authorized.
+5. Retain `authDomain` from Firebase, normally `<project-id>.firebaseapp.com`. The Google popup is managed by Firebase, with the helper callback `https://<authDomain>/__/auth/handler`. If supplying a separate Google OAuth client, register that exact callback in Google's client settings. It replaces the old `/api/auth/callback/google` callback. No GitHub/LinkedIn applications are used.
 
-Production: `devreads-auth-production`, binding `AUTH_DB`. Staging: `devreads-auth-staging`, configured under the staging Wrangler environment. Local development uses `.wrangler/dev-local`, not remote storage.
+Map the public Web app configuration into Wrangler's production `vars`, and use the staging project's values under `env.staging.vars`:
 
-```powershell
-npm install
-npm run build
-Copy-Item .dev.vars.example .dev.vars
-# Fill .dev.vars with local OAuth app credentials and a random auth secret.
-npx wrangler d1 migrations apply AUTH_DB --local --persist-to .wrangler/dev-local
-npm run dev:accounts
+```json
+{
+  "FIREBASE_PROJECT_ID": "your-project-id",
+  "FIREBASE_API_KEY": "your-public-web-api-key",
+  "FIREBASE_AUTH_DOMAIN": "your-project-id.firebaseapp.com",
+  "FIREBASE_APP_ID": "1:123456789:web:your-app-id",
+  "AUTH_ENABLED": "false"
+}
 ```
 
-Local callback root: `http://localhost:8787/api/auth/callback/`. Astro dev/preview alone has no account backend and supports guest favorites only. Tests use disposable Miniflare storage and test-only sessions; no public test-login endpoint exists.
+First deploy and enable staging, test real Google popup login, cancellation, reload persistence, sign-out, reauthentication and deletion. Then enable production and verify the same flows. Provider buttons are shown only when `AUTH_ENABLED=true`, all four settings and D1 are present. Public config is returned by `/api/auth/config` only when enabled; no token, OAuth secret or admin credential is exposed. The SDK client bundle is loaded only when auth is configured.
 
-Apply migrations before deploying code that uses them:
+## Databases and migrations
+
+Production binding `AUTH_DB` uses `devreads-auth-production`; staging uses `devreads-auth-staging`. Both are independent of the visit counter. Apply migrations before deploying the new Worker:
 
 ```powershell
 npx wrangler d1 migrations apply AUTH_DB --remote
 npx wrangler d1 migrations apply AUTH_DB --remote --env staging
-# Deploy staging first when configuring real provider credentials:
 npm run build
 npx wrangler deploy --env staging
-# Production is Git-connected: a push to main builds/deploys devreads-fyi.
+# A push to main builds/deploys production through Cloudflare's Git integration.
 ```
 
-## OAuth applications
+Migration 0001 is retained unchanged. Migration 0002 adds Firebase project/UID mappings and temporary deletion markers. Historical Better Auth tables remain for rollback and are not read for authentication. Existing Favorites are retained. No user is linked merely because their email matches: a collision with an unmigrated legacy account returns `ACCOUNT_MIGRATION_REQUIRED` for explicit owner-assisted migration. The previous deployment was disabled and both remote databases were empty at its last verification; recheck before any future identity migration.
 
-Create one application for each provider/environment. Production callbacks must exactly match:
+## Local development and verification
 
-| Provider | Callback | Setup |
-|---|---|---|
-| Google | `https://devreads.fyi/api/auth/callback/google` | Google Cloud Console → APIs & Services → OAuth consent screen and Web application credentials. Publish for external users and complete branding/domain checks required by Google. Request `openid email profile`. |
-| GitHub | `https://devreads.fyi/api/auth/callback/github` | GitHub Settings → Developer settings → OAuth Apps → New OAuth App. Homepage `https://devreads.fyi`; request `read:user user:email`. |
-| LinkedIn | `https://devreads.fyi/api/auth/callback/linkedin` | LinkedIn Developer Portal → Create app → enable **Sign In with LinkedIn using OpenID Connect** → Auth redirect URLs. Complete LinkedIn's application/company verification requirements. Request `openid profile email`. |
-
-For staging, set `AUTH_BASE_URL` to the deployed staging Worker URL and register matching staging callbacks. Do not reuse production applications/secrets for staging or local development. Staging has no counter binding.
-
-Enter credentials using Wrangler's hidden input prompts:
+Use Node 22.12 or newer and Chrome/Chromium for browser tests.
 
 ```powershell
-npx wrangler secret put GOOGLE_CLIENT_ID
-npx wrangler secret put GOOGLE_CLIENT_SECRET
-npx wrangler secret put GITHUB_CLIENT_ID
-npx wrangler secret put GITHUB_CLIENT_SECRET
-npx wrangler secret put LINKEDIN_CLIENT_ID
-npx wrangler secret put LINKEDIN_CLIENT_SECRET
+npm ci
+Copy-Item .dev.vars.example .dev.vars
+# Fill the four public settings using a development Firebase project.
+npx wrangler d1 migrations apply AUTH_DB --local --persist-to .wrangler/dev-local
+npm run build
+npm run dev:accounts
 ```
 
-Use `--env staging` for staging secrets. Set a distinct random `BETTER_AUTH_SECRET` of at least 32 characters for each environment. Secrets belong in Wrangler or ignored `.dev.vars`, never tracked source files. Do not rotate this secret casually: it signs sessions and encrypts provider tokens.
-
-Set `AUTH_ENABLED=true` and `AUTH_PROVIDERS=google,github,linkedin` in the relevant Wrangler environment only after credentials are in place. First enable and verify on staging; then test actual production sign-in/callbacks, cancellation, sign-out, and linked accounts. Real OAuth verification requires the owner's provider accounts. `AUTH_ENABLED=false` rolls back account features while retaining D1 data and guest favorites.
-
-## Behavior and security
-
-Guest favorites migrate from `er:saved` to `er:favorites:v1`. Successfully migrated legacy data is removed; malformed/unsafe data retains a backup and does not repeatedly resurrect removed entries. Browser storage never contains session/provider tokens. Automatic import clears only acknowledged records that have not changed during the request. Import errors retain the local copy and expose Retry sync.
-
-Sessions use secure HttpOnly host-only `__Secure-devreads.session_token` cookies, rolling 30-day expiry and daily renewal. Additional short-lived `devreads` OAuth-state cookies are necessary for the flow. Classify this cookie family as **necessary** in CookieHub; analytics consent must not block sign-in or account sync. Provider tokens are encrypted by Better Auth. Identity claims and account linking are checked server-side; no blanket trusted-provider bypass is enabled. Explicit provider linking and deletion require a sign-in within five minutes. An account without a verified provider email can sign in using an internal `.invalid` placeholder; that placeholder is not a contact address, and such an identity cannot be implicitly linked to another account.
-
-Favorites APIs require authenticated ownership and validate origins/JSON, record sizes and HTTP(S) URLs. Auth/Favorites responses are uncached; only exact apex/www origins receive credentialed CORS. All browser return paths are restricted to those origins. Production account APIs are unavailable on preview/worker URLs. Worker observability redacts URL query strings, including OAuth callback codes. Counter security rules remain separate.
-
-The daily cron removes expired sessions and verification records. Account deletion cascades favorites and authentication records. Restore operations may restore deleted data from backups; D1 Time Travel retention follows the Cloudflare plan.
-
-## Checks, costs and capacity
+Open `http://localhost:8787`; authorize `localhost` in that Firebase project. Astro dev/preview alone has no account backend. Production/staging storage is never used by local runtime tests.
 
 ```powershell
 npm run typecheck:worker
@@ -75,25 +59,31 @@ npm run test:accounts
 npm run build
 npm run check:analytics
 npm run check:sharing
-# After build and test:accounts; requires an installed Chrome/Chromium:
+npm run check:seo
 $env:CHROME_PATH = 'C:/Program Files/Google/Chrome/Application/chrome.exe'
 npm run test:accounts:browser
+npm run test:seo:browser
+npm audit
 ```
 
-Workers Paid has a $5 account minimum plus additional usage; it is not a guaranteed total bill. Monitor Workers CPU/requests/errors and D1 database size, rows read/written and query latency. D1 storage includes indexes. Begin PostgreSQL migration work at 7GB or when indexed queries cannot meet the measured peak workload; D1 has a hard 10GB per-database maximum.
+Runtime tests use locally generated RSA signatures and mock Google's public-key/Firebase REST responses, while running the deployed Worker bundle in workerd against disposable D1. Browser tests use a test-only popup adapter and genuinely signed tokens. No unsigned-token mode, emulator verification bypass or public test-login endpoint is deployed. These tests do not establish a successful real Google callback; owner project configuration is still required.
 
-Growth acceptance target: 100k accounts with 20 favorites each; 100 authenticated requests/second for ten minutes, 90% reads/10% writes, p95 under 500ms and unexpected errors under 1%, excluding OAuth-provider latency. Results must be recorded separately; passing functional tests does not establish this capacity. Initial usage assumption is 5k MAU. Alert/review operationally when latency/error rates or storage approach these thresholds.
+## Session, ownership and privacy
 
-Keep application and counter databases/namespaces when rolling back. Roll back through `AUTH_ENABLED=false` and the previous Worker version; never delete storage to roll back UI changes.
+Firebase's SDK persists auth state using its managed IndexedDB/localStorage mechanisms and refreshes short-lived ID tokens. This replaces the former 30-day HttpOnly Better Auth cookie. Application code does not manually persist tokens, place them in URLs or save Google access/refresh tokens in D1. Treat Firebase sign-in storage as **necessary** in CookieHub; analytics consent must not block login or Favorites sync. The Firebase SDK is not loaded while auth is disabled.
 
-## Implementation verification (2026-10-15)
+The browser sends ID tokens in the Authorization header. The Worker checks RS256 signatures against Google's rotating keys, exact project issuer/audience, expiry, issued/authentication times, Google provider and verified email. Account lookup also checks UID, current Google linkage, verified email, disabled state and `validSince` revocation. Account-status lookups are cached for at most 60 seconds in a bounded isolate cache; administrative revocation may therefore take up to that interval to be observed. Signature and expiry checks still run on every request. Application deletion markers reject replay immediately.
 
-Strict Worker type checking, six unit tests and six actual workerd/D1 test groups passed. Runtime checks cover real signed sessions, forgery/expiry, owner isolation, idempotent writes, 50-record imports, 100-record pagination, origin and JSON validation, OAuth redirect initialization, recent-session checks and cascading account deletion. Ten headless Chrome test groups against the local Worker/D1 passed, including legacy migration, automatic import, a second device, account switching, failed-write rollback, partial-import retry, logout, deletion, both themes and widths from 320 to 1,440px. Provider redirect tests use dummy credentials and controlled sessions; they do not establish successful real OAuth callbacks.
+Only exact apex/www origins receive bearer CORS headers. Mutations require an allowed Origin; originless reads require same-origin Fetch Metadata. Production account endpoints are unavailable on preview/worker hosts. All responses are no-store, URL query strings are redacted from Worker logs, automatic invocation logs/traces are disabled, and explicit API error logs include only the path. Favorite writes/imports include an expected application user ID so a tab/account switch cannot write an old action into a different account. D1 owner checks remain authoritative.
 
-After incorporating scheduled feed updates, the final static build produced 1,708 pages and indexed 26,168 posts. Existing analytics and sharing regression checks passed, including 64,927 article controls and 1,254 tag destinations. Linux GitHub CI passed clean npm installation, strict types, full build, account runtime tests, analytics/sharing checks and audit. The optional WASM lock entries missing from the initial Windows-generated lockfile were repaired.
+Sign-out clears Firebase state on the current browser origin and notifies other tabs. It does not delete cloud Favorites or automatically log out every other device. Apex and www have separate browser storage; canonical navigation to the apex is recommended. Guest favorites migrate and import in acknowledged batches of 50; failed imports retain unacknowledged local data. Pagination is 100 records and membership queries accept 50 IDs.
 
-Production and staging D1 databases have migration `0001` applied and distinct auth secrets stored in Cloudflare. Provider credentials remain outstanding, so `AUTH_ENABLED=false` is intentional. No test identities or fixture sessions were inserted in either remote database. Production was deployed through Cloudflare's Git build for commit `290087b` (build `bed47cd8-c8ba-4ad9-8559-af85baf7401f`, version `7778a048-37e7-4e94-8d47-82aa62d79b27`). Live Chrome checks passed for guest migration, hearts, persistence, attributed sharing, hidden unconfigured providers, API origin/preview isolation and responsive pages. The existing counter read 145,221 during verification; it continues advancing. Third-party scripts were blocked and verification used prefetch headers. Real provider callbacks remain unverified.
+Account deletion requires Google reauthentication within five minutes. The Worker deletes the authenticated Firebase user, then atomically removes its D1 user/Favorites/mapping and writes a two-hour replay marker. Cross-service deletion is not a distributed transaction: if Firebase succeeds while D1 fails, retry promptly while the current token and recent-auth window remain valid; `USER_NOT_FOUND` from Firebase is treated as an idempotent deletion retry. A sustained outage may require operator cleanup of orphaned D1 records. Daily cleanup removes expired markers and historical expired sessions/verification records. D1 backup retention/Time Travel may retain historical deleted data according to the Cloudflare plan.
 
-The 100k-account growth benchmark has **not** been run. Paid billing status could not be verified with the available OAuth permissions; the subscriptions read returned 403. Before the growth benchmark, confirm Workers Paid in the dashboard, enable a credentialed staging deployment, run the workload above against staging only, and record measured results. Functional tests establish application behavior, not a MAU capacity guarantee.
+## Rollback, costs and growth
 
-Reference: [Workers pricing](https://developers.cloudflare.com/workers/platform/pricing/), [D1 pricing](https://developers.cloudflare.com/d1/platform/pricing/), [D1 limits](https://developers.cloudflare.com/d1/platform/limits/), and [Better Auth account linking](https://better-auth.com/docs/concepts/users-accounts).
+`AUTH_ENABLED=false` hides Google sign-in while retaining local guest Favorites and all D1 data. Keep migration history, remote databases and the counter namespace. Old Worker secrets are unused by Firebase; retain them until the rollback window closes, then remove them separately. Do not revert to the old auth backend after creating Firebase users without an explicit identity/data migration.
+
+Standard Firebase's non-phone Authentication is listed as no-cost subject to quotas. The separate Identity Platform upgrade has different MAU pricing and daily Spark limits; it is not required here. Existing Cloudflare Workers/D1 charges remain separate. Monitor Workers request/CPU/error rates and D1 rows/size/query latency. The earlier 100k-account staging capacity benchmark has not been measured; functional tests are not a capacity guarantee. Workers Paid billing status could not previously be read with available API permissions.
+
+Sources: [Firebase pricing](https://firebase.google.com/pricing), [Google sign-in](https://firebase.google.com/docs/auth/web/google-signin), [auth persistence](https://firebase.google.com/docs/auth/web/auth-state-persistence), [ID-token verification](https://firebase.google.com/docs/auth/admin/verify-id-tokens), [account lookup/deletion REST APIs](https://firebase.google.com/docs/reference/rest/auth), [API-key guidance](https://firebase.google.com/docs/projects/api-keys), and [Firebase privacy](https://firebase.google.com/support/privacy).

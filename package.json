@@ -16,7 +16,7 @@
   "scripts": {
     "import:opml": "node scripts/import-opml.mjs",
     "ingest": "node ingest/run.mjs",
-    "build": "astro build && node scripts/build-search-index.mjs",
+    "build": "astro build && node scripts/build-search-index.mjs && node scripts/build-auth-client.mjs",
     "check:analytics": "node scripts/verify-analytics.mjs",
     "check:sharing": "node scripts/verify-sharing-tags.mjs",
     "check:seo": "node scripts/verify-structured-data.mjs",
@@ -32,13 +32,14 @@
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
     "astro": "7.3.8",
-    "better-auth": "1.7.8",
-    "drizzle-orm": "0.45.2",
+    "firebase": "13.0.0",
+    "jose": "6.2.12",
     "rss-parser": "^3.13.0",
     "yaml": "^2.7.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "5.20261014.1",
+    "esbuild": "0.28.1",
     "miniflare": "4.20260730.0",
     "playwright-core": "1.64.0",
     "sharp": "0.35.5",
@@ -46,6 +47,7 @@
     "wrangler": "4.151.0"
   },
   "overrides": {
+    "@grpc/grpc-js": "1.13.6",
     "undici": "7.30.0",
     "esbuild": "0.28.1",
     "sharp": "0.35.5"

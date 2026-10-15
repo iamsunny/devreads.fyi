@@ -8,6 +8,8 @@ const nudge = document.getElementById('favorite-nudge');
 const headerLink = document.querySelector('[data-account-link]');
 const channel = typeof BroadcastChannel === 'function' ? new BroadcastChannel('devreads-favorites') : null;
 let config = { enabled: false, providers: [] };
+let firebaseClient = null;
+let firebaseLoading = null;
 let current = null;
 let items = {};
 let nextCursor = null;
@@ -31,9 +33,11 @@ function showGuestInvitation() {
 async function api(path, options = {}) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 15000);
+  const owner = path.startsWith('/api/favorites') ? current?.user.id : null;
   try {
-    const response = await fetch(API + path, { ...options, credentials: 'include', cache: 'no-store', signal: controller.signal,
-      headers: { ...(options.body ? { 'Content-Type': 'application/json' } : {}), ...options.headers } });
+    const token = path === '/api/auth/config' ? null : await firebaseClient?.token();
+    const response = await fetch(API + path, { ...options, credentials: 'omit', cache: 'no-store', signal: controller.signal,
+      headers: { ...(options.body ? { 'Content-Type': 'application/json' } : {}), ...options.headers, ...(token ? { Authorization: `Bearer ${token}` } : {}), ...(owner ? {'X-Devreads-User':owner} : {}) } });
     const data = await response.json().catch(() => ({}));
     if (!response.ok) {
       const error = new Error(data.error?.message || data.error || data.message || 'Account service is unavailable. Try again.');
@@ -41,6 +45,12 @@ async function api(path, options = {}) {
     }
     return data;
   } finally { clearTimeout(timer); }
+}
+async function loadFirebase() {
+  if (!firebaseLoading) firebaseLoading = import(`${base}firebase-client.js`).then(async client => {
+    await client.configure(config.firebase); firebaseClient = client; return client;
+  }).catch(error => {firebaseLoading = null; throw error;});
+  return firebaseLoading;
 }
 function syncButtons() {
   for (const row of document.querySelectorAll('.row')) {
@@ -132,6 +142,7 @@ async function refresh() {
     try {
       config = await api('/api/auth/config');
       if (!config.enabled) { current = null; items = readGuest(); nextCursor = null; renderAccount(); renderList(); return; }
+      await loadFirebase();
       const previous = current?.user.id;
       const session = await api('/api/auth/get-session');
       if (epoch() !== turn) return;
@@ -142,7 +153,6 @@ async function refresh() {
         await importGuest(turn);
         if (epoch() !== turn) return;
         if (list) await loadFavorites(turn); else await loadMembership(turn);
-        await showLinkedAccounts();
       } else { items = readGuest(); nextCursor = null; renderList(); }
     } catch (error) {
       // Preserve the current account state on network errors; never switch it to guest silently.
@@ -174,7 +184,7 @@ async function toggle(row) {
       if (before) items[item.id] = before; else delete items[item.id];
       announce(error.status === 401 ? 'Please sign in again to sync favorites. Your displayed favorites have been retained.' : 'Could not sync this change. Please try again.', true);
     }
-  } finally { pending.delete(item.id); renderList(); }
+  } finally { pending.delete(item.id); renderList(); if (epoch() !== turn) await refresh(); }
 }
 function returnURL() {
   const candidate = new URLSearchParams(location.search).get('returnTo');
@@ -184,32 +194,33 @@ function returnURL() {
   } catch {}
   return new URL(`${base}favorites/`, location.origin).href;
 }
-async function beginSignIn(provider, link = false) {
-  const data = await api(`/api/auth/${link ? 'link-social' : 'sign-in/social'}`, { method: 'POST', body: JSON.stringify({ provider, callbackURL: link ? new URL(`${base}account/`, location.origin).href : returnURL(), errorCallbackURL: new URL(`${base}signin/?error=signin_failed`, location.origin).href, disableRedirect: true }) });
-  if (!data.url || !/^https?:\/\//.test(data.url)) throw new Error('Sign-in could not start. Try again.');
-  location.assign(data.url);
-}
-async function showLinkedAccounts() {
-  const container = document.querySelector('[data-linked-accounts]'); if (!container || !current) return;
-  const owner = current.user.id;
-  const accounts = await api('/api/auth/list-accounts');
-  if (current?.user.id !== owner) return;
-  const linked = new Set(accounts.map(account => account.providerId));
-  container.replaceChildren();
-  for (const provider of config.providers) {
-    const button = document.createElement('button'); button.type = 'button'; button.className = 'account-button'; button.dataset.linkProvider = provider;
-    button.textContent = linked.has(provider) ? `${provider === 'github' ? 'GitHub' : provider === 'linkedin' ? 'LinkedIn' : 'Google'} connected` : `Connect ${provider === 'github' ? 'GitHub' : provider === 'linkedin' ? 'LinkedIn' : 'Google'}`;
-    button.disabled = linked.has(provider); container.append(button);
-  }
+function signInError(error) {
+  const messages = {
+    'auth/popup-closed-by-user': 'Google sign-in was cancelled. Your browser favorites are still here.',
+    'auth/cancelled-popup-request': 'Google sign-in was cancelled. Please try again.',
+    'auth/popup-blocked': 'Allow the Google sign-in popup, then try again.',
+    'auth/network-request-failed': 'Google sign-in could not connect. Please try again when online.',
+    'auth/unauthorized-domain': 'Google sign-in is not configured for this domain yet.',
+    'auth/operation-not-allowed': 'Google sign-in has not been enabled yet.',
+    'auth/invalid-api-key': 'Google sign-in is not configured yet.',
+    'auth/user-disabled': 'This account is disabled. Please contact the site owner.',
+  };
+  return messages[error.code] || (error.code?.startsWith('auth/') ? 'Google sign-in could not complete. Please try again.' : error.message) || 'Google sign-in could not complete. Please try again.';
 }
 document.addEventListener('click', async event => {
   const heart = event.target.closest('.favorite-btn');
   if (heart) { await toggle(heart.closest('.row')); return; }
-  const provider = event.target.closest('[data-auth-provider], [data-link-provider]');
+  const provider = event.target.closest('[data-auth-provider]');
   if (provider) {
     provider.disabled = true;
-    try { await beginSignIn(provider.dataset.authProvider || provider.dataset.linkProvider, !!provider.dataset.linkProvider); }
-    catch (error) { announce(error.message, true); provider.disabled = false; }
+    try {
+      announce('');
+      if (provider.dataset.authProvider !== 'google') throw new Error('Only Google sign-in is available.');
+      const client = await loadFirebase(); await client.signInGoogle();
+      if (refreshing) await refreshing; await refresh();
+      if (current && message?.dataset.error !== 'true') location.assign(returnURL());
+    } catch (error) { announce(signInError(error), true); }
+    finally { provider.disabled = false; }
     return;
   }
   if (event.target.closest('[data-dismiss-nudge]')) {
@@ -218,9 +229,15 @@ document.addEventListener('click', async event => {
   }
   if (event.target.closest('[data-signout]')) {
     try {
-      await api('/api/auth/sign-out', { method: 'POST', body: '{}' }); generation++; current = null; items = readGuest(); nextCursor = null;
+      await firebaseClient?.signOut(); generation++; current = null; items = readGuest(); nextCursor = null;
       renderAccount(); renderList(); announce('Signed out. Account favorites remain in your account.'); channel?.postMessage({ type: 'session' });
     } catch (error) { announce(error.message, true); }
+  }
+  if (event.target.closest('[data-reauth]')) {
+    const button = event.target.closest('[data-reauth]'); button.disabled = true;
+    try { await firebaseClient.reauthenticateGoogle(); announce('Google sign-in confirmed. You can now delete your account.'); }
+    catch (error) { announce(signInError(error), true); }
+    finally { button.disabled = false; }
   }
   if (event.target.closest('[data-favorites-more]') && nextCursor && current) {
     const button = event.target.closest('[data-favorites-more]'); button.disabled = true;
@@ -232,7 +249,8 @@ document.addEventListener('click', async event => {
   if (event.target.closest('[data-delete-account]')) {
     const button = event.target.closest('[data-delete-account]'); button.disabled = true;
     try {
-      await api('/api/auth/delete-user', { method: 'POST', body: JSON.stringify({ callbackURL: new URL(`${base}favorites/`, location.origin).href }) });
+      await api('/api/auth/delete-user', { method: 'POST', body: '{}' });
+      await firebaseClient?.signOut();
       generation++; current = null; items = readGuest(); nextCursor = null; channel?.postMessage({ type: 'session' }); location.assign(`${base}favorites/`);
     } catch (error) { announce(error.message, true); button.disabled = false; }
   }
@@ -240,6 +258,10 @@ document.addEventListener('click', async event => {
 window.addEventListener('devreads:toggle-favorite', event => toggle(event.detail.row));
 window.addEventListener('focus', refresh);
 window.addEventListener('online', refresh);
+window.addEventListener('devreads:firebase-session', () => {
+  generation++; current = null; items = readGuest(); nextCursor = null; renderAccount(); renderList();
+  if (refreshing) refreshing.finally(refresh); else refresh();
+});
 window.addEventListener('storage', event => { if (event.key === GUEST_KEY && !current) { try { items = readGuest(); renderList(); } catch {} } });
 if (channel) channel.onmessage = () => refresh();
 document.addEventListener('click', event => {

@@ -1,8 +1,6 @@
-# Copy to .dev.vars (ignored by Git). Use separate local provider applications.
-BETTER_AUTH_SECRET=replace-with-a-random-secret-of-at-least-32-characters
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-GITHUB_CLIENT_ID=
-GITHUB_CLIENT_SECRET=
-LINKEDIN_CLIENT_ID=
-LINKEDIN_CLIENT_SECRET=
+# Copy to .dev.vars (ignored by Git). Use a separate development Firebase project.
+# These are public Firebase Web app settings, not Google OAuth client secrets.
+FIREBASE_PROJECT_ID=
+FIREBASE_API_KEY=
+FIREBASE_AUTH_DOMAIN=
+FIREBASE_APP_ID=
