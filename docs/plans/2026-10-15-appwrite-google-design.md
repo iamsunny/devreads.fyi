@@ -25,4 +25,6 @@ No Appwrite project credentials are available at implementation start. Local moc
 
 Production D1 was read before schema changes: zero users and Favorites. Migration 0003 applied successfully to the isolated production and staging databases; no fixture data was inserted remotely. The application uses manual upstream fetch redirects because the actual workerd runtime does not support the standard fetch redirect='error' mode; non-2xx responses fail closed and never forward the server key to a redirect target.
 
+Deployment follow-up: b55f0ee passed Linux CI 38776136358, including the final 1,714-page build and regression checks. Cloudflare build 8ef0fc88-e06a-4cc4-9723-48938b154542 failed; the current OAuth credentials cannot read its logs (403), so no failure cause is asserted. A local direct asset upload also failed with a connectivity error after retries. The first inactive Appwrite deployment remains live. This recorded status update retries the existing Git-connected build; the root tracker records its final outcome.
+
 Sources: https://appwrite.io/docs/products/auth/server-side-rendering and https://appwrite.io/docs/products/auth/oauth2. REST routes/headers and Google-provider session semantics were also checked against Appwrite's official server SDK and account controller source.
