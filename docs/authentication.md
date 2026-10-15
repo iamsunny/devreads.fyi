@@ -40,7 +40,7 @@ Migration 0001 is retained unchanged. Migration 0002 adds Firebase project/UID m
 
 ## Local development and verification
 
-Use Node 22.12 or newer and Chrome/Chromium for browser tests.
+Use Node 24.12 or newer and Chrome/Chromium for browser tests. `.node-version` pins the locally tested Node 24.13.0 for Cloudflare builds and GitHub workflows, matching Firebase 13's declared engine requirement.
 
 ```powershell
 npm ci

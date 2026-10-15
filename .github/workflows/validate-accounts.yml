@@ -14,6 +14,7 @@ on:
       - 'package*.json'
       - '*config*'
       - 'wrangler.jsonc'
+      - '.node-version'
       - '.github/workflows/validate-accounts.yml'
   workflow_dispatch:
 
@@ -27,7 +28,7 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: 22
+          node-version-file: .node-version
           cache: npm
       - run: npm ci
       - run: npm run typecheck:worker
