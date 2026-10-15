@@ -146,7 +146,7 @@ export async function getCurrentUser(request: Request, env: AuthEnv) {
 export function safeReturn(value: unknown, env: AuthEnv) {
   try {
     const url = new URL(typeof value === 'string' ? value : '/favorites/', baseURL(env));
-    if (url.origin === new URL(baseURL(env)).origin && !url.username && !url.password && !/^\/(api|signin)(\/|$)/.test(url.pathname)) return url.href;
+    if (trustedOrigins(env).includes(url.origin) && !url.username && !url.password && !/^\/(api|signin)(\/|$)/.test(url.pathname)) return url.href;
   } catch {}
   return new URL('/favorites/', baseURL(env)).href;
 }

@@ -26,6 +26,7 @@ test('canonical returns and host-only production cookies prevent external redire
   const env={AUTH_BASE_URL:'https://devreads.fyi'};
   for(const value of ['https://evil.example','//evil.example','/api/auth/callback/google','/signin/','https://user@devreads.fyi/'])assert.equal(safeReturn(value,env),'https://devreads.fyi/favorites/');
   assert.equal(safeReturn('/tag/cloud/?q=a#top',env),'https://devreads.fyi/tag/cloud/?q=a#top');
+  assert.equal(safeReturn('https://www.devreads.fyi/favorites/',env),'https://www.devreads.fyi/favorites/','Return to www to import its own browser Favorites');
   assert.equal(cookieName(env),'__Host-devreads.session');
   assert.equal(cookieName({AUTH_BASE_URL:'http://localhost:8787'}),'devreads.session');
 });

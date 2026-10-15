@@ -188,7 +188,7 @@ function returnURL() {
 async function startGoogle(confirmation = false) {
   const target = new URL(returnURL());
   const result = await api(confirmation ? '/api/auth/confirm-google' : '/api/auth/sign-in/google', {
-    method: 'POST', body: JSON.stringify({returnTo: target.pathname + target.search + target.hash}),
+    method: 'POST', body: JSON.stringify({returnTo: target.href}),
   });
   location.assign(result.url);
 }
